@@ -1,0 +1,174 @@
+AWSTemplateFormatVersion: '2010-09-09' 
+Transform: AWS::Serverless-2016-10-31 
+ 
+Parameters:
+  FIREHOSE:
+      Type: String
+      Default: QnABot-FeedbackFirehose-1VNU53MBYJ22T
+Resources:
+  FeedbackSNS:
+    Type: AWS::SNS::Topic
+    Properties: 
+      DisplayName: SLUBOT - Feedback topic
+      TopicName: SLUBot-Feedback
+
+  slubusstops:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: slu-bus-stops
+      AttributeDefinitions:
+        - AttributeName: id
+          AttributeType: N
+      KeySchema:
+        - AttributeName: id
+          KeyType: HASH
+      ProvisionedThroughput:
+        ReadCapacityUnits: 5
+        WriteCapacityUnits: 5
+
+  slubusroutes:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: slu-bus-routes
+      AttributeDefinitions:
+        - AttributeName: id
+          AttributeType: N
+      KeySchema:
+        - AttributeName: id
+          KeyType: HASH
+      ProvisionedThroughput:
+        ReadCapacityUnits: 5
+        WriteCapacityUnits: 5
+        
+  slubuses:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: slu-buses
+      AttributeDefinitions:
+        - AttributeName: id
+          AttributeType: N
+      KeySchema:
+        - AttributeName: id
+          KeyType: HASH
+      ProvisionedThroughput:
+        ReadCapacityUnits: 5
+        WriteCapacityUnits: 5
+
+  qnawhatsopennow:
+    Type: 'AWS::Serverless::Function'
+    Properties:
+      FunctionName: qna-whats-open-now
+      Handler: lambda_function.lambda_handler
+      Runtime: python3.7
+      CodeUri: lambda_hooks/qna_whats_open_now/
+      Description: 'returns what restaurants/dining halls are open at SLU'
+      MemorySize: 2432
+      Timeout: 63
+      Environment:
+        Variables:
+          PATH: /var/task/bin
+          PYTHONPATH: /var/task/lib
+
+  qnabushandler:
+    Type: 'AWS::Serverless::Function'
+    Properties:
+      FunctionName: qna-bus-handler
+      Handler: lambda_function.bushandler
+      Runtime: python3.6
+      CodeUri: lambda_hooks/qna_bus_handler
+      Description: 'returns bus information for SLU routes'
+      MemorySize: 128
+      Timeout: 10
+      Environment:
+        Variables:
+          BUSES: !Ref slubuses
+          ROUTES: !Ref slubusroutes
+          STOPS: !Ref slubusstops
+          Intro: The following bus schedules were found
+      Policies: 
+        - Version: '2012-10-17' # Policy Document
+          Statement:
+            - Effect: Allow
+              Action:
+                - dynamodb:GetItem
+                -  dynamodb:Scan
+                -  dynamodb:Query
+                -  dynamodb:BatchGetItem
+                -  dynamodb:DescribeTable
+              Resource:
+                - !GetAtt slubusroutes.Arn
+                - !GetAtt slubuses.Arn
+                - !GetAtt slubusstops.Arn
+ 
+  ThumbsFunction: 
+    Type: AWS::Serverless::Function 
+    Properties: 
+      FunctionName: qna-feedback
+      Handler: lambda_function.feedback_handler
+      Runtime: python3.6
+      Environment:
+        Variables:
+          FIREHOSE_NAME: !Ref FIREHOSE
+          SNS_TOPIC_ARN: !Ref FeedbackSNS
+      CodeUri: lambda_hooks/thumbs_function/
+      Description: enables thumbs down and thumbs up feedback backend
+      MemorySize: 128 
+      Timeout: 10 
+      #Role: arn:aws:iam::252158453973:role/QnABot-FulfillmentLambdaRole-15HCCZ2BJOCRJ  
+      Policies:
+        - Version: '2012-10-17' # Policy Document
+          Statement:
+           - Effect: Allow
+             Action:
+              - firehose:PutRecordBatch
+              - firehose:PutRecord
+             Resource: '*'
+        - Version: '2012-10-17' # Policy Document
+          Statement:
+           - Effect: Allow
+             Action: 
+              - sns:Publish
+             Resource: !Ref FeedbackSNS
+
+  slupopulateBusData:
+    Type: 'AWS::Serverless::Function'
+    Properties:
+      FunctionName: qna-slu-populate-busdata
+      Handler: lambda_function.populateData
+      Runtime: python3.6
+      CodeUri: lambda_hooks/slu_populate_bus_data/
+      Description: 'Poplulates doublemap data to dynamodb table'
+      MemorySize: 128
+      Timeout: 10
+      Policies: 
+        - Version: '2012-10-17' # Policy Document
+          Statement:
+            - Effect: Allow
+              Action: dynamodb:*
+              Resource:
+                - !GetAtt slubusroutes.Arn
+                - !GetAtt slubuses.Arn
+                - !GetAtt slubusstops.Arn
+      Environment:
+        Variables:
+          BUSES: !Ref slubuses
+          ROUTES: !Ref slubusroutes
+          STOPS: !Ref slubusstops
+      
+Outputs:
+
+  PopulateBus:
+    Description: "Arn for populate bus data lambda hook"
+    Value: !GetAtt slupopulateBusData.Arn
+
+  ThumbsFunction:
+    Description: "Arn for populate bus data lambda hook"
+    Value: !GetAtt ThumbsFunction.Arn
+
+  BusHandler:
+    Description: "Arn for populate bus data lambda hook"
+    Value: !GetAtt qnabushandler.Arn
+
+  OpenNow:
+    Description: "Arn for populate bus data lambda hook"
+    Value: !GetAtt qnawhatsopennow.Arn
