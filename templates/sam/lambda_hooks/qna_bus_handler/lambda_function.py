@@ -51,7 +51,7 @@ def bushandler(event, context):
    
 def getStopIDfromName(name):
     
-    table = boto3.resource('dynamodb').Table('slu-bus-stops')
+    table = boto3.resource('dynamodb').Table(TableName=os.environ['STOPS'])
     
     # - Note: This scan is case sensitive, so make sure the QnABot arg case matches the DB. 
     response = table.scan(
@@ -91,7 +91,7 @@ def getETAfromStopID(stopID):
     
 def getBusNamebyID(busID):
 
-    table = boto3.resource('dynamodb').Table('slu-buses')
+    table = boto3.resource('dynamodb').Table(os.environ['BUSES'])
 
     # - Query the slu-buses table for the bus name.
     response = table.query(
@@ -105,7 +105,7 @@ def getBusNamebyID(busID):
 
 def getRouteNamebyID(routeID):
     
-    table = boto3.resource('dynamodb').Table('slu-bus-routes')
+    table = boto3.resource('dynamodb').Table(os.environ['ROUTES'])
 
     # - Query the slu-bus-routes table for the route name. 
     response = table.query(
