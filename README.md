@@ -1,6 +1,7 @@
 # A Question and Answer Bot Using Amazon Lex and Amazon Alexa
 
 > Build a chat bot to answer questions. 
+Hi TOM THIS IS A CHANGE
 
 ## Overview
 This repository contains code for the QnABot, described in the AWS AI blog post [“Creating a Question and Answer Bot with Amazon Lex and Amazon Alexa”](https://aws.amazon.com/blogs/ai/creating-a-question-and-answer-bot-with-amazon-lex-and-amazon-alexa/).
