@@ -24,7 +24,7 @@ exports.parse=function(event){
                 response:{
                     outputSpeech:{
                         type:"PlainText",
-                        text: (process.env.DEFAULT_ALEXA_LAUNCH_MESSAGE ? process.env.DEFAULT_ALEXA_LAUNCH_MESSAGE : "Hello, Please ask a question")
+                        text: (process.env.DEFAULT_ALEXA_LAUNCH_MESSAGE ? process.env.DEFAULT_ALEXA_LAUNCH_MESSAGE : "Welcome to the ask Slew Skill.  I can answer many common questions about Saint Louis University.  Try asking me what is open now for dining, or when Fall Break begins.")
                     },
                     shouldEndSession:false
                 }
@@ -45,7 +45,7 @@ exports.parse=function(event){
                 response:{
                     outputSpeech:{
                         type:"PlainText",
-                        text:"GoodBye"
+                        text:"Thanks for using ask Slew.  If you are on your way to catch the shuttle, try Alexa, ask slew when will the bus arrive."
                     },
                     shouldEndSession:true
                 }

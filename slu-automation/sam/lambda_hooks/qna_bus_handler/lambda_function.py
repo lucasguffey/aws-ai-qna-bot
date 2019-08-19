@@ -32,7 +32,8 @@ def bushandler(event, context):
     
     # - Construct the ETA Message for each arrival returned by the API.
     for arrivals in etas:
-        messageText = messageText + ("Bus {} traveling on route {} will arrive in approximately {} minutes. ".format(str(getBusNamebyID(arrivals['bus'])), str(getRouteNamebyID(arrivals['route'])), str(arrivals['avg'])) )
+        if arrivals['bus']:
+            messageText = messageText + ("Bus {} traveling on route {} will arrive in approximately {} minutes. ".format(str(getBusNamebyID(arrivals['bus'])), str(getRouteNamebyID(arrivals['route'])), str(arrivals['avg'])) )
          
     
     messageText = messageText + "Bus scheduling information can be found here: https://bit.ly/319ECfO"
