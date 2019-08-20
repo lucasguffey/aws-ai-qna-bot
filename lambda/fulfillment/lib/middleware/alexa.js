@@ -45,7 +45,7 @@ exports.parse=function(event){
                 response:{
                     outputSpeech:{
                         type:"PlainText",
-                        text:"Thanks for using ask Slew.  If you are on your way to catch the shuttle, try Alexa, ask slew when will the bus arrive."
+                        text:"GoodBye"
                     },
                     shouldEndSession:true
                 }
@@ -65,7 +65,7 @@ exports.parse=function(event){
                 response:{
                     outputSpeech:{
                         type:"PlainText",
-                        text:(process.env.DEFAULT_ALEXA_STOP_MESSAGE ? process.env.DEFAULT_ALEXA_STOP_MESSAGE :"GoodBye")
+                        text:(process.env.DEFAULT_ALEXA_STOP_MESSAGE ? process.env.DEFAULT_ALEXA_STOP_MESSAGE :"Thanks for using ask Slew.  If you are on your way to catch the shuttle, try Alexa, ask slew when will the bus arrive.")
                     },
                     shouldEndSession:true
                 }

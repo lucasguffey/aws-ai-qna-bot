@@ -52,7 +52,7 @@ def bushandler(event, context):
    
 def getStopIDfromName(name):
     
-    table = boto3.resource('dynamodb').Table(TableName=os.environ['STOPS'])
+    table = boto3.resource('dynamodb').Table(os.environ['STOPS'])
     
     # - Note: This scan is case sensitive, so make sure the QnABot arg case matches the DB. 
     response = table.scan(

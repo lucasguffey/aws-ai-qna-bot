@@ -27,7 +27,7 @@ echo "WAITING ..."
 # aws cloudformation wait stack-create-complete --stack-name $2
 
 FEEDBACK=$(aws cloudformation describe-stacks --stack-name $2 --query "Stacks[0].Outputs[*].OutputValue" | sed "s/,/ /g" | grep 'feedback')
-OPEN=$(aws cloudformation describe-stacks --stack-name $2 --query "Stacks[0].Outputs[*].OutputValue" | sed "s/,/ /g" | grep 'whats-open-now')
+OPEN=$(aws cloudformation describe-stacks --stack-name $2 --query "Stacks[0].Outputs[*].OutputValue" | sed "s/,/ /g" | grep 'qna-opennow')
 BUS=$(aws cloudformation describe-stacks --stack-name $2 --query "Stacks[0].Outputs[*].OutputValue" | sed "s/,/ /g" | grep 'bus-handler')
 POPULATE=$(aws cloudformation describe-stacks --stack-name $2 --query "Stacks[0].Outputs[*].OutputValue" | sed "s/,/ /g" | grep 'populate')
 
