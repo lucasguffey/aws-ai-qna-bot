@@ -36,14 +36,11 @@ def bushandler(event, context):
             messageText = messageText + ("Bus {} traveling on route {} will arrive in approximately {} minutes. ".format(str(getBusNamebyID(arrivals['bus'])), str(getRouteNamebyID(arrivals['route'])), str(arrivals['avg'])) )
          
     
-    messageText = messageText + "Bus scheduling information can be found here: https://bit.ly/319ECfO"
-    
-    
     # - Set the response message in the event object, and return the event.
     if messageText:
-        event["res"]["message"] = messageText
+        event["res"]["message"] = messageText + "Bus scheduling information can be found here: https://bit.ly/319ECfO"
     else:
-        event["res"]["message"] = "No buses currently scheduled"
+        event["res"]["message"] = "No buses currently scheduled for this stop. Bus information can be found here: https://bit.ly/319ECfO"
 
     
     return event
