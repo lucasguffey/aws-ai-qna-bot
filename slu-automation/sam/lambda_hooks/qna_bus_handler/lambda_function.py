@@ -45,7 +45,7 @@ def bushandler(event, context):
         event["res"]["message"] = messageText
     
     elif input_mode != 'Text' and not messageText:
-        event["res"]["message"] = "No buses currently scheduled for this stop.
+        event["res"]["message"] = "No buses currently scheduled for this stop."
         
     else:
         event["res"]["message"] = "No buses currently scheduled for this stop. Bus information can be found here: https://bit.ly/319ECfO"
