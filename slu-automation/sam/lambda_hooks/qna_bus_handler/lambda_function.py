@@ -14,7 +14,8 @@ from boto3.dynamodb.conditions import Key, Attr
 
 def bushandler(event, context):
     
-    #print(json.dumps(event))
+    print(json.dumps(event))
+    input_mode = event['req']['_event']['outputDialogMode']
     
     # - Setting an environment variable to allow the customer to control the initial language in the message.
     messageText = os.environ['Intro']
@@ -39,6 +40,13 @@ def bushandler(event, context):
     # - Set the response message in the event object, and return the event.
     if messageText:
         event["res"]["message"] = messageText + "Bus scheduling information can be found here: https://bit.ly/319ECfO"
+        
+    elif messageText and input_mode != 'Text':
+        event["res"]["message"] = messageText
+    
+    elif input_mode != 'Text' and not messageText:
+        event["res"]["message"] = "No buses currently scheduled for this stop.
+        
     else:
         event["res"]["message"] = "No buses currently scheduled for this stop. Bus information can be found here: https://bit.ly/319ECfO"
 
