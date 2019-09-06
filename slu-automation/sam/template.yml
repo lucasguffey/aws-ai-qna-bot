@@ -1,21 +1,38 @@
 AWSTemplateFormatVersion: '2010-09-09' 
 Transform: AWS::Serverless-2016-10-31 
- 
+
+
 Parameters:
+
+  STACK:
+      Type: String
+      Default: prod
+
   FIREHOSE:
       Type: String
-      Default: QnABot-FeedbackFirehose-1VNU53MBYJ22T
+      Default: FIREHOSE PLACEHOLDER
+      
 Resources:
   FeedbackSNS:
     Type: AWS::SNS::Topic
     Properties: 
-      DisplayName: SLUBOT - Feedback topic
-      TopicName: SLUBot-Feedback
+      DisplayName: !Join
+                      - '-'
+                      - - 'SLUBot-Feedback'
+                        - !Ref STACK
+
+      TopicName: !Join
+                      - '-'
+                      - - 'SLUBot-Feedback'
+                        - !Ref STACK
 
   slubusstops:
     Type: AWS::DynamoDB::Table
     Properties:
-      TableName: slu-bus-stops
+      TableName: !Join
+                      - '-'
+                      - - 'slu-bus-stops'
+                        - !Ref STACK
       AttributeDefinitions:
         - AttributeName: id
           AttributeType: N
@@ -29,7 +46,10 @@ Resources:
   slubusroutes:
     Type: AWS::DynamoDB::Table
     Properties:
-      TableName: slu-bus-routes
+      TableName: !Join
+                      - '-'
+                      - - 'slu-bus-routes'
+                        - !Ref STACK
       AttributeDefinitions:
         - AttributeName: id
           AttributeType: N
@@ -43,7 +63,10 @@ Resources:
   slubuses:
     Type: AWS::DynamoDB::Table
     Properties:
-      TableName: slu-buses
+      TableName: !Join
+                      - '-'
+                      - - 'slu-buses'
+                        - !Ref STACK
       AttributeDefinitions:
         - AttributeName: id
           AttributeType: N
@@ -57,7 +80,10 @@ Resources:
   qnawhatsopennow:
     Type: 'AWS::Serverless::Function'
     Properties:
-      FunctionName: qna-whats-open-now
+      FunctionName: !Join
+                      - '-'
+                      - - 'qna-opennow'
+                        - !Ref STACK
       Handler: lambda_function.lambda_handler
       Runtime: python3.7
       CodeUri: lambda_hooks/qna_whats_open_now/
@@ -72,7 +98,10 @@ Resources:
   qnabushandler:
     Type: 'AWS::Serverless::Function'
     Properties:
-      FunctionName: qna-bus-handler
+      FunctionName: !Join
+                      - '-'
+                      - - 'qna-bus-handler'
+                        - !Ref STACK
       Handler: lambda_function.bushandler
       Runtime: python3.6
       CodeUri: lambda_hooks/qna_bus_handler
@@ -99,11 +128,14 @@ Resources:
                 - !GetAtt slubusroutes.Arn
                 - !GetAtt slubuses.Arn
                 - !GetAtt slubusstops.Arn
- 
+
   ThumbsFunction: 
     Type: AWS::Serverless::Function 
     Properties: 
-      FunctionName: qna-feedback
+      FunctionName: !Join
+                      - '-'
+                      - - 'qna-feedback'
+                        - !Ref STACK
       Handler: lambda_function.feedback_handler
       Runtime: python3.6
       Environment:
@@ -133,7 +165,10 @@ Resources:
   slupopulateBusData:
     Type: 'AWS::Serverless::Function'
     Properties:
-      FunctionName: qna-slu-populate-busdata
+      FunctionName: !Join
+                      - '-'
+                      - - 'qna-populate-busdata'
+                        - !Ref STACK
       Handler: lambda_function.populateData
       Runtime: python3.6
       CodeUri: lambda_hooks/slu_populate_bus_data/
@@ -149,12 +184,32 @@ Resources:
                 - !GetAtt slubusroutes.Arn
                 - !GetAtt slubuses.Arn
                 - !GetAtt slubusstops.Arn
+      Events:
+          ScheduledEvent:
+              Type: Schedule
+              Properties:
+                  Schedule: !Sub "rate(3 hours)"
+                  Input: "{\”caller\":\”updating dynamodb for bus schedule\"}"
       Environment:
         Variables:
           BUSES: !Ref slubuses
           ROUTES: !Ref slubusroutes
           STOPS: !Ref slubusstops
-      
+
+  qnasodexohandler:
+    Type: 'AWS::Serverless::Function'
+    Properties:
+      FunctionName: !Join
+                      - '-'
+                      - - 'qna-sodexo-handler'
+                        - !Ref STACK
+      Handler: lambda_function.lambda_handler
+      Runtime: python3.6
+      CodeUri: lambda_hooks/qna_sodexo_handler
+      Description: 'returns information for grand dining hall menu items such as vegan options and allergen arguments'
+      MemorySize: 256
+      Timeout: 30
+
 Outputs:
 
   PopulateBus:
@@ -172,3 +227,7 @@ Outputs:
   OpenNow:
     Description: "Arn for populate bus data lambda hook"
     Value: !GetAtt qnawhatsopennow.Arn
+    
+  SodexoHandler:
+    Description: "Arn for sodexo handler"
+    Value: !GetAtt qnasodexohandler.Arn

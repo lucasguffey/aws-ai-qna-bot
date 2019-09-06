@@ -1,0 +1,91 @@
+import json
+from botocore.vendored import requests
+import qnalib 
+
+
+
+def lambda_handler(event, context):
+    
+    event_results = event["res"]["result"]
+    dietary_argument = event_results["args"][0]
+    meal_argument = event_results["args"][1]
+    
+    try:
+        allergen_argument = event_results["args"][2]
+    except IndexError:
+        allergen_argument = None
+        
+    print(meal_argument)
+    print(allergen_argument)
+    
+    
+    sodexo_endpoint = requests.get("http://api-staging.sodexomyway.net/api/menus/13341001/14759/{}/{}".format(dietary_argument,allergen_argument))
+    try:
+        sodexo_endpoint.raise_for_status()
+    except Exception as exc:
+        event['res']['message'] = "Unable to locate the information at this time, please try again"
+        return(event)
+        
+    menu_items = sodexo_endpoint.json()
+    print(json.dumps(event))
+
+    meals = []
+    for item in menu_items['data']['menuItems']:
+        if item['Meal'].lower() == meal_argument.lower():
+            meals.append(item['Name'])
+     
+
+
+    ssml = ""
+    if allergen_argument:
+        markdown = "| Grand Dining Hall {} Free {} Items |\n|------------|-------|".format(allergen_argument.capitalize(),meal_argument.capitalize())
+    else:
+        markdown = "| Grand Dining Hall {} {} Items |\n|------------|-------|".format(dietary_argument.capitalize(),meal_argument.capitalize())
+        
+    for i in meals:
+        markdown += "\n| {}      |".format(i)
+        ssml += " and {}".format(i)
+    
+    
+    qnalib.markdown_response(event,markdown)
+     
+
+    if allergen_argument:
+        allergen_response = written_allergen(meals,meal_argument,allergen_argument)
+        qnalib.text_response(event,allergen_response)
+        qnalib.ssml_response(event,allergen_response)
+    
+    else:
+        written_response = written_restriction(meals,meal_argument,dietary_argument)
+        qnalib.text_response(event,written_response)
+        qnalib.ssml_response(event,written_response)
+        
+    return event
+
+
+def written_allergen(meal_list,meal_type,allergen):
+        #Text and SSML response flow
+    if len(meal_list) == 0 :
+        response = "There are currently no {} meals right now that are {} free".format(meal_type,allergen)
+    elif len(meal_list) == 1:
+        response_message = "The following {} meal is {} free: ".format(meal_type,allergen)
+        response = response_message + "".join(str(x) for x in meal_list)
+    else:
+        meal_list.insert(-1,'and')
+        response_message = "The following {} meals are {} free: ".format(meal_type,allergen)
+        response = response_message + ", ".join(str(x) for x in meal_list[:-2]) + " ".join(str(x) for x in meal_list[-2:])
+    return response
+
+ 
+def written_restriction(meal_list,meal_type,meal_restriction):  
+    if len(meal_list) == 0:
+        response = "There are currently no {} meals right now that are {}".format(meal_type,meal_restriction)
+    elif len(meal_list) == 1:
+        response_message = "The following {} meal is {}: ".format(meal_type,meal_restriction)
+        response = response_message + "".join(str(x) for x in meal_list)
+    else:
+        meal_list.insert(-1,'and')
+        response_message = "The following {} meals are {} free: ".format(meal_type,meal_restriction)
+        response = response_message + ", ".join(str(x) for x in meal_list[:-2]) + " ".join(str(x) for x in meal_list[-2:])
+    return response
+        

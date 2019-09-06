@@ -2,7 +2,7 @@ import json
 import sys
 import re
 
-def jsonInjector(feedback, sodexo, bus):
+def jsonInjector(feedback, sodexo, bus, allergen):
     with open('qna_lambda.json', 'r+') as f:
         data = json.load(f)
         for item in data['qna']:
@@ -12,8 +12,10 @@ def jsonInjector(feedback, sodexo, bus):
                 item['l'] = sodexo[1:-1]
             elif 'bus.' in item['qid']:
                 item['l'] = bus[1:-1]
+            elif 'grand.' in item['qid']:
+                item['l'] = allergen[1:-1]
         f.seek(0)
         json.dump(data, f, indent=4)
         f.truncate
 
-jsonInjector(sys.argv[1], sys.argv[2], sys.argv[3])
+jsonInjector(sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4])
