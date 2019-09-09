@@ -189,7 +189,6 @@ Resources:
               Type: Schedule
               Properties:
                   Schedule: !Sub "rate(3 hours)"
-                  Input: "{\”caller\":\”updating dynamodb for bus schedule\"}"
       Environment:
         Variables:
           BUSES: !Ref slubuses

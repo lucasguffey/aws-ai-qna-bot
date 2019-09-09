@@ -30,7 +30,7 @@ FEEDBACK=$(aws cloudformation describe-stacks --stack-name $2 --query "Stacks[0]
 OPEN=$(aws cloudformation describe-stacks --stack-name $2 --query "Stacks[0].Outputs[*].OutputValue" | sed "s/,/ /g" | grep 'qna-opennow')
 BUS=$(aws cloudformation describe-stacks --stack-name $2 --query "Stacks[0].Outputs[*].OutputValue" | sed "s/,/ /g" | grep 'bus-handler')
 POPULATE=$(aws cloudformation describe-stacks --stack-name $2 --query "Stacks[0].Outputs[*].OutputValue" | sed "s/,/ /g" | grep 'populate')
-SODEXO=$(aws cloudformation describe-stacks --stack-name $2 --query "Stacks[0].Outputs[*].OutputValue" | sed "s/,/ /g" | grep 'sodexo')
+ALLERGEN=$(aws cloudformation describe-stacks --stack-name $2 --query "Stacks[0].Outputs[*].OutputValue" | sed "s/,/ /g" | grep 'sodexo')
 
 python arn_injector.py $FEEDBACK $OPEN $BUS $ALLERGEN
 

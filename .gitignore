@@ -63,6 +63,7 @@ config.json
 **/.DS_Store
 .idea/
 
+slu-automation/sam/vp3/*
 
 
 

@@ -30,7 +30,8 @@ def bushandler(event, context):
     
     response = ''
     
-    markdown = "|   Bus # |   Bus Route  |ETA |\n|:------------|:-----------------:|-------:|"
+
+    markdown = "|  |{}|\n|:------------|:-----------------:|-------:|\n|   Bus # |   Bus Route  |ETA |".format(stopName)
     
     # - Construct the ETA Message for each arrival returned by the API.
     for arrivals in etas:
@@ -115,7 +116,7 @@ def getBusNamebyID(busID):
     try:
         busName = response['Items'][0]['name']
     except IndexError:
-        busName = 'unavailalbe'
+        busName = 'unavailable'
         
     
     # - Return the bus name.
