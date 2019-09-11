@@ -2,7 +2,7 @@ import json
 import sys
 import re
 
-#hydrating qna_lambda.json
+#hydrates qna_lambda.json
 def jsonInjector(feedback, sodexo, bus, allergen):
     with open('qna_lambda.json', 'r+') as f:
         data = json.load(f)
