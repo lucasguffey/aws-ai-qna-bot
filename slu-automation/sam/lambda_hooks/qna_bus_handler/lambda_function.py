@@ -5,6 +5,7 @@ import boto3
 import os
 import decimal
 from boto3.dynamodb.conditions import Key, Attr
+import qnalib
 
 # - Lambda hook to query the doublemap API, and construct return messages.
 # - Author: sunnyc@
@@ -15,11 +16,9 @@ from boto3.dynamodb.conditions import Key, Attr
 def bushandler(event, context):
     
     print(json.dumps(event))
-    input_mode = event['req']['_event']['outputDialogMode']
     
-    # - Setting an environment variable to allow the customer to control the initial language in the message.
-    messageText = os.environ['Intro']
     
+
     # - Extracting the stop name from the event args (This is set in the content designer, and must match case)
     stopName = event["res"]["result"]["args"][0]
     
@@ -29,22 +28,39 @@ def bushandler(event, context):
     # - Query the ETA service with the requested Stop.
     etas = getETAfromStopID(stopID) 
     
-    messageText = ''
+    response = ''
+    
+
+    markdown = "|  |{}|\n|:------------|:-----------------:|-------:|\n|   Bus # |   Bus Route  |ETA |".format(stopName)
     
     # - Construct the ETA Message for each arrival returned by the API.
     for arrivals in etas:
         if arrivals['bus']:
-            messageText = messageText + ("Bus {} traveling on route {} will arrive in approximately {} minutes. ".format(str(getBusNamebyID(arrivals['bus'])), str(getRouteNamebyID(arrivals['route'])), str(arrivals['avg'])) )
-         
-    
-    # - Set the response message in the event object, and return the event.
-    if messageText:
-        event["res"]["message"] = messageText + "Bus scheduling information can be found here: https://bit.ly/319ECfO"
-    
-    else:
-        event["res"]["message"] = "No buses currently scheduled for this stop. Bus information can be found here: https://bit.ly/319ECfO"
+           markdown +=  "\n|    {}      |  {}      | {}      |".format(getBusNamebyID(arrivals['bus']),getRouteNamebyID(arrivals['route']),arrivals['avg'])
+           response = response + ("Bus {} traveling on route {} will arrive in approximately {} minutes. ".format(str(getBusNamebyID(arrivals['bus'])), str(getRouteNamebyID(arrivals['route'])), str(arrivals['avg'])) )
+           
 
     
+    # - Set the response message in the event object, and return the event.
+    
+    if response:
+        
+        ssml = response
+        text = response + "Bus scheduling information can be found here: https://bit.ly/319ECfO"
+        qnalib.markdown_response(event,markdown) 
+        qnalib.text_response(event,text)
+        qnalib.ssml_response(event,ssml)
+    
+    else:
+        inactive_route_text = "No buses are currently scheduled for this stop. bus stop information can be found here: https://bit.ly/319ECfO "
+        inactive_route_ssml = "No buses are currently scheduled for this stop"
+        
+        qnalib.markdown_response(event,inactive_route_text) 
+        qnalib.text_response(event,inactive_route_text)
+        qnalib.ssml_response(event,inactive_route_ssml)
+        
+        
+
     return event
     
     
@@ -97,8 +113,11 @@ def getBusNamebyID(busID):
     response = table.query(
         KeyConditionExpression=Key('id').eq(busID)
         )
+    try:
+        busName = response['Items'][0]['name']
+    except IndexError:
+        busName = 'unavailable'
         
-    busName = response['Items'][0]['name']
     
     # - Return the bus name.
     return busName
@@ -111,8 +130,10 @@ def getRouteNamebyID(routeID):
     response = table.query(
         KeyConditionExpression=Key('id').eq(routeID)
         )
-        
-    routeName = response['Items'][0]['name']
+    try:
+        routeName = response['Items'][0]['name']
+    except IndexError:
+        routeName = "unavailalbe"
     
     
     return routeName

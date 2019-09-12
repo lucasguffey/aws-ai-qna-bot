@@ -128,7 +128,7 @@ Resources:
                 - !GetAtt slubusroutes.Arn
                 - !GetAtt slubuses.Arn
                 - !GetAtt slubusstops.Arn
- 
+
   ThumbsFunction: 
     Type: AWS::Serverless::Function 
     Properties: 
@@ -184,12 +184,31 @@ Resources:
                 - !GetAtt slubusroutes.Arn
                 - !GetAtt slubuses.Arn
                 - !GetAtt slubusstops.Arn
+      Events:
+          ScheduledEvent:
+              Type: Schedule
+              Properties:
+                  Schedule: !Sub "rate(3 hours)"
       Environment:
         Variables:
           BUSES: !Ref slubuses
           ROUTES: !Ref slubusroutes
           STOPS: !Ref slubusstops
-      
+
+  qnasodexohandler:
+    Type: 'AWS::Serverless::Function'
+    Properties:
+      FunctionName: !Join
+                      - '-'
+                      - - 'qna-sodexo-handler'
+                        - !Ref STACK
+      Handler: lambda_function.lambda_handler
+      Runtime: python3.6
+      CodeUri: lambda_hooks/qna_sodexo_handler
+      Description: 'returns information for grand dining hall menu items such as vegan options and allergen arguments'
+      MemorySize: 256
+      Timeout: 30
+
 Outputs:
 
   PopulateBus:
@@ -207,3 +226,7 @@ Outputs:
   OpenNow:
     Description: "Arn for populate bus data lambda hook"
     Value: !GetAtt qnawhatsopennow.Arn
+    
+  SodexoHandler:
+    Description: "Arn for sodexo handler"
+    Value: !GetAtt qnasodexohandler.Arn
