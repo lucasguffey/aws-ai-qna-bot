@@ -82,7 +82,7 @@ Resources:
           - Ref: STACK
       Handler: lambda_function.lambda_handler
       Runtime: python3.7
-      CodeUri: s3://sluhookdev/a5098a00d10d43a508e08f776de65922
+      CodeUri: s3://sluhookdev/3c027f884459cf2d05cf64145fa6978d
       Description: returns what restaurants/dining halls are open at SLU
       MemorySize: 2432
       Timeout: 63
@@ -100,7 +100,7 @@ Resources:
           - Ref: STACK
       Handler: lambda_function.bushandler
       Runtime: python3.6
-      CodeUri: s3://sluhookdev/c970944ff75fa10fc0587d508fda9e1f
+      CodeUri: s3://sluhookdev/6574d02cf5a033a7ba4d94f16db308b1
       Description: returns bus information for SLU routes
       MemorySize: 128
       Timeout: 10
@@ -221,7 +221,7 @@ Resources:
           - Ref: STACK
       Handler: lambda_function.lambda_handler
       Runtime: python3.6
-      CodeUri: s3://sluhookdev/399414e5f37db01feb64b4da1f56db5e
+      CodeUri: s3://sluhookdev/54d5ad09cb7922814d7889fdb9903725
       Description: returns information for grand dining hall menu items such as vegan
         options and allergen arguments
       MemorySize: 256
