@@ -1366,7 +1366,7 @@
             "t": "milk",
             "alt": {
               "markdown": "",
-              "ssml": ""
+              "ssml": "The following are free of dairy. You can say Dairy free breakfast, dairy free lunch, or dairy free dinner"
             },
             "l": "",
             "qid": "grand.allergen.milk",
@@ -1768,7 +1768,7 @@
             "t": "wheat",
             "alt": {
               "markdown": "",
-              "ssml": ""
+              "ssml": "The following foods are free of wheat allergens. You can say wheat free breakfast, wheat free lunch, wheat free dinner"
             },
             "l": "",
             "qid": "grand.allergen.wheat",
@@ -1807,7 +1807,7 @@
             "t": "treenut",
             "alt": {
               "markdown": "",
-              "ssml": " "
+              "ssml": "The following foods are safe for tree nut allergies. You can say tree nut free breakfast, tree nut allergies lunch, tree nut free dinner"
             },
             "l": "",
             "qid": "grand.allergen.treenuts",
@@ -1843,7 +1843,7 @@
             },
             "t": "fish",
             "alt": {
-              "markdown": "",
+              "markdown": "The following foods are safe for fish allergies. You can say fish free breakfast meals, fish free lunch meals or fish free dinner meals",
               "ssml": ""
             },
             "l": "",
@@ -2128,7 +2128,7 @@
             "t": "soybean",
             "alt": {
               "markdown": "",
-              "ssml": ""
+              "ssml": "The following are free of soy allergens. You can say soy free breakfast, soy free lunch or soy free dinner"
             },
             "l": "",
             "qid": "grand.allergen.soybean",
@@ -2142,7 +2142,7 @@
           {
             "args": [],
             "next": "",
-            "a": "The following meals",
+            "a": "The following meals are shellfish free",
             "r": {
               "buttons": [
                 {
@@ -2167,7 +2167,7 @@
             "t": "shellfish",
             "alt": {
               "markdown": "",
-              "ssml": ""
+              "ssml": "The following meals are shellfish free. You can say shellfish free breakfast, shellfish free lunch, or shellfish free dinner."
             },
             "l": "",
             "qid": "grand.allergen.shellfish",
@@ -2443,7 +2443,7 @@
             "t": "eggs",
             "alt": {
               "markdown": "",
-              "ssml": ""
+              "ssml": "The following foods are safe for egg allergies. You can say egg free breakfast meals, egg free lunch meals , or egg free dinner meals"
             },
             "l": "",
             "qid": "grand.allergen.eggs",
@@ -2705,7 +2705,7 @@
             "t": "peanut",
             "alt": {
               "markdown": "",
-              "ssml": ""
+              "ssml": "The following foods are safe for peanut allergies. You can say peanut free breakfast, peanut free lunch or peanut free dinner"
             },
             "l": "",
             "qid": "grand.allergen.peanut",
