@@ -1,0 +1,15 @@
+{
+	"qna": [{
+		"a": "a",
+		"qid": "sodexo.open",
+		"args": [
+			"https://dineslu.sodexomyway.com/dining-near-me/open-now#"
+		],
+		"l": "QNA:EXTSluWhatsOpenNow",
+		"q": [
+			"what restaurants are open right now",
+			"where can i eat right now"
+		],
+		"type": "qna"
+	}]
+}

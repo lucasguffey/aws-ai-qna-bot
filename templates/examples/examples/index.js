@@ -29,6 +29,9 @@ module.exports=Object.assign(
     _.fromPairs(js.map(x=>[x.name,x.resource])),
     _.fromPairs(py.map(x=>[x.name,x.resource])),
     {
+    "FeedbackSNS": {
+      "Type": "AWS::SNS::Topic"
+    },
     "InvokePolicy": {
       "Type": "AWS::IAM::ManagedPolicy",
       "Properties": {
@@ -172,6 +175,21 @@ module.exports=Object.assign(
           }
         },
         { 
+          "PolicyName" : "SNSQNALambda",
+          "PolicyDocument" : {
+          "Version": "2012-10-17",
+            "Statement": [
+              {
+                  "Effect": "Allow",
+                  "Action": [
+                      "sns:Publish"
+                   ],
+					"Resource":{"Ref":"FeedbackSNS"}
+              }
+            ]
+          }
+        },
+        { 
           "PolicyName" : "LexQNALambda",
           "PolicyDocument" : {
           "Version": "2012-10-17",
@@ -247,7 +265,8 @@ function pylambda(name){
             "ES_INDEX": {"Ref":"Index"},
             "FIREHOSE_NAME":{"Ref":"FeedbackFirehoseName"},
             "ES_ADDRESS": {"Ref":"ESAddress"},
-            "QUIZ_KMS_KEY":{"Ref":"QuizKey"}
+            "QUIZ_KMS_KEY":{"Ref":"QuizKey"},
+            "SNS_TOPIC_ARN":{"Ref":"FeedbackSNS"}
           }
         },
         "Handler":`py/${name}.handler`,

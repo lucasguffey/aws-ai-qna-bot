@@ -1,0 +1,1450 @@
+{
+	"qna": [{
+			"args": [
+				"vegan",
+				"Lunch"
+			],
+			"next": "",
+			"a": "this is a lambda answer",
+			"r": {
+				"buttons": [{
+					"text": "",
+					"value": ""
+				}],
+				"subTitle": "",
+				"imageUrl": "",
+				"title": "",
+				"text": "",
+				"url": ""
+			},
+			"t": "vegan",
+			"alt": {
+				"markdown": "",
+				"ssml": ""
+			},
+			"l": "QNA:EXTSluSodexoHandler",
+			"qid": "grand.vegan.lunch",
+			"type": "qna",
+			"q": [
+				"vegan lunch",
+				"vegan lunch at grand dining hall",
+				"vegan for lunch"
+			]
+		},
+		{
+			"a": "this works for ssml currently",
+			"r": {
+				"buttons": [{
+						"text": "Lunch",
+						"value": "vegetarian lunch"
+					},
+					{
+						"text": "Dinner",
+						"value": "vegetarian dinner"
+					},
+					{
+						"text": "breakfast",
+						"value": "vegetarian breakfast"
+					}
+				],
+				"title": "vegetarian"
+			},
+			"t": "vegetarian",
+			"alt": {
+				"markdown": "Which of the following meals would you like to hear the vegetarian options for"
+			},
+			"qid": "grand.vegetarian.initial",
+			"type": "qna",
+			"q": [
+				"what are the vegetarian options at grand dinning hall",
+				"vegetarian food at grand dinning hall",
+				"vegetarian meal"
+			]
+		},
+		{
+			"args": [
+				"allergen",
+				"Dinner",
+				"shellfish"
+			],
+			"next": "",
+			"a": "The following are safe for shellfish allergens for Dinner",
+			"r": {
+				"buttons": [{
+					"text": "",
+					"value": ""
+				}],
+				"subTitle": "",
+				"imageUrl": "",
+				"title": "",
+				"text": "",
+				"url": ""
+			},
+			"t": "shellfish",
+			"alt": {
+				"markdown": "",
+				"ssml": ""
+			},
+			"l": "QNA:EXTSluSodexoHandler",
+			"qid": "grand.allergen.shellfish.Dinner",
+			"type": "qna",
+			"q": [
+				"What Dinner options are safe for shellfish allergies?",
+				"shellfish allergy Dinner"
+			]
+		},
+		{
+			"args": [
+				""
+			],
+			"next": "",
+			"a": "The following are free of dairy.",
+			"r": {
+				"buttons": [{
+						"text": "Breakfast meals safe for milk allergens",
+						"value": "milk allergy breakfast"
+					},
+					{
+						"text": "Lunch meals safe for milk allergens",
+						"value": "milk allergy lunch"
+					},
+					{
+						"text": "Dinner meals safe for milk allergens",
+						"value": "milk allergy dinner"
+					}
+				],
+				"subTitle": "",
+				"imageUrl": "",
+				"title": "milk allergen",
+				"text": "",
+				"url": ""
+			},
+			"t": "milk",
+			"alt": {
+				"markdown": "",
+				"ssml": "The following are free of dairy. You can say Dairy free breakfast, dairy free lunch, or dairy free dinner"
+			},
+			"l": "",
+			"qid": "grand.allergen.milk",
+			"type": "qna",
+			"q": [
+				"What meals are safe for milk allergies",
+				"Dairy allergy",
+				"What meals are safe for dairy allergies at Grand Hall?",
+				"milk allergens"
+			]
+		},
+		{
+			"args": [
+				"allergen",
+				"Breakfast",
+				"treenuts"
+			],
+			"next": "",
+			"a": "The following are safe for tree nuts allergens for breakfast",
+			"r": {
+				"buttons": [{
+					"text": "",
+					"value": ""
+				}],
+				"subTitle": "",
+				"imageUrl": "",
+				"title": "",
+				"text": "",
+				"url": ""
+			},
+			"t": "treenut",
+			"alt": {
+				"markdown": "",
+				"ssml": ""
+			},
+			"l": "QNA:EXTSluSodexoHandler",
+			"qid": "grand.allergen.treenuts.breakfast",
+			"type": "qna",
+			"q": [
+				"What breakfast options are safe for treenuts allergies?",
+				"tree nuts allergy breakfast",
+				"breakfast tree nut allergies"
+			]
+		},
+		{
+			"args": [
+				"allergen",
+				"Dinner",
+				"soybean"
+			],
+			"next": "",
+			"a": "The following are safe for soy allergens for Dinner",
+			"r": {
+				"buttons": [{
+					"text": "",
+					"value": ""
+				}],
+				"subTitle": "",
+				"imageUrl": "",
+				"title": "",
+				"text": "",
+				"url": ""
+			},
+			"t": "soy",
+			"alt": {
+				"markdown": "",
+				"ssml": ""
+			},
+			"l": "QNA:EXTSluSodexoHandler",
+			"qid": "grand.allergen.soybean.Dinner",
+			"type": "qna",
+			"q": [
+				"What Dinner options are safe for soy allergies?",
+				"Soy allergy Dinner",
+				"soy bean dinner"
+			]
+		},
+		{
+			"args": [
+				"allergen",
+				"Breakfast",
+				"soybean"
+			],
+			"next": "",
+			"a": "The following are safe for soy allergens for breakfast",
+			"r": {
+				"buttons": [{
+					"text": "",
+					"value": ""
+				}],
+				"subTitle": "",
+				"imageUrl": "",
+				"title": "",
+				"text": "",
+				"url": ""
+			},
+			"t": "soy",
+			"alt": {
+				"markdown": "",
+				"ssml": ""
+			},
+			"l": "QNA:EXTSluSodexoHandler",
+			"qid": "grand.allergen.soybean.breakfast",
+			"type": "qna",
+			"q": [
+				"What breakfast options are safe for soy allergies?",
+				"Soy allergy breakfast",
+				"soy bean allergy breakfast"
+			]
+		},
+		{
+			"args": [
+				"allergen",
+				"breakfast",
+				"fish"
+			],
+			"next": "",
+			"a": "this is a lambda answer",
+			"r": {
+				"buttons": [{
+					"text": "",
+					"value": ""
+				}],
+				"subTitle": "",
+				"imageUrl": "",
+				"title": "",
+				"text": "",
+				"url": ""
+			},
+			"t": "fish",
+			"alt": {
+				"markdown": "",
+				"ssml": ""
+			},
+			"l": "QNA:EXTSluSodexoHandler",
+			"qid": "grand.allergen.fish.breakfast",
+			"type": "qna",
+			"q": [
+				"what breakfast meals are safe from fish allergies at grand dining hall",
+				"fish free breakfast meals",
+				"breakfast meals containing no fish"
+			]
+		},
+		{
+			"args": [
+				"allergen",
+				"breakfast",
+				"eggs"
+			],
+			"a": "this is a lambda answer",
+			"t": "eggs",
+			"l": "QNA:EXTSluSodexoHandler",
+			"qid": "grand.allergen.eggs.breakfast",
+			"type": "qna",
+			"q": [
+				"egg free breakfast meals",
+				"which breakfast meals are egg free at grand dining hall"
+			]
+		},
+		{
+			"args": [
+				"vegan",
+				"Dinner"
+			],
+			"next": "",
+			"a": "this is a lambda response",
+			"r": {
+				"buttons": [{
+					"text": "",
+					"value": ""
+				}],
+				"subTitle": "",
+				"imageUrl": "",
+				"title": ""
+			},
+			"t": "vegan",
+			"alt": {
+				"markdown": "",
+				"ssml": ""
+			},
+			"l": "QNA:EXTSluSodexoHandler",
+			"qid": "grand.vegan.dinner",
+			"type": "qna",
+			"selected": false,
+			"q": [
+				"vegan dinner",
+				"is vegan dinner at grand dining hall",
+				"grand dinning hall vegan dinner"
+			]
+		},
+		{
+			"args": [
+				"allergen",
+				"Lunch",
+				"shellfish"
+			],
+			"next": "",
+			"a": "The following are safe for shellfish allergens for Lunch",
+			"r": {
+				"buttons": [{
+					"text": "",
+					"value": ""
+				}],
+				"subTitle": "",
+				"imageUrl": "",
+				"title": "",
+				"text": "",
+				"url": ""
+			},
+			"t": "shellfish",
+			"alt": {
+				"markdown": "",
+				"ssml": ""
+			},
+			"l": "QNA:EXTSluSodexoHandler",
+			"qid": "grand.allergen.shellfish.Lunch",
+			"type": "qna",
+			"q": [
+				"What Lunch options are safe for shellfish allergies?",
+				"shellfish allergy Lunch"
+			]
+		},
+		{
+			"args": [
+				"allergen",
+				"Breakfast",
+				"wheat"
+			],
+			"next": "",
+			"a": "The following are safe for wheat allergens for breakfast",
+			"r": {
+				"buttons": [{
+					"text": "",
+					"value": ""
+				}],
+				"subTitle": "",
+				"imageUrl": "",
+				"title": "",
+				"text": "",
+				"url": ""
+			},
+			"t": "wheat",
+			"alt": {
+				"markdown": "",
+				"ssml": ""
+			},
+			"l": "QNA:EXTSluSodexoHandler",
+			"qid": "grand.allergen.wheat.breakfast",
+			"type": "qna",
+			"q": [
+				"What breakfast options are safe for wheat allergies?",
+				"wheat allergy breakfast"
+			]
+		},
+		{
+			"args": [
+				"allergen",
+				"Lunch",
+				"wheat"
+			],
+			"next": "",
+			"a": "The following are safe for wheat allergens for Lunch",
+			"r": {
+				"buttons": [{
+					"text": "",
+					"value": ""
+				}],
+				"subTitle": "",
+				"imageUrl": "",
+				"title": "",
+				"text": "",
+				"url": ""
+			},
+			"t": "wheat",
+			"alt": {
+				"markdown": "",
+				"ssml": ""
+			},
+			"l": "QNA:EXTSluSodexoHandler",
+			"qid": "grand.allergen.wheat.Lunch",
+			"type": "qna",
+			"q": [
+				"What Lunch options are safe for wheat allergies?",
+				"wheat allergy Lunch"
+			]
+		},
+		{
+			"args": [
+				"allergen",
+				"Dinner",
+				"wheat"
+			],
+			"next": "",
+			"a": "The following are safe for wheat allergens for Dinner",
+			"r": {
+				"buttons": [{
+					"text": "",
+					"value": ""
+				}],
+				"subTitle": "",
+				"imageUrl": "",
+				"title": "",
+				"text": "",
+				"url": ""
+			},
+			"t": "wheat",
+			"alt": {
+				"markdown": "",
+				"ssml": ""
+			},
+			"l": "QNA:EXTSluSodexoHandler",
+			"qid": "grand.allergen.wheat.Dinner",
+			"type": "qna",
+			"q": [
+				"What Dinner options are safe for wheat allergies?",
+				"wheat allergy Dinner"
+			]
+		},
+		{
+			"args": [
+				"allergen",
+				"Dinner",
+				"milk"
+			],
+			"next": "",
+			"a": "The following are safe for milk allergens for Dinner",
+			"r": {
+				"buttons": [{
+					"text": "",
+					"value": ""
+				}],
+				"subTitle": "",
+				"imageUrl": "",
+				"title": "",
+				"text": "",
+				"url": ""
+			},
+			"t": "milk",
+			"alt": {
+				"markdown": "",
+				"ssml": ""
+			},
+			"l": "QNA:EXTSluSodexoHandler",
+			"qid": "grand.allergen.milk.Dinner",
+			"type": "qna",
+			"q": [
+				"What Dinner options are safe for milk allergies?",
+				"milk allergy Dinner",
+				"dairy free dinner"
+			]
+		},
+		{
+			"args": [
+				""
+			],
+			"next": "",
+			"a": "The following foods are free of wheat allergens",
+			"r": {
+				"buttons": [{
+						"text": "Breakfast meals safe for wheat allergies",
+						"value": "wheat allergies breakfast"
+					},
+					{
+						"text": "Lunch meals safe for wheat allergies",
+						"value": "wheat allergies lunch"
+					},
+					{
+						"text": "Dinner meals safe for wheat allergies",
+						"value": "wheat allergies dinner"
+					}
+				],
+				"subTitle": "",
+				"imageUrl": "",
+				"title": "wheat allergens",
+				"text": "",
+				"url": ""
+			},
+			"t": "wheat",
+			"alt": {
+				"markdown": "",
+				"ssml": "The following foods are free of wheat allergens. You can say wheat free breakfast, wheat free lunch, wheat free dinner"
+			},
+			"l": "",
+			"qid": "grand.allergen.wheat",
+			"type": "qna",
+			"q": [
+				"What meals are safe for wheat allergies at Grand Hall?",
+				"Wheat allergies at grand dining hall",
+				"Gluten free"
+			]
+		},
+		{
+			"args": [],
+			"next": "",
+			"a": "The following foods are safe for tree nut allergies",
+			"r": {
+				"buttons": [{
+						"text": "Breakfast meals safe for tree nut allergies",
+						"value": "tree nut allergies breakfast"
+					},
+					{
+						"text": "Lunch meals safe for tree nut allergies",
+						"value": "tree nut allergies lunch"
+					},
+					{
+						"text": "Dinner meals safe for tree nut allergies",
+						"value": "tree nut allergies dinner"
+					}
+				],
+				"subTitle": "",
+				"imageUrl": "",
+				"title": "tree nut allergies",
+				"text": "",
+				"url": ""
+			},
+			"t": "treenut",
+			"alt": {
+				"markdown": "",
+				"ssml": "The following foods are safe for tree nut allergies. You can say tree nut free breakfast, tree nut allergies lunch, tree nut free dinner"
+			},
+			"l": "",
+			"qid": "grand.allergen.treenuts",
+			"type": "qna",
+			"q": [
+				"What meals are safe for tree nut allergies at Grand Hall?",
+				"what meals are safe for tree nut allergies",
+				"tree nut free meals at grand dinning hall"
+			]
+		},
+		{
+			"args": [],
+			"next": "",
+			"a": "The following foods are safe for fish allergies",
+			"r": {
+				"buttons": [{
+						"text": "Breakfast meals safe for fish allergies",
+						"value": "fish free breakfast meals"
+					},
+					{
+						"text": "Lunch meals safe for fish allergies",
+						"value": "fish free lunch meals"
+					},
+					{
+						"text": "Dinner meals safe for fish allergies",
+						"value": "fish free dinner meals"
+					}
+				],
+				"subTitle": "",
+				"imageUrl": "",
+				"title": "Fish free meals"
+			},
+			"t": "fish",
+			"alt": {
+				"markdown": "The following foods are safe for fish allergies. You can say fish free breakfast meals, fish free lunch meals or fish free dinner meals",
+				"ssml": ""
+			},
+			"l": "",
+			"qid": "grand.allergen.fish",
+			"type": "qna",
+			"selected": false,
+			"q": [
+				"What meals are safe for fish allergies at Grand Hall?",
+				"fish free meals at grand dining hall",
+				"fish free meals"
+			]
+		},
+		{
+			"args": [
+				""
+			],
+			"next": "",
+			"a": "Which of the following meals would you like to know about. Text Mindful lunch, Mindful Dinner, or Mindful Breakfast.",
+			"r": {
+				"buttons": [{
+						"text": "Lunch",
+						"value": "mindful lunch"
+					},
+					{
+						"text": "Dinner",
+						"value": "mindful Dinner"
+					},
+					{
+						"text": "Breakfast",
+						"value": "mindful breakfast"
+					}
+				],
+				"subTitle": "",
+				"imageUrl": "",
+				"title": "Mindful meals"
+			},
+			"t": "mindful",
+			"alt": {
+				"markdown": "Which of the following meals would you like to know about",
+				"ssml": "Which of the following meals would you like to know about. Say Mindful lunch, Mindful Dinner, or Mindful Breakfast."
+			},
+			"qid": "grand.mindful.initial",
+			"type": "qna",
+			"q": [
+				"what meals are mindful at grand dining hall",
+				"mindful food",
+				"mindful meals",
+				"which meals are mindful at grand dining hall"
+			]
+		},
+		{
+			"args": [
+				"vegetarian",
+				"breakfast"
+			],
+			"next": "",
+			"a": "this is a lambda hook response",
+			"r": {
+				"buttons": [{
+					"text": "",
+					"value": ""
+				}],
+				"subTitle": "",
+				"imageUrl": "",
+				"title": "",
+				"text": "",
+				"url": ""
+			},
+			"t": "vegetarian",
+			"alt": {
+				"markdown": "",
+				"ssml": ""
+			},
+			"l": "QNA:EXTSluSodexoHandler",
+			"qid": "grand.vegetarian.breakfast",
+			"type": "qna",
+			"q": [
+				"vegetarian breakfast",
+				"vegetarian breakfast grand dinning hall",
+				"breakfast for vegetarians"
+			]
+		},
+		{
+			"args": [
+				"allergen",
+				"Dinner",
+				"Fish"
+			],
+			"next": "",
+			"a": "The following are safe for fish allergens for Dinner",
+			"r": {
+				"buttons": [{
+					"text": "",
+					"value": ""
+				}],
+				"subTitle": "",
+				"imageUrl": "",
+				"title": "",
+				"text": "",
+				"url": ""
+			},
+			"t": "shellfish",
+			"alt": {
+				"markdown": "",
+				"ssml": ""
+			},
+			"l": "QNA:EXTSluSodexoHandler",
+			"qid": "grand.allergen.Fish.Dinner",
+			"type": "qna",
+			"q": [
+				"What Dinner options are safe for fish allergies?",
+				"fish allergy Dinner"
+			]
+		},
+		{
+			"args": [
+				"vegetarian",
+				"lunch"
+			],
+			"next": "",
+			"a": "this is a lambda response",
+			"r": {
+				"buttons": [{
+					"text": "",
+					"value": ""
+				}],
+				"subTitle": "",
+				"imageUrl": "",
+				"title": "",
+				"text": "",
+				"url": ""
+			},
+			"t": "vegetarian",
+			"alt": {
+				"markdown": "",
+				"ssml": ""
+			},
+			"l": "QNA:EXTSluSodexoHandler",
+			"qid": "grand.vegetarian.lunch",
+			"type": "qna",
+			"q": [
+				"vegetarian lunch",
+				"what are vegetarian lunch options at grand dining hall"
+			]
+		},
+		{
+			"args": [
+				"allergen",
+				"Breakfast",
+				"milk"
+			],
+			"next": "",
+			"a": "The following are safe for milk allergens for breakfast",
+			"r": {
+				"buttons": [{
+					"text": "",
+					"value": ""
+				}],
+				"subTitle": "",
+				"imageUrl": "",
+				"title": "",
+				"text": "",
+				"url": ""
+			},
+			"t": "milk",
+			"alt": {
+				"markdown": "",
+				"ssml": ""
+			},
+			"l": "QNA:EXTSluSodexoHandler",
+			"qid": "grand.allergen.milk.breakfast",
+			"type": "qna",
+			"q": [
+				"What breakfast options are safe for milk allergies?",
+				"milk allergy breakfast",
+				"dairy free breakfast"
+			]
+		},
+		{
+			"args": [
+				"allergen",
+				"Lunch",
+				"milk"
+			],
+			"next": "",
+			"a": "The following are safe for milk allergens for Lunch",
+			"r": {
+				"buttons": [{
+					"text": "",
+					"value": ""
+				}],
+				"subTitle": "",
+				"imageUrl": "",
+				"title": "",
+				"text": "",
+				"url": ""
+			},
+			"t": "milk",
+			"alt": {
+				"markdown": "",
+				"ssml": ""
+			},
+			"l": "QNA:EXTSluSodexoHandler",
+			"qid": "grand.allergen.milk.Lunch",
+			"type": "qna",
+			"q": [
+				"What Lunch options are safe for milk allergies?",
+				"milk allergy Lunch",
+				"dairy free lunch"
+			]
+		},
+		{
+			"args": [
+				"allergen",
+				"Lunch",
+				"treenuts"
+			],
+			"next": "",
+			"a": "The following are safe for tree nuts allergens for Lunch",
+			"r": {
+				"buttons": [{
+					"text": "",
+					"value": ""
+				}],
+				"subTitle": "",
+				"imageUrl": "",
+				"title": "",
+				"text": "",
+				"url": ""
+			},
+			"t": "treenut",
+			"alt": {
+				"markdown": "",
+				"ssml": ""
+			},
+			"l": "QNA:EXTSluSodexoHandler",
+			"qid": "grand.allergen.treenuts.Lunch",
+			"type": "qna",
+			"q": [
+				"What Lunch options are safe for tree nut allergies?",
+				"tree nuts allergy Lunch"
+			]
+		},
+		{
+			"args": [],
+			"next": "",
+			"a": "The following are free of soy allergens",
+			"r": {
+				"buttons": [{
+						"text": "Breakfast meals safe for soy bean allergies",
+						"value": "soy bean breakfast allergen"
+					},
+					{
+						"text": "Lunch meals safe for soy bean allergies",
+						"value": "soy bean lunch allergen"
+					},
+					{
+						"text": "Dinner meals safe for soy bean allergies",
+						"value": "soy bean dinner allergen"
+					}
+				],
+				"subTitle": "",
+				"imageUrl": "",
+				"title": "Soy bean free meal options",
+				"text": "",
+				"url": ""
+			},
+			"t": "soybean",
+			"alt": {
+				"markdown": "",
+				"ssml": "The following are free of soy allergens. You can say soy free breakfast, soy free lunch or soy free dinner"
+			},
+			"l": "",
+			"qid": "grand.allergen.soybean",
+			"type": "qna",
+			"q": [
+				"What meals are safe for soy allergies?",
+				"Soy bean allergen",
+				"soy bean free meals at grand dining hall"
+			]
+		},
+		{
+			"args": [],
+			"next": "",
+			"a": "The following meals are shellfish free",
+			"r": {
+				"buttons": [{
+						"text": "Breakfast meals safe for shellfish allergies",
+						"value": "shellfish free breakfast"
+					},
+					{
+						"text": "Lunch meals safe for shellfish allergies",
+						"value": "shellfish free lunch"
+					},
+					{
+						"text": "Dinner meals safe for shellfish allergies",
+						"value": "shellfish free dinner"
+					}
+				],
+				"subTitle": "",
+				"imageUrl": "",
+				"title": "shell fish free meals",
+				"text": "",
+				"url": ""
+			},
+			"t": "shellfish",
+			"alt": {
+				"markdown": "",
+				"ssml": "The following meals are shellfish free. You can say shellfish free breakfast, shellfish free lunch, or shellfish free dinner."
+			},
+			"l": "",
+			"qid": "grand.allergen.shellfish",
+			"type": "qna",
+			"q": [
+				"What meals are safe for shellfish allergies at Grand Hall?",
+				"shellfish free meals"
+			]
+		},
+		{
+			"args": [
+				"allergen",
+				"lunch",
+				"fish"
+			],
+			"next": "",
+			"a": "this is a lambda response",
+			"r": {
+				"buttons": [{
+					"text": "",
+					"value": ""
+				}],
+				"subTitle": "",
+				"imageUrl": "",
+				"title": ""
+			},
+			"t": "fish",
+			"alt": {
+				"markdown": "",
+				"ssml": ""
+			},
+			"l": "QNA:EXTSluSodexoHandler",
+			"qid": "grand.allergen.fish.lunch",
+			"type": "qna",
+			"selected": false,
+			"q": [
+				"what lunch meals are safe for fish allergens",
+				"which lunch meals are fish free",
+				"lunch meals safe for fish allergen"
+			]
+		},
+		{
+			"args": [
+				"mindful",
+				"breakfast"
+			],
+			"a": "This is a lambda answer",
+			"t": "mindful",
+			"l": "QNA:EXTSluSodexoHandler",
+			"qid": "grand.mindful.breakfast",
+			"type": "qna",
+			"q": [
+				"mindful breakfast",
+				"mindful breakfast options at grand dining hall",
+				"breakfast meals that are mindful at grand dining hall"
+			]
+		},
+		{
+			"args": [
+				"mindful",
+				"dinner"
+			],
+			"a": "This is a lambda answer",
+			"l": "QNA:EXTSluSodexoHandler",
+			"qid": "grand.mindful.dinner",
+			"type": "qna",
+			"q": [
+				"mindful dinner",
+				"mindful dinner at grand dining hall",
+				"what are the mindful dinner options at grand dinning hall"
+			]
+		},
+		{
+			"args": [
+				"allergen",
+				"Lunch",
+				"Fish"
+			],
+			"next": "",
+			"a": "The following are safe for fish allergens for Lunch",
+			"r": {
+				"buttons": [{
+					"text": "",
+					"value": ""
+				}],
+				"subTitle": "",
+				"imageUrl": "",
+				"title": "",
+				"text": "",
+				"url": ""
+			},
+			"t": "fish",
+			"alt": {
+				"markdown": "",
+				"ssml": ""
+			},
+			"l": "QNA:EXTSluSodexoHandler",
+			"qid": "grand.allergen.Fish.Lunch",
+			"type": "qna",
+			"q": [
+				"What Lunch options are safe for fish allergies?",
+				"fish allergy Lunch"
+			]
+		},
+		{
+			"args": [
+				"allergen",
+				"Breakfast",
+				"shellfish"
+			],
+			"next": "",
+			"a": "The following are safe for shellfish allergens for breakfast",
+			"r": {
+				"buttons": [{
+					"text": "",
+					"value": ""
+				}],
+				"subTitle": "",
+				"imageUrl": "",
+				"title": "",
+				"text": "",
+				"url": ""
+			},
+			"t": "shellfish",
+			"alt": {
+				"markdown": "",
+				"ssml": ""
+			},
+			"l": "QNA:EXTSluSodexoHandler",
+			"qid": "grand.allergen.shellfish.breakfast",
+			"type": "qna",
+			"q": [
+				"What breakfast options are safe for shellfish allergies?",
+				"shellfish allergy breakfast"
+			]
+		},
+		{
+			"args": [
+				"allergen",
+				"Breakfast",
+				"peanut"
+			],
+			"next": "",
+			"a": "The following are safe for peanut allergens for breakfast",
+			"r": {
+				"buttons": [{
+					"text": "",
+					"value": ""
+				}],
+				"subTitle": "",
+				"imageUrl": "",
+				"title": "",
+				"text": "",
+				"url": ""
+			},
+			"t": "peanut",
+			"alt": {
+				"markdown": "",
+				"ssml": ""
+			},
+			"l": "QNA:EXTSluSodexoHandler",
+			"qid": "grand.allergen.peanut.breakfast",
+			"type": "qna",
+			"q": [
+				"What breakfast options are safe for peanut allergies?",
+				"peanut allergy breakfast",
+				"peanut free breakfast"
+			]
+		},
+		{
+			"args": [
+				"allergen",
+				"Lunch",
+				"peanut"
+			],
+			"next": "",
+			"a": "The following are safe for peanut allergens for Lunch",
+			"r": {
+				"buttons": [{
+					"text": "",
+					"value": ""
+				}],
+				"subTitle": "",
+				"imageUrl": "",
+				"title": "",
+				"text": "",
+				"url": ""
+			},
+			"t": "peanut",
+			"alt": {
+				"markdown": "",
+				"ssml": ""
+			},
+			"l": "QNA:EXTSluSodexoHandler",
+			"qid": "grand.allergen.peanut.Lunch",
+			"type": "qna",
+			"q": [
+				"What Lunch options are safe for peanut allergies?",
+				"peanut allergy Lunch",
+				"peanut free lunch"
+			]
+		},
+		{
+			"args": [
+				"allergen",
+				"dinner",
+				"fish"
+			],
+			"a": "this is a lambda answer",
+			"t": "fish",
+			"l": "QNA:EXTSluSodexoHandler",
+			"qid": "grand.allergen.fish.dinner",
+			"type": "qna",
+			"q": [
+				"what dinner meals are safe for fish allergies",
+				"fish free dinner menu",
+				"fish free dinner meals"
+			]
+		},
+		{
+			"args": [
+				"allergen",
+				"lunch",
+				"eggs"
+			],
+			"a": "this is a lambda answer",
+			"t": "eggs",
+			"l": "QNA:EXTSluSodexoHandler",
+			"qid": "grand.allergen.eggs.lunch",
+			"type": "qna",
+			"q": [
+				"egg free lunch meals",
+				"which lunch meals at grand dining hall are egg free"
+			]
+		},
+		{
+			"args": [
+				""
+			],
+			"next": "",
+			"a": "The following foods are safe for egg allergies",
+			"r": {
+				"buttons": [{
+						"text": "Breakfast meals safe for egg allergens",
+						"value": "egg free breakfast meals"
+					},
+					{
+						"text": "Lunch meals safe for egg allergens",
+						"value": "egg free lunch meals"
+					},
+					{
+						"text": "Dinner meals safe for egg allergens",
+						"value": "egg free dinner meals"
+					}
+				],
+				"subTitle": "",
+				"imageUrl": "",
+				"title": "egg allergen",
+				"text": "",
+				"url": ""
+			},
+			"t": "eggs",
+			"alt": {
+				"markdown": "",
+				"ssml": "The following foods are safe for egg allergies. You can say egg free breakfast meals, egg free lunch meals , or egg free dinner meals"
+			},
+			"l": "",
+			"qid": "grand.allergen.eggs",
+			"type": "qna",
+			"q": [
+				"What meals are safe for egg allergies at Grand Hall?",
+				"egg free meals at grand dining hall"
+			]
+		},
+		{
+			"args": [
+				"vegan",
+				"breakfast"
+			],
+			"next": "",
+			"a": "this is a lambda response",
+			"r": {
+				"buttons": [{
+					"text": "",
+					"value": ""
+				}],
+				"subTitle": "",
+				"imageUrl": "",
+				"title": "",
+				"text": "",
+				"url": ""
+			},
+			"t": "vegan",
+			"alt": {
+				"markdown": "",
+				"ssml": ""
+			},
+			"l": "QNA:EXTSluSodexoHandler",
+			"qid": "grand.vegan.breakfast",
+			"type": "qna",
+			"q": [
+				"vegan breakfast",
+				"vegan for breakfast at grand dinning hall"
+			]
+		},
+		{
+			"args": [
+				"mindful",
+				"lunch"
+			],
+			"next": "",
+			"a": "This is a lambda answer",
+			"r": {
+				"buttons": [{
+					"text": "",
+					"value": ""
+				}],
+				"subTitle": "",
+				"imageUrl": "",
+				"title": "",
+				"text": "",
+				"url": ""
+			},
+			"t": "mindful",
+			"alt": {
+				"markdown": "",
+				"ssml": ""
+			},
+			"l": "QNA:EXTSluSodexoHandler",
+			"qid": "grand.mindful.lunch",
+			"type": "qna",
+			"q": [
+				"mindful lunch",
+				"mindful lunch at grand dining hall",
+				"which meals are mindful at grand dining hall for lunch"
+			]
+		},
+		{
+			"args": [
+				"allergen",
+				"Breakfast",
+				"Fish"
+			],
+			"next": "",
+			"a": "The following are safe for fish allergens for breakfast",
+			"r": {
+				"buttons": [{
+					"text": "",
+					"value": ""
+				}],
+				"subTitle": "",
+				"imageUrl": "",
+				"title": "",
+				"text": "",
+				"url": ""
+			},
+			"t": "fish",
+			"alt": {
+				"markdown": "",
+				"ssml": ""
+			},
+			"l": "QNA:EXTSluSodexoHandler",
+			"qid": "grand.allergen.Fish.breakfast",
+			"type": "qna",
+			"q": [
+				"What breakfast options are safe for fish allergies?",
+				"fish allergy breakfast"
+			]
+		},
+		{
+			"args": [
+				""
+			],
+			"next": "",
+			"a": "this should be ssml",
+			"r": {
+				"buttons": [{
+						"text": "Lunch",
+						"value": "vegan lunch"
+					},
+					{
+						"text": "Dinner",
+						"value": "Vegan Dinner"
+					},
+					{
+						"text": "Breakfast",
+						"value": "Vegan breakfast"
+					}
+				],
+				"subTitle": "",
+				"imageUrl": "",
+				"title": "vegan meals",
+				"text": "",
+				"url": ""
+			},
+			"t": "vegan",
+			"alt": {
+				"markdown": "Which of the following meals would you like to hear about?",
+				"ssml": ""
+			},
+			"qid": "grand.vegan.initial",
+			"type": "qna",
+			"q": [
+				"what are the vegan options at grand dining hall",
+				"what can i eat that is vegan",
+				"what is vegan at the dining hall",
+				"vegan food at grand"
+			]
+		},
+		{
+			"args": [
+				"vegetarian",
+				"dinner"
+			],
+			"a": "this is a lambda hook response",
+			"l": "QNA:EXTSluSodexoHandler",
+			"qid": "grand.vegetarian.dinner",
+			"type": "qna",
+			"q": [
+				"vegetarian dinner",
+				"vegetarian dinner at grand dinning hall",
+				"dinner for vegetarians"
+			]
+		},
+		{
+			"args": [
+				"allergen",
+				"Dinner",
+				"treenuts"
+			],
+			"next": "",
+			"a": "The following are safe for tree nuts allergens for Dinner",
+			"r": {
+				"buttons": [{
+					"text": "",
+					"value": ""
+				}],
+				"subTitle": "",
+				"imageUrl": "",
+				"title": "",
+				"text": "",
+				"url": ""
+			},
+			"t": "treenut",
+			"alt": {
+				"markdown": "",
+				"ssml": ""
+			},
+			"l": "QNA:EXTSluSodexoHandler",
+			"qid": "grand.allergen.treenuts.Dinner",
+			"type": "qna",
+			"q": [
+				"What Dinner options are safe for tree nuts allergies?",
+				"tree nuts allergy Dinner"
+			]
+		},
+		{
+			"args": [
+				"allergen",
+				"Lunch",
+				"soybean"
+			],
+			"next": "",
+			"a": "The following are safe for soy allergens for Lunch",
+			"r": {
+				"buttons": [{
+					"text": "",
+					"value": ""
+				}],
+				"subTitle": "",
+				"imageUrl": "",
+				"title": "",
+				"text": "",
+				"url": ""
+			},
+			"t": "soy",
+			"alt": {
+				"markdown": "",
+				"ssml": ""
+			},
+			"l": "QNA:EXTSluSodexoHandler",
+			"qid": "grand.allergen.soybean.Lunch",
+			"type": "qna",
+			"q": [
+				"What Lunch options are safe for soy allergies?",
+				"Soy allergy Lunch",
+				"soy bean allergy lunch"
+			]
+		},
+		{
+			"args": [],
+			"next": "",
+			"a": "The following foods are safe for peanut allergies",
+			"r": {
+				"buttons": [{
+						"text": "Breakfast meals safe for peanut allergies",
+						"value": "peanut free breakfast"
+					},
+					{
+						"text": "Lunch meals safe for peanut allergies",
+						"value": "peanut free lunch"
+					},
+					{
+						"text": "Dinner meals safe for peanut allergies",
+						"value": "peanut free dinner"
+					}
+				],
+				"subTitle": "",
+				"imageUrl": "",
+				"title": "Peanut free meals"
+			},
+			"t": "peanut",
+			"alt": {
+				"markdown": "",
+				"ssml": "The following foods are safe for peanut allergies. You can say peanut free breakfast, peanut free lunch or peanut free dinner"
+			},
+			"l": "",
+			"qid": "grand.allergen.peanut",
+			"type": "qna",
+			"selected": false,
+			"q": [
+				"What meals are safe for peanut allergies at Grand Hall?",
+				"Peanuts",
+				"what meals are peanut free"
+			]
+		},
+		{
+			"args": [
+				"allergen",
+				"Dinner",
+				"peanut"
+			],
+			"next": "",
+			"a": "The following are safe for peanut allergens for Dinner",
+			"r": {
+				"buttons": [{
+					"text": "",
+					"value": ""
+				}],
+				"subTitle": "",
+				"imageUrl": "",
+				"title": "",
+				"text": "",
+				"url": ""
+			},
+			"t": "peanut",
+			"alt": {
+				"markdown": "",
+				"ssml": ""
+			},
+			"l": "QNA:EXTSluSodexoHandler",
+			"qid": "grand.allergen.peanut.Dinner",
+			"type": "qna",
+			"q": [
+				"What Dinner options are safe for peanut allergies?",
+				"peanut allergy Dinner",
+				"peanut free dinner"
+
+			]
+		}
+	]
+}
