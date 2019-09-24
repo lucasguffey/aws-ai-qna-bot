@@ -45,7 +45,7 @@ module.exports=Object.assign(
   "Type": "AWS::Events::Rule",
     "Properties": {
       "Description": "schedules rule for populate bus",
-      "ScheduleExpression": "rate(2 minutes)",
+      "ScheduleExpression": "rate(3 hours)",
       "State": "ENABLED",
       "Targets": [{
         "Arn": { "Fn::GetAtt": ["EXTQnaPopulateBusData", "Arn"] },
