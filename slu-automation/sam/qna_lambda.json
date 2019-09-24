@@ -6,7 +6,7 @@
             "args": [
                 "thumbs_up_arg"
             ],
-            "l": "arn:aws:lambda:us-east-1:238359442180:function:qna-feedback-vegetarian-stack",
+            "l": "arn:aws:lambda:us-east-1:312408282760:function:qna-feedback-hookdev",
             "q": [
                 "Thumbs up",
                 "Good answer"
@@ -19,7 +19,7 @@
             "args": [
                 "https://dineslu.sodexomyway.com/dining-near-me/open-now#"
             ],
-            "l": "arn:aws:lambda:us-east-1:238359442180:function:qna-opennow-vegetarian-stack",
+            "l": "arn:aws:lambda:us-east-1:312408282760:function:qna-opennow-hookdev",
             "q": [
                 "what restaurants are open right now",
                 "where can i eat right now"
@@ -32,7 +32,7 @@
             "args": [
                 "thumbs_down_arg"
             ],
-            "l": "arn:aws:lambda:us-east-1:238359442180:function:qna-feedback-vegetarian-stack",
+            "l": "arn:aws:lambda:us-east-1:312408282760:function:qna-feedback-hookdev",
             "next": "",
             "q": [
                 "Thumbs down",
@@ -64,7 +64,7 @@
             "args": [
                 "Spring and Laclede"
             ],
-            "l": "arn:aws:lambda:us-east-1:238359442180:function:qna-bus-handler-vegetarian-stack",
+            "l": "arn:aws:lambda:us-east-1:312408282760:function:qna-bus-handler-hookdev",
             "next": "",
             "q": [
                 "when does the Spring and Laclede shuttle arrive",
@@ -98,7 +98,7 @@
             "args": [
                 "Vandeventer and West Pine"
             ],
-            "l": "arn:aws:lambda:us-east-1:238359442180:function:qna-bus-handler-vegetarian-stack",
+            "l": "arn:aws:lambda:us-east-1:312408282760:function:qna-bus-handler-hookdev",
             "next": "",
             "q": [
                 "when does the Vandeventer and West Pine shuttle arrive",
@@ -132,7 +132,7 @@
             "args": [
                 "Olive Garage (Channing)"
             ],
-            "l": "arn:aws:lambda:us-east-1:238359442180:function:qna-bus-handler-vegetarian-stack",
+            "l": "arn:aws:lambda:us-east-1:312408282760:function:qna-bus-handler-hookdev",
             "next": "",
             "q": [
                 "when does the channing shuttle arrive",
@@ -166,7 +166,7 @@
             "args": [
                 "Olive Garage (Olive)"
             ],
-            "l": "arn:aws:lambda:us-east-1:238359442180:function:qna-bus-handler-vegetarian-stack",
+            "l": "arn:aws:lambda:us-east-1:312408282760:function:qna-bus-handler-hookdev",
             "next": "",
             "q": [
                 "when does the Olive Garden shuttle arrive",
@@ -200,7 +200,7 @@
             "args": [
                 "Salus Center"
             ],
-            "l": "arn:aws:lambda:us-east-1:238359442180:function:qna-bus-handler-vegetarian-stack",
+            "l": "arn:aws:lambda:us-east-1:312408282760:function:qna-bus-handler-hookdev",
             "next": "",
             "q": [
                 "when does the salus center shuttle arrive",
@@ -234,7 +234,7 @@
             "args": [
                 "School of Medicine"
             ],
-            "l": "arn:aws:lambda:us-east-1:238359442180:function:qna-bus-handler-vegetarian-stack",
+            "l": "arn:aws:lambda:us-east-1:312408282760:function:qna-bus-handler-hookdev",
             "next": "",
             "q": [
                 "when does the school of medicine shuttle arrive",
@@ -268,7 +268,7 @@
             "args": [
                 "Crave"
             ],
-            "l": "arn:aws:lambda:us-east-1:238359442180:function:qna-bus-handler-vegetarian-stack",
+            "l": "arn:aws:lambda:us-east-1:312408282760:function:qna-bus-handler-hookdev",
             "next": "",
             "q": [
                 "when does the crave bus shuttle arrive",
@@ -302,7 +302,7 @@
             "args": [
                 "Schnucks Culinaria"
             ],
-            "l": "arn:aws:lambda:us-east-1:238359442180:function:qna-bus-handler-vegetarian-stack",
+            "l": "arn:aws:lambda:us-east-1:312408282760:function:qna-bus-handler-hookdev",
             "next": "",
             "q": [
                 "when does the schnucks culinaria shuttle arrive",
@@ -361,7 +361,7 @@
             "args": [
                 "Spring/Rutger"
             ],
-            "l": "arn:aws:lambda:us-east-1:238359442180:function:qna-bus-handler-vegetarian-stack",
+            "l": "arn:aws:lambda:us-east-1:312408282760:function:qna-bus-handler-hookdev",
             "next": "",
             "q": [
                 "when does the spring rutger shuttle arrive",
@@ -395,7 +395,7 @@
             "args": [
                 "Busch Student Center"
             ],
-            "l": "arn:aws:lambda:us-east-1:238359442180:function:qna-bus-handler-vegetarian-stack",
+            "l": "arn:aws:lambda:us-east-1:312408282760:function:qna-bus-handler-hookdev",
             "next": "",
             "q": [
                 "when does the Busch student center shuttle arrive",
@@ -429,7 +429,7 @@
             "args": [
                 "Georgetown Loop"
             ],
-            "l": "arn:aws:lambda:us-east-1:238359442180:function:qna-bus-handler-vegetarian-stack",
+            "l": "arn:aws:lambda:us-east-1:312408282760:function:qna-bus-handler-hookdev",
             "next": "",
             "q": [
                 "when does the Georgetown Loop shuttle arrive",
@@ -463,7 +463,7 @@
             "args": [
                 "College Church"
             ],
-            "l": "arn:aws:lambda:us-east-1:238359442180:function:qna-bus-handler-vegetarian-stack",
+            "l": "arn:aws:lambda:us-east-1:312408282760:function:qna-bus-handler-hookdev",
             "next": "",
             "q": [
                 "when does the college church shuttle arrive",
@@ -497,7 +497,7 @@
             "args": [
                 "Metro-West"
             ],
-            "l": "arn:aws:lambda:us-east-1:238359442180:function:qna-bus-handler-vegetarian-stack",
+            "l": "arn:aws:lambda:us-east-1:312408282760:function:qna-bus-handler-hookdev",
             "next": "",
             "q": [
                 "when does the metro-west shuttle arrive",
@@ -531,7 +531,7 @@
             "args": [
                 "Village Apts"
             ],
-            "l": "arn:aws:lambda:us-east-1:238359442180:function:qna-bus-handler-vegetarian-stack",
+            "l": "arn:aws:lambda:us-east-1:312408282760:function:qna-bus-handler-hookdev",
             "next": "",
             "q": [
                 "when does the village apartments shuttle arrive",
@@ -565,7 +565,7 @@
             "args": [
                 "Target"
             ],
-            "l": "arn:aws:lambda:us-east-1:238359442180:function:qna-bus-handler-vegetarian-stack",
+            "l": "arn:aws:lambda:us-east-1:312408282760:function:qna-bus-handler-hookdev",
             "next": "",
             "q": [
                 "when does the target shuttle arrive",
@@ -599,7 +599,7 @@
             "args": [
                 "Chouteau and Broadway"
             ],
-            "l": "arn:aws:lambda:us-east-1:238359442180:function:qna-bus-handler-vegetarian-stack",
+            "l": "arn:aws:lambda:us-east-1:312408282760:function:qna-bus-handler-hookdev",
             "next": "",
             "q": [
                 "when does the chouteau and broadway shuttle arrive",
@@ -657,7 +657,7 @@
                 "markdown": ""
             },
             "type": "qna",
-            "l": "arn:aws:lambda:us-east-1:238359442180:function:qna-bus-handler-vegetarian-stack"
+            "l": "arn:aws:lambda:us-east-1:312408282760:function:qna-bus-handler-hookdev"
         },
         {
             "a": "yes",
@@ -665,7 +665,7 @@
             "args": [
                 "Bannister House"
             ],
-            "l": "arn:aws:lambda:us-east-1:238359442180:function:qna-bus-handler-vegetarian-stack",
+            "l": "arn:aws:lambda:us-east-1:312408282760:function:qna-bus-handler-hookdev",
             "next": "",
             "q": [
                 "when does the bannister house shuttle arrive",
@@ -699,7 +699,7 @@
             "args": [
                 "Parks Airport"
             ],
-            "l": "arn:aws:lambda:us-east-1:238359442180:function:qna-bus-handler-vegetarian-stack",
+            "l": "arn:aws:lambda:us-east-1:312408282760:function:qna-bus-handler-hookdev",
             "next": "",
             "q": [
                 "when does the parks airport shuttle arrive",
@@ -733,7 +733,7 @@
             "args": [
                 "Olive Garage (Compton)"
             ],
-            "l": "arn:aws:lambda:us-east-1:238359442180:function:qna-bus-handler-vegetarian-stack",
+            "l": "arn:aws:lambda:us-east-1:312408282760:function:qna-bus-handler-hookdev",
             "next": "",
             "q": [
                 "when does the olive garage compton shuttle arrive",
@@ -767,7 +767,7 @@
             "args": [
                 "McDonnell Douglas"
             ],
-            "l": "arn:aws:lambda:us-east-1:238359442180:function:qna-bus-handler-vegetarian-stack",
+            "l": "arn:aws:lambda:us-east-1:312408282760:function:qna-bus-handler-hookdev",
             "next": "",
             "q": [
                 "when does the mcdonnel douglas shuttle arrive",
@@ -801,7 +801,7 @@
             "args": [
                 "Central West End Library"
             ],
-            "l": "arn:aws:lambda:us-east-1:238359442180:function:qna-bus-handler-vegetarian-stack",
+            "l": "arn:aws:lambda:us-east-1:312408282760:function:qna-bus-handler-hookdev",
             "next": "",
             "q": [
                 "when does the central west end library shuttle arrive",
@@ -835,7 +835,7 @@
             "args": [
                 "Wal-Mart"
             ],
-            "l": "arn:aws:lambda:us-east-1:238359442180:function:qna-bus-handler-vegetarian-stack",
+            "l": "arn:aws:lambda:us-east-1:312408282760:function:qna-bus-handler-hookdev",
             "next": "",
             "q": [
                 "when does the walmart shuttle arrive",
@@ -869,7 +869,7 @@
             "args": [
                 "Pius Library"
             ],
-            "l": "arn:aws:lambda:us-east-1:238359442180:function:qna-bus-handler-vegetarian-stack",
+            "l": "arn:aws:lambda:us-east-1:312408282760:function:qna-bus-handler-hookdev",
             "next": "",
             "q": [
                 "when does the pius library shuttle arrive",
@@ -903,7 +903,7 @@
             "args": [
                 "Village Housing"
             ],
-            "l": "arn:aws:lambda:us-east-1:238359442180:function:qna-bus-handler-vegetarian-stack",
+            "l": "arn:aws:lambda:us-east-1:312408282760:function:qna-bus-handler-hookdev",
             "next": "",
             "q": [
                 "when does the village housing shuttle arrive",
@@ -937,7 +937,7 @@
             "args": [
                 "Spring and Lindell"
             ],
-            "l": "arn:aws:lambda:us-east-1:238359442180:function:qna-bus-handler-vegetarian-stack",
+            "l": "arn:aws:lambda:us-east-1:312408282760:function:qna-bus-handler-hookdev",
             "next": "",
             "q": [
                 "when does the spring and lindell shuttle arrive",
@@ -971,7 +971,7 @@
             "args": [
                 "Metro-East"
             ],
-            "l": "arn:aws:lambda:us-east-1:238359442180:function:qna-bus-handler-vegetarian-stack",
+            "l": "arn:aws:lambda:us-east-1:312408282760:function:qna-bus-handler-hookdev",
             "next": "",
             "q": [
                 "when does the metro east shuttle arrive",
@@ -1005,7 +1005,7 @@
             "args": [
                 "13th and Olive St Parking Lot"
             ],
-            "l": "arn:aws:lambda:us-east-1:238359442180:function:qna-bus-handler-vegetarian-stack",
+            "l": "arn:aws:lambda:us-east-1:312408282760:function:qna-bus-handler-hookdev",
             "next": "",
             "q": [
                 "when does the 13th and Olive St Parking Lot shuttle arrive",
@@ -1039,7 +1039,7 @@
             "args": [
                 "Scott Hall"
             ],
-            "l": "arn:aws:lambda:us-east-1:238359442180:function:qna-bus-handler-vegetarian-stack",
+            "l": "arn:aws:lambda:us-east-1:312408282760:function:qna-bus-handler-hookdev",
             "next": "",
             "q": [
                 "when does the scott hall shuttle arrive",
@@ -1073,7 +1073,7 @@
             "args": [
                 "Bed Bath and Beyond"
             ],
-            "l": "arn:aws:lambda:us-east-1:238359442180:function:qna-bus-handler-vegetarian-stack",
+            "l": "arn:aws:lambda:us-east-1:312408282760:function:qna-bus-handler-hookdev",
             "next": "",
             "q": [
                 "when does the bed bath and beyond shuttle arrive",
@@ -1107,7 +1107,7 @@
             "args": [
                 "Galleria"
             ],
-            "l": "arn:aws:lambda:us-east-1:238359442180:function:qna-bus-handler-vegetarian-stack",
+            "l": "arn:aws:lambda:us-east-1:312408282760:function:qna-bus-handler-hookdev",
             "next": "",
             "q": [
                 "when does the galleria shuttle arrive",
@@ -1141,7 +1141,7 @@
             "args": [
                 "Schnucks/Esquire Theatre"
             ],
-            "l": "arn:aws:lambda:us-east-1:238359442180:function:qna-bus-handler-vegetarian-stack",
+            "l": "arn:aws:lambda:us-east-1:312408282760:function:qna-bus-handler-hookdev",
             "next": "",
             "q": [
                 "when does the schnucks esquire theatre shuttle arrive",
@@ -1175,7 +1175,7 @@
             "args": [
                 "Whole Foods"
             ],
-            "l": "arn:aws:lambda:us-east-1:238359442180:function:qna-bus-handler-vegetarian-stack",
+            "l": "arn:aws:lambda:us-east-1:312408282760:function:qna-bus-handler-hookdev",
             "next": "",
             "q": [
                 "when does the whole foods shuttle arrive",
@@ -1209,7 +1209,7 @@
             "args": [
                 "BEB"
             ],
-            "l": "arn:aws:lambda:us-east-1:238359442180:function:qna-bus-handler-vegetarian-stack",
+            "l": "arn:aws:lambda:us-east-1:312408282760:function:qna-bus-handler-hookdev",
             "next": "",
             "q": [
                 "when does the beb shuttle arrive",
@@ -1262,7 +1262,7 @@
               "markdown": "",
               "ssml": ""
             },
-            "l": "arn:aws:lambda:us-east-1:238359442180:function:qna-sodexo-handler-vegetarian-stack",
+            "l": "arn:aws:lambda:us-east-1:312408282760:function:qna-sodexo-handler-hookdev",
             "qid": "grand.vegan.lunch",
             "type": "qna",
             "q": [
@@ -1593,7 +1593,7 @@
               "markdown": "",
               "ssml": ""
             },
-            "l": "arn:aws:lambda:us-east-1:238359442180:function:qna-sodexo-handler-vegetarian-stack",
+            "l": "arn:aws:lambda:us-east-1:312408282760:function:qna-sodexo-handler-hookdev",
             "qid": "grand.allergen.shellfish.Lunch",
             "type": "qna",
             "q": [
@@ -1627,7 +1627,7 @@
               "markdown": "",
               "ssml": ""
             },
-            "l": "arn:aws:lambda:us-east-1:238359442180:function:qna-sodexo-handler-vegetarian-stack",
+            "l": "arn:aws:lambda:us-east-1:312408282760:function:qna-sodexo-handler-hookdev",
             "qid": "grand.allergen.wheat.breakfast",
             "type": "qna",
             "q": [
@@ -1661,7 +1661,7 @@
               "markdown": "",
               "ssml": ""
             },
-            "l": "arn:aws:lambda:us-east-1:238359442180:function:qna-sodexo-handler-vegetarian-stack",
+            "l": "arn:aws:lambda:us-east-1:312408282760:function:qna-sodexo-handler-hookdev",
             "qid": "grand.allergen.wheat.Lunch",
             "type": "qna",
             "q": [
@@ -1695,7 +1695,7 @@
               "markdown": "",
               "ssml": ""
             },
-            "l": "arn:aws:lambda:us-east-1:238359442180:function:qna-sodexo-handler-vegetarian-stack",
+            "l": "arn:aws:lambda:us-east-1:312408282760:function:qna-sodexo-handler-hookdev",
             "qid": "grand.allergen.wheat.Dinner",
             "type": "qna",
             "q": [
@@ -1955,7 +1955,7 @@
               "markdown": "",
               "ssml": ""
             },
-            "l": "arn:aws:lambda:us-east-1:238359442180:function:qna-sodexo-handler-vegetarian-stack",
+            "l": "arn:aws:lambda:us-east-1:312408282760:function:qna-sodexo-handler-hookdev",
             "qid": "grand.allergen.Fish.Dinner",
             "type": "qna",
             "q": [
@@ -2022,7 +2022,7 @@
               "markdown": "",
               "ssml": ""
             },
-            "l": "arn:aws:lambda:us-east-1:238359442180:function:qna-sodexo-handler-vegetarian-stack",
+            "l": "arn:aws:lambda:us-east-1:312408282760:function:qna-sodexo-handler-hookdev",
             "qid": "grand.allergen.milk.breakfast",
             "type": "qna",
             "q": [
@@ -2057,7 +2057,7 @@
               "markdown": "",
               "ssml": ""
             },
-            "l": "arn:aws:lambda:us-east-1:238359442180:function:qna-sodexo-handler-vegetarian-stack",
+            "l": "arn:aws:lambda:us-east-1:312408282760:function:qna-sodexo-handler-hookdev",
             "qid": "grand.allergen.milk.Lunch",
             "type": "qna",
             "q": [
@@ -2092,7 +2092,7 @@
               "markdown": "",
               "ssml": ""
             },
-            "l": "arn:aws:lambda:us-east-1:238359442180:function:qna-sodexo-handler-vegetarian-stack",
+            "l": "arn:aws:lambda:us-east-1:312408282760:function:qna-sodexo-handler-hookdev",
             "qid": "grand.allergen.treenuts.Lunch",
             "type": "qna",
             "q": [
@@ -2218,7 +2218,7 @@
             ],
             "a": "This is a lambda answer",
             "t": "mindful",
-            "l": "arn:aws:lambda:us-east-1:238359442180:function:qna-sodexo-handler-vegetarian-stack",
+            "l": "arn:aws:lambda:us-east-1:312408282760:function:qna-sodexo-handler-hookdev",
             "qid": "grand.mindful.breakfast",
             "type": "qna",
             "q": [
@@ -2336,7 +2336,7 @@
               "markdown": "",
               "ssml": ""
             },
-            "l": "arn:aws:lambda:us-east-1:238359442180:function:qna-sodexo-handler-vegetarian-stack",
+            "l": "arn:aws:lambda:us-east-1:312408282760:function:qna-sodexo-handler-hookdev",
             "qid": "grand.allergen.peanut.breakfast",
             "type": "qna",
             "q": [
@@ -2371,7 +2371,7 @@
               "markdown": "",
               "ssml": ""
             },
-            "l": "arn:aws:lambda:us-east-1:238359442180:function:qna-sodexo-handler-vegetarian-stack",
+            "l": "arn:aws:lambda:us-east-1:312408282760:function:qna-sodexo-handler-hookdev",
             "qid": "grand.allergen.peanut.Lunch",
             "type": "qna",
             "q": [
@@ -2546,7 +2546,7 @@
               "markdown": "",
               "ssml": ""
             },
-            "l": "arn:aws:lambda:us-east-1:238359442180:function:qna-sodexo-handler-vegetarian-stack",
+            "l": "arn:aws:lambda:us-east-1:312408282760:function:qna-sodexo-handler-hookdev",
             "qid": "grand.allergen.Fish.breakfast",
             "type": "qna",
             "q": [
@@ -2636,7 +2636,7 @@
               "markdown": "",
               "ssml": ""
             },
-            "l": "arn:aws:lambda:us-east-1:238359442180:function:qna-sodexo-handler-vegetarian-stack",
+            "l": "arn:aws:lambda:us-east-1:312408282760:function:qna-sodexo-handler-hookdev",
             "qid": "grand.allergen.treenuts.Dinner",
             "type": "qna",
             "q": [

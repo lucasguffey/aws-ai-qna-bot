@@ -1,0 +1,1116 @@
+{
+	"qna": [{
+			"a": "yes",
+			"qid": "bus.springlaclede",
+			"args": [
+				"Spring and Laclede"
+			],
+			"l": "QNA:EXTQnaBusHandler",
+			"next": "",
+			"q": [
+				"when does the Spring and Laclede shuttle arrive",
+				"Spring and Laclede",
+				"when does the Spring and Laclede bus arrive?",
+				"what time does the Spring and Laclede arrive?"
+			],
+			"r": {
+				"subTitle": "",
+				"title": "",
+				"url": "",
+				"text": "",
+				"imageUrl": "",
+				"buttons": [{
+					"text": "",
+					"value": ""
+				}]
+			},
+			"t": "bus",
+			"alt": {
+				"ssml": "",
+				"markdown": ""
+			},
+			"type": "qna"
+		},
+		{
+			"a": "yes",
+			"qid": "bus.vandeventer",
+			"args": [
+				"Vandeventer and West Pine"
+			],
+			"l": "QNA:EXTQnaBusHandler",
+			"next": "",
+			"q": [
+				"when does the Vandeventer and West Pine shuttle arrive",
+				"Vandeventer and West Pine",
+				"when does the Vandeventer and West Pine bus arrive?",
+				"what time does the Vandeventer and West Pine arrive?"
+			],
+			"r": {
+				"subTitle": "",
+				"title": "",
+				"url": "",
+				"text": "",
+				"imageUrl": "",
+				"buttons": [{
+					"text": "",
+					"value": ""
+				}]
+			},
+			"t": "bus",
+			"alt": {
+				"ssml": "",
+				"markdown": ""
+			},
+			"type": "qna"
+		},
+		{
+			"a": "yes",
+			"qid": "bus.olivegaragechanning",
+			"args": [
+				"Olive Garage (Channing)"
+			],
+			"l": "QNA:EXTQnaBusHandler",
+			"next": "",
+			"q": [
+				"when does the channing shuttle arrive",
+				"Olive Garage (Channing)",
+				"when does the Olive Garage (Channing) bus arrive?",
+				"what time does the Olive Garage (Channing) arrive?"
+			],
+			"r": {
+				"subTitle": "",
+				"title": "",
+				"url": "",
+				"text": "",
+				"imageUrl": "",
+				"buttons": [{
+					"text": "",
+					"value": ""
+				}]
+			},
+			"t": "bus",
+			"alt": {
+				"ssml": "",
+				"markdown": ""
+			},
+			"type": "qna"
+		},
+		{
+			"a": "yes",
+			"qid": "bus.olivegarageolive",
+			"args": [
+				"Olive Garage (Olive)"
+			],
+			"l": "QNA:EXTQnaBusHandler",
+			"next": "",
+			"q": [
+				"when does the Olive Garden shuttle arrive",
+				"Olive Garage (Olive)",
+				"when does the Olive Garage (Olive) bus arrive?",
+				"what time does the Olive Garage (Olive) arrive?"
+			],
+			"r": {
+				"subTitle": "",
+				"title": "",
+				"url": "",
+				"text": "",
+				"imageUrl": "",
+				"buttons": [{
+					"text": "",
+					"value": ""
+				}]
+			},
+			"t": "bus",
+			"alt": {
+				"ssml": "",
+				"markdown": ""
+			},
+			"type": "qna"
+		},
+		{
+			"a": "yes",
+			"qid": "bus.saluscenter",
+			"args": [
+				"Salus Center"
+			],
+			"l": "QNA:EXTQnaBusHandler",
+			"next": "",
+			"q": [
+				"when does the salus center shuttle arrive",
+				"Salus Center",
+				"when does the Salus Center bus arrive?",
+				"what time does the Salus Center arrive?"
+			],
+			"r": {
+				"subTitle": "",
+				"title": "",
+				"url": "",
+				"text": "",
+				"imageUrl": "",
+				"buttons": [{
+					"text": "",
+					"value": ""
+				}]
+			},
+			"t": "bus",
+			"alt": {
+				"ssml": "",
+				"markdown": ""
+			},
+			"type": "qna"
+		},
+		{
+			"a": "yes",
+			"qid": "bus.schoolofmedicine",
+			"args": [
+				"School of Medicine"
+			],
+			"l": "QNA:EXTQnaBusHandler",
+			"next": "",
+			"q": [
+				"when does the school of medicine shuttle arrive",
+				"School of Medicine",
+				"when does the School of Medicine bus arrive?",
+				"what time does the School of Medicine arrive?"
+			],
+			"r": {
+				"subTitle": "",
+				"title": "",
+				"url": "",
+				"text": "",
+				"imageUrl": "",
+				"buttons": [{
+					"text": "",
+					"value": ""
+				}]
+			},
+			"t": "bus",
+			"alt": {
+				"ssml": "",
+				"markdown": ""
+			},
+			"type": "qna"
+		},
+		{
+			"a": "yes",
+			"qid": "bus.crave",
+			"args": [
+				"Crave"
+			],
+			"l": "QNA:EXTQnaBusHandler",
+			"next": "",
+			"q": [
+				"when does the crave bus shuttle arrive",
+				"Crave",
+				"when does the Crave bus arrive?",
+				"what time does the Crave arrive?"
+			],
+			"r": {
+				"subTitle": "",
+				"title": "",
+				"url": "",
+				"text": "",
+				"imageUrl": "",
+				"buttons": [{
+					"text": "",
+					"value": ""
+				}]
+			},
+			"t": "bus",
+			"alt": {
+				"ssml": "",
+				"markdown": ""
+			},
+			"type": "qna"
+		},
+		{
+			"a": "yes",
+			"qid": "bus.SchnucksCulinaria",
+			"args": [
+				"Schnucks Culinaria"
+			],
+			"l": "QNA:EXTQnaBusHandler",
+			"next": "",
+			"q": [
+				"when does the schnucks culinaria shuttle arrive",
+				"Schnucks Culinaria",
+				"when does the Schnucks Culinaria bus arrive?",
+				"what time does the Schnucks Culinaria arrive?"
+			],
+			"r": {
+				"subTitle": "",
+				"title": "",
+				"url": "",
+				"text": "",
+				"imageUrl": "",
+				"buttons": [{
+					"text": "",
+					"value": ""
+				}]
+			},
+			"t": "bus",
+			"alt": {
+				"ssml": "",
+				"markdown": ""
+			},
+			"type": "qna"
+		},
+		{
+			"a": "Which stop would you like to take a bus from?",
+			"qid": "bus.initial",
+			"args": [
+				""
+			],
+			"next": "",
+			"q": [
+				"when does the shuttle arrive",
+				"what time does the bus arrive?",
+				"when does the bus arrive"
+			],
+			"r": {
+				"buttons": [],
+				"imageUrl": "",
+				"subTitle": "",
+				"title": ""
+			},
+			"t": "bus",
+			"alt": {
+				"ssml": "",
+				"markdown": ""
+			},
+			"type": "qna"
+		},
+		{
+			"a": "One moment, while we look up the schedule for Spring/Rutger",
+			"qid": "bus.springrutger",
+			"args": [
+				"Spring/Rutger"
+			],
+			"l": "QNA:EXTQnaBusHandler",
+			"next": "",
+			"q": [
+				"when does the spring rutger shuttle arrive",
+				"When does the spring rutger bus arrive",
+				"Spring/Rutger",
+				"Rutger"
+			],
+			"r": {
+				"subTitle": "",
+				"title": "",
+				"url": "",
+				"text": "",
+				"imageUrl": "",
+				"buttons": [{
+					"text": "",
+					"value": ""
+				}]
+			},
+			"t": "bus",
+			"alt": {
+				"ssml": "",
+				"markdown": ""
+			},
+			"type": "qna"
+		},
+		{
+			"a": "yes",
+			"qid": "bus.busch",
+			"args": [
+				"Busch Student Center"
+			],
+			"l": "QNA:EXTQnaBusHandler",
+			"next": "",
+			"q": [
+				"when does the Busch student center shuttle arrive",
+				"Busch Student Center",
+				"when does the busch student center bus arrive?",
+				"what time does the busch student center arrive?",
+				"bsc bus",
+				"bsc shuttle"
+			],
+			"r": {
+				"subTitle": "",
+				"title": "",
+				"url": "",
+				"text": "",
+				"imageUrl": "",
+				"buttons": [{
+					"text": "",
+					"value": ""
+				}]
+			},
+			"t": "bus",
+			"alt": {
+				"ssml": "",
+				"markdown": ""
+			},
+			"type": "qna"
+		},
+		{
+			"a": "yes",
+			"qid": "bus.georgetown",
+			"args": [
+				"Georgetown Loop"
+			],
+			"l": "QNA:EXTQnaBusHandler",
+			"next": "",
+			"q": [
+				"when does the Georgetown Loop shuttle arrive",
+				"Georgetown Loop",
+				"when does the Georgetown Loop bus arrive?",
+				"what time does the Georgetown Loop arrive?"
+			],
+			"r": {
+				"subTitle": "",
+				"title": "",
+				"url": "",
+				"text": "",
+				"imageUrl": "",
+				"buttons": [{
+					"text": "",
+					"value": ""
+				}]
+			},
+			"t": "bus",
+			"alt": {
+				"ssml": "",
+				"markdown": ""
+			},
+			"type": "qna"
+		},
+		{
+			"a": "yes",
+			"qid": "bus.collegechurch",
+			"args": [
+				"College Church"
+			],
+			"l": "QNA:EXTQnaBusHandler",
+			"next": "",
+			"q": [
+				"when does the college church shuttle arrive",
+				"College Church",
+				"when does the College Church bus arrive?",
+				"what time does the College Church arrive?"
+			],
+			"r": {
+				"subTitle": "",
+				"title": "",
+				"url": "",
+				"text": "",
+				"imageUrl": "",
+				"buttons": [{
+					"text": "",
+					"value": ""
+				}]
+			},
+			"t": "bus",
+			"alt": {
+				"ssml": "",
+				"markdown": ""
+			},
+			"type": "qna"
+		},
+		{
+			"a": "yes",
+			"qid": "bus.metrowest",
+			"args": [
+				"Metro-West"
+			],
+			"l": "QNA:EXTQnaBusHandler",
+			"next": "",
+			"q": [
+				"when does the metro-west shuttle arrive",
+				"Metro-West",
+				"when does the Metro-West bus arrive?",
+				"what time does the Metro-West arrive?"
+			],
+			"r": {
+				"subTitle": "",
+				"title": "",
+				"url": "",
+				"text": "",
+				"imageUrl": "",
+				"buttons": [{
+					"text": "",
+					"value": ""
+				}]
+			},
+			"t": "bus",
+			"alt": {
+				"ssml": "",
+				"markdown": ""
+			},
+			"type": "qna"
+		},
+		{
+			"a": "yes",
+			"qid": "bus.villageapts",
+			"args": [
+				"Village Apts"
+			],
+			"l": "QNA:EXTQnaBusHandler",
+			"next": "",
+			"q": [
+				"when does the village apartments shuttle arrive",
+				"Village Apts",
+				"when does the Village Apts bus arrive?",
+				"what time does the Village Apts arrive?"
+			],
+			"r": {
+				"subTitle": "",
+				"title": "",
+				"url": "",
+				"text": "",
+				"imageUrl": "",
+				"buttons": [{
+					"text": "",
+					"value": ""
+				}]
+			},
+			"t": "bus",
+			"alt": {
+				"ssml": "",
+				"markdown": ""
+			},
+			"type": "qna"
+		},
+		{
+			"a": "yes",
+			"qid": "bus.target",
+			"args": [
+				"Target"
+			],
+			"l": "QNA:EXTQnaBusHandler",
+			"next": "",
+			"q": [
+				"when does the target shuttle arrive",
+				"Target",
+				"when does the Target bus arrive?",
+				"what time does the Target arrive?"
+			],
+			"r": {
+				"subTitle": "",
+				"title": "",
+				"url": "",
+				"text": "",
+				"imageUrl": "",
+				"buttons": [{
+					"text": "",
+					"value": ""
+				}]
+			},
+			"t": "bus",
+			"alt": {
+				"ssml": "",
+				"markdown": ""
+			},
+			"type": "qna"
+		},
+		{
+			"a": "yes",
+			"qid": "bus.chouteau",
+			"args": [
+				"Chouteau and Broadway"
+			],
+			"l": "QNA:EXTQnaBusHandler",
+			"next": "",
+			"q": [
+				"when does the chouteau and broadway shuttle arrive",
+				"Chouteau and Broadway",
+				"when does the Chouteau and Broadway bus arrive?",
+				"what time does the Chouteau and Broadway arrive?"
+			],
+			"r": {
+				"subTitle": "",
+				"title": "",
+				"url": "",
+				"text": "",
+				"imageUrl": "",
+				"buttons": [{
+					"text": "",
+					"value": ""
+				}]
+			},
+			"t": "bus",
+			"alt": {
+				"ssml": "",
+				"markdown": ""
+			},
+			"type": "qna"
+		},
+		{
+			"a": "Here are all the buses currently running. https://slu.doublemap.com/map/",
+			"qid": "bus.showmeall",
+			"args": [
+				""
+			],
+			"next": "",
+			"q": [
+				"Show me currently running buses",
+				"Show me all buses"
+			],
+			"r": {
+				"subTitle": "",
+				"title": "",
+				"url": "",
+				"text": "",
+				"imageUrl": "",
+				"buttons": [{
+					"text": "",
+					"value": ""
+				}]
+			},
+			"t": "",
+			"alt": {
+				"ssml": "<speak> Use the Slew mobile app to track active buses and routes, or ask when does the next shuttle arrive. </speak>",
+				"markdown": ""
+			},
+			"type": "qna",
+			"l": "QNA:EXTQnaBusHandler"
+		},
+		{
+			"a": "yes",
+			"qid": "bus.bannister",
+			"args": [
+				"Bannister House"
+			],
+			"l": "QNA:EXTQnaBusHandler",
+			"next": "",
+			"q": [
+				"when does the bannister house shuttle arrive",
+				"Bannister House",
+				"when does the Bannister House bus arrive?",
+				"what time does the Bannister House arrive?"
+			],
+			"r": {
+				"subTitle": "",
+				"title": "",
+				"url": "",
+				"text": "",
+				"imageUrl": "",
+				"buttons": [{
+					"text": "",
+					"value": ""
+				}]
+			},
+			"t": "bus",
+			"alt": {
+				"ssml": "",
+				"markdown": ""
+			},
+			"type": "qna"
+		},
+		{
+			"a": "yes",
+			"qid": "bus.parksairport",
+			"args": [
+				"Parks Airport"
+			],
+			"l": "QNA:EXTQnaBusHandler",
+			"next": "",
+			"q": [
+				"when does the parks airport shuttle arrive",
+				"Parks Airport",
+				"when does the Parks Airport bus arrive?",
+				"what time does the Parks Airport arrive?"
+			],
+			"r": {
+				"subTitle": "",
+				"title": "",
+				"url": "",
+				"text": "",
+				"imageUrl": "",
+				"buttons": [{
+					"text": "",
+					"value": ""
+				}]
+			},
+			"t": "bus",
+			"alt": {
+				"ssml": "",
+				"markdown": ""
+			},
+			"type": "qna"
+		},
+		{
+			"a": "yes",
+			"qid": "bus.olivegarage",
+			"args": [
+				"Olive Garage (Compton)"
+			],
+			"l": "QNA:EXTQnaBusHandler",
+			"next": "",
+			"q": [
+				"when does the olive garage compton shuttle arrive",
+				"Olive Garage (Compton)",
+				"when does the Olive Garage (Compton) bus arrive?",
+				"what time does the Olive Garage (Compton) arrive?"
+			],
+			"r": {
+				"subTitle": "",
+				"title": "",
+				"url": "",
+				"text": "",
+				"imageUrl": "",
+				"buttons": [{
+					"text": "",
+					"value": ""
+				}]
+			},
+			"t": "bus",
+			"alt": {
+				"ssml": "",
+				"markdown": ""
+			},
+			"type": "qna"
+		},
+		{
+			"a": "yes",
+			"qid": "bus.mcdonnelldouglas",
+			"args": [
+				"McDonnell Douglas"
+			],
+			"l": "QNA:EXTQnaBusHandler",
+			"next": "",
+			"q": [
+				"when does the mcdonnel douglas shuttle arrive",
+				"McDonnell Douglas",
+				"when does the McDonnell Douglas bus arrive?",
+				"what time does the McDonnell Douglas arrive?"
+			],
+			"r": {
+				"subTitle": "",
+				"title": "",
+				"url": "",
+				"text": "",
+				"imageUrl": "",
+				"buttons": [{
+					"text": "",
+					"value": ""
+				}]
+			},
+			"t": "bus",
+			"alt": {
+				"ssml": "",
+				"markdown": ""
+			},
+			"type": "qna"
+		},
+		{
+			"a": "yes",
+			"qid": "bus.centralwestendlibrary",
+			"args": [
+				"Central West End Library"
+			],
+			"l": "QNA:EXTQnaBusHandler",
+			"next": "",
+			"q": [
+				"when does the central west end library shuttle arrive",
+				"Central West End Library",
+				"when does the Central West End Library bus arrive?",
+				"what time does the Central West End Library arrive?"
+			],
+			"r": {
+				"subTitle": "",
+				"title": "",
+				"url": "",
+				"text": "",
+				"imageUrl": "",
+				"buttons": [{
+					"text": "",
+					"value": ""
+				}]
+			},
+			"t": "bus",
+			"alt": {
+				"ssml": "",
+				"markdown": ""
+			},
+			"type": "qna"
+		},
+		{
+			"a": "yes",
+			"qid": "bus.walmart",
+			"args": [
+				"Wal-Mart"
+			],
+			"l": "QNA:EXTQnaBusHandler",
+			"next": "",
+			"q": [
+				"when does the walmart shuttle arrive",
+				"Wal-Mart",
+				"when does the Wal-Mart bus arrive?",
+				"what time does the Wal-Mart arrive?"
+			],
+			"r": {
+				"subTitle": "",
+				"title": "",
+				"url": "",
+				"text": "",
+				"imageUrl": "",
+				"buttons": [{
+					"text": "",
+					"value": ""
+				}]
+			},
+			"t": "bus",
+			"alt": {
+				"ssml": "",
+				"markdown": ""
+			},
+			"type": "qna"
+		},
+		{
+			"a": "yes",
+			"qid": "bus.pius",
+			"args": [
+				"Pius Library"
+			],
+			"l": "QNA:EXTQnaBusHandler",
+			"next": "",
+			"q": [
+				"when does the pius library shuttle arrive",
+				"Pius Library",
+				"when does the Pius Library bus arrive?",
+				"what time does the Pius Library arrive?"
+			],
+			"r": {
+				"subTitle": "",
+				"title": "",
+				"url": "",
+				"text": "",
+				"imageUrl": "",
+				"buttons": [{
+					"text": "",
+					"value": ""
+				}]
+			},
+			"t": "bus",
+			"alt": {
+				"ssml": "",
+				"markdown": ""
+			},
+			"type": "qna"
+		},
+		{
+			"a": "yes",
+			"qid": "bus.villagehousing",
+			"args": [
+				"Village Housing"
+			],
+			"l": "QNA:EXTQnaBusHandler",
+			"next": "",
+			"q": [
+				"when does the village housing shuttle arrive",
+				"Village Housing",
+				"when does the Village Housing bus arrive?",
+				"what time does the Village Housing arrive?"
+			],
+			"r": {
+				"subTitle": "",
+				"title": "",
+				"url": "",
+				"text": "",
+				"imageUrl": "",
+				"buttons": [{
+					"text": "",
+					"value": ""
+				}]
+			},
+			"t": "bus",
+			"alt": {
+				"ssml": "",
+				"markdown": ""
+			},
+			"type": "qna"
+		},
+		{
+			"a": "yes",
+			"qid": "bus.springlindell",
+			"args": [
+				"Spring and Lindell"
+			],
+			"l": "QNA:EXTQnaBusHandler",
+			"next": "",
+			"q": [
+				"when does the spring and lindell shuttle arrive",
+				"Spring and Lindell",
+				"when does the Spring and Lindell bus arrive?",
+				"what time does the Spring and Lindell arrive?"
+			],
+			"r": {
+				"subTitle": "",
+				"title": "",
+				"url": "",
+				"text": "",
+				"imageUrl": "",
+				"buttons": [{
+					"text": "",
+					"value": ""
+				}]
+			},
+			"t": "bus",
+			"alt": {
+				"ssml": "",
+				"markdown": ""
+			},
+			"type": "qna"
+		},
+		{
+			"a": "yes",
+			"qid": "bus.metroeast",
+			"args": [
+				"Metro-East"
+			],
+			"l": "QNA:EXTQnaBusHandler",
+			"next": "",
+			"q": [
+				"when does the metro east shuttle arrive",
+				"Metro-East",
+				"when does the Metro-East bus arrive?",
+				"what time does the Metro-East arrive?"
+			],
+			"r": {
+				"subTitle": "",
+				"title": "",
+				"url": "",
+				"text": "",
+				"imageUrl": "",
+				"buttons": [{
+					"text": "",
+					"value": ""
+				}]
+			},
+			"t": "bus",
+			"alt": {
+				"ssml": "",
+				"markdown": ""
+			},
+			"type": "qna"
+		},
+		{
+			"a": "yes",
+			"qid": "bus.13thandOliveSt",
+			"args": [
+				"13th and Olive St Parking Lot"
+			],
+			"l": "QNA:EXTQnaBusHandler",
+			"next": "",
+			"q": [
+				"when does the 13th and Olive St Parking Lot shuttle arrive",
+				"13th and Olive St Parking Lot",
+				"when does the 13th and Olive St Parking Lot bus arrive?",
+				"what time does the 13th and Olive St Parking Lot arrive?"
+			],
+			"r": {
+				"subTitle": "",
+				"title": "",
+				"url": "",
+				"text": "",
+				"imageUrl": "",
+				"buttons": [{
+					"text": "",
+					"value": ""
+				}]
+			},
+			"t": "bus",
+			"alt": {
+				"ssml": "",
+				"markdown": ""
+			},
+			"type": "qna"
+		},
+		{
+			"a": "yes",
+			"qid": "bus.scotthall",
+			"args": [
+				"Scott Hall"
+			],
+			"l": "QNA:EXTQnaBusHandler",
+			"next": "",
+			"q": [
+				"when does the scott hall shuttle arrive",
+				"Scott Hall",
+				"when does the Scott Hall bus arrive?",
+				"what time does the Scott Hall arrive?"
+			],
+			"r": {
+				"subTitle": "",
+				"title": "",
+				"url": "",
+				"text": "",
+				"imageUrl": "",
+				"buttons": [{
+					"text": "",
+					"value": ""
+				}]
+			},
+			"t": "bus",
+			"alt": {
+				"ssml": "",
+				"markdown": ""
+			},
+			"type": "qna"
+		},
+		{
+			"a": "yes",
+			"qid": "bus.bedbath",
+			"args": [
+				"Bed Bath and Beyond"
+			],
+			"l": "QNA:EXTQnaBusHandler",
+			"next": "",
+			"q": [
+				"when does the bed bath and beyond shuttle arrive",
+				"Bed Bath and Beyond",
+				"when does the Bed Bath and Beyond bus arrive?",
+				"what time does the Bed Bath and Beyond arrive?"
+			],
+			"r": {
+				"subTitle": "",
+				"title": "",
+				"url": "",
+				"text": "",
+				"imageUrl": "",
+				"buttons": [{
+					"text": "",
+					"value": ""
+				}]
+			},
+			"t": "bus",
+			"alt": {
+				"ssml": "",
+				"markdown": ""
+			},
+			"type": "qna"
+		},
+		{
+			"a": "yes",
+			"qid": "bus.galleria",
+			"args": [
+				"Galleria"
+			],
+			"l": "QNA:EXTQnaBusHandler",
+			"next": "",
+			"q": [
+				"when does the galleria shuttle arrive",
+				"Galleria",
+				"when does the Galleria bus arrive?",
+				"what time does the Galleria arrive?"
+			],
+			"r": {
+				"subTitle": "",
+				"title": "",
+				"url": "",
+				"text": "",
+				"imageUrl": "",
+				"buttons": [{
+					"text": "",
+					"value": ""
+				}]
+			},
+			"t": "bus",
+			"alt": {
+				"ssml": "",
+				"markdown": ""
+			},
+			"type": "qna"
+		},
+		{
+			"a": "yes",
+			"qid": "bus.schnucksesquiretheatre",
+			"args": [
+				"Schnucks/Esquire Theatre"
+			],
+			"l": "QNA:EXTQnaBusHandler",
+			"next": "",
+			"q": [
+				"when does the schnucks esquire theatre shuttle arrive",
+				"Schnucks/Esquire Theatre",
+				"when does the Schnucks/Esquire Theatre bus arrive?",
+				"what time does the Schnucks/Esquire Theatre arrive?"
+			],
+			"r": {
+				"subTitle": "",
+				"title": "",
+				"url": "",
+				"text": "",
+				"imageUrl": "",
+				"buttons": [{
+					"text": "",
+					"value": ""
+				}]
+			},
+			"t": "bus",
+			"alt": {
+				"ssml": "",
+				"markdown": ""
+			},
+			"type": "qna"
+		},
+		{
+			"a": "yes",
+			"qid": "bus.wholefoods",
+			"args": [
+				"Whole Foods"
+			],
+			"l": "QNA:EXTQnaBusHandler",
+			"next": "",
+			"q": [
+				"when does the whole foods shuttle arrive",
+				"Whole Foods",
+				"when does the Whole Foods bus arrive?",
+				"what time does the Whole Foods arrive?"
+			],
+			"r": {
+				"subTitle": "",
+				"title": "",
+				"url": "",
+				"text": "",
+				"imageUrl": "",
+				"buttons": [{
+					"text": "",
+					"value": ""
+				}]
+			},
+			"t": "bus",
+			"alt": {
+				"ssml": "",
+				"markdown": ""
+			},
+			"type": "qna"
+		},
+		{
+			"a": "yes",
+			"qid": "bus.beb",
+			"args": [
+				"BEB"
+			],
+			"l": "QNA:EXTQnaBusHandler",
+			"next": "",
+			"q": [
+				"when does the beb shuttle arrive",
+				"BEB",
+				"when does the BEB bus arrive?",
+				"what time does the BEB arrive?"
+			],
+			"r": {
+				"subTitle": "",
+				"title": "",
+				"url": "",
+				"text": "",
+				"imageUrl": "",
+				"buttons": [{
+					"text": "",
+					"value": ""
+				}]
+			},
+			"t": "bus",
+			"alt": {
+				"ssml": "",
+				"markdown": ""
+			},
+			"type": "qna"
+		}
+	]
+}
