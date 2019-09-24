@@ -324,7 +324,9 @@
 				"when does the Busch student center shuttle arrive",
 				"Busch Student Center",
 				"when does the busch student center bus arrive?",
-				"what time does the busch student center arrive?"
+				"what time does the busch student center arrive?",
+				"bsc bus",
+				"bsc shuttle"
 			],
 			"r": {
 				"subTitle": "",
