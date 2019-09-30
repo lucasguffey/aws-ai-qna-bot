@@ -1,4 +1,4 @@
-﻿{
+{
   "qna": [
     {
       "args": [
@@ -24,7 +24,7 @@
         "markdown": "",
         "ssml": ""
       },
-      "l": "QNA:EXTSluSportsSchedule",
+      "l": "QNA:SluSportsResults",
       "qid": "sports.result.volleyball",
       "type": "qna",
       "q": [
@@ -56,8 +56,8 @@
         "markdown": "",
         "ssml": ""
       },
-      "l": "QNA:EXTSluSportsSchedule",
-      "qid": "sports.schedule.w.tennis",
+      "l": "QNA:SluSportsResults",
+      "qid": "sports.result.w.tennis",
       "type": "qna",
       "q": [
         "what was the score of the womens tennis game",
@@ -88,8 +88,8 @@
         "markdown": "",
         "ssml": ""
       },
-      "l": "QNA:EXTSluSportsSchedule",
-      "qid": "sports.schedule.softball",
+      "l": "QNA:SluSportsResults",
+      "qid": "sports.result.softball",
       "type": "qna",
       "q": [
         "what was the score of the softball game",
@@ -120,8 +120,8 @@
         "markdown": "",
         "ssml": ""
       },
-      "l": "QNA:EXTSluSportsSchedule",
-      "qid": "sports.schedule.w.soccer",
+      "l": "QNA:SluSportsResults",
+      "qid": "sports.result.w.soccer",
       "type": "qna",
       "q": [
         "what was the score of the womens soccer game",
@@ -151,8 +151,8 @@
         "markdown": "",
         "ssml": ""
       },
-      "l": "QNA:EXTSluSportsSchedule",
-      "qid": "sports.schedule.fieldhockey",
+      "l": "QNA:SluSportsResults",
+      "qid": "sports.result.fieldhockey",
       "type": "qna",
       "q": [
         "what was the score of the field hockey game",
@@ -183,8 +183,8 @@
         "markdown": "",
         "ssml": ""
       },
-      "l": "QNA:EXTSluSportsSchedule",
-      "qid": "sports.schedule.w.basketball",
+      "l": "QNA:SluSportsResults",
+      "qid": "sports.result.w.basketball",
       "type": "qna",
       "q": [
         "what was the score of the womens basketball game",
@@ -215,8 +215,8 @@
         "markdown": "",
         "ssml": ""
       },
-      "l": "QNA:EXTSluSportsSchedule",
-      "qid": "sports.schedule.m.tennis",
+      "l": "QNA:SluSportsResults",
+      "qid": "sports.result.m.tennis",
       "type": "qna",
       "q": [
         "what was the score of the mens tennis game",
@@ -247,8 +247,8 @@
         "markdown": "",
         "ssml": ""
       },
-      "l": "QNA:EXTSluSportsSchedule",
-      "qid": "sports.schedule.swimming",
+      "l": "QNA:SluSportsResults",
+      "qid": "sports.result.swimming",
       "type": "qna",
       "q": [
         "what was the score of the swim meet",
@@ -279,8 +279,8 @@
         "markdown": "",
         "ssml": ""
       },
-      "l": "QNA:EXTSluSportsSchedule",
-      "qid": "sports.schedule.m.soccer",
+      "l": "QNA:SluSportsResults",
+      "qid": "sports.result.m.soccer",
       "type": "qna",
       "q": [
         "what was the score of the mens soccer game",
@@ -311,8 +311,8 @@
         "markdown": "",
         "ssml": ""
       },
-      "l": "QNA:EXTSluSportsSchedule",
-      "qid": "sports.schedule.crosscountry",
+      "l": "QNA:SluSportsResults",
+      "qid": "sports.result.crosscountry",
       "type": "qna",
       "q": [
         "what was the score of the cross country meet",
@@ -343,8 +343,8 @@
         "markdown": "",
         "ssml": ""
       },
-      "l": "QNA:EXTSluSportsSchedule",
-      "qid": "sports.schedule.m.basketball",
+      "l": "QNA:SluSportsResults",
+      "qid": "sports.result.m.basketball",
       "type": "qna",
       "q": [
         "what was the score of the mens basketball game",
@@ -375,8 +375,8 @@
         "markdown": "",
         "ssml": ""
       },
-      "l": "QNA:EXTSluSportsSchedule",
-      "qid": "sports.schedule.baseball",
+      "l": "QNA:SluSportsResults",
+      "qid": "sports.result.baseball",
       "type": "qna",
       "q": [
         "what was the score of the baseball game",
