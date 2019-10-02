@@ -18,8 +18,6 @@ def handler(event, context):
     except IndexError:
         allergen_argument = None
         
-    print("this is the meal argument " + meal_argument)
-    print("this is the allergen argument " + allergen_argument)
     
     #if token is expired fetch a new one
     if time.time() > token['expiration']:
@@ -47,24 +45,27 @@ def handler(event, context):
         markdown = "| Grand Dining Hall {} Free {} Items |\n|------------|-------|".format(allergen_argument.capitalize(),meal_argument.capitalize())
     else:
         markdown = "| Grand Dining Hall {} {} Items |\n|------------|-------|".format(dietary_argument.capitalize(),meal_argument.capitalize())
+    
+    if meals:    
+        for i in meals:
+            markdown += "\n| {}      |".format(i)
+            ssml += " and {}".format(i)
         
-    for i in meals:
-        markdown += "\n| {}      |".format(i)
-        ssml += " and {}".format(i)
-    
-    #response objects
-    qnalib.markdown_response(event,markdown)
-    if allergen_argument:
-        allergen_response = written_allergen(meals,meal_argument,allergen_argument)
-        qnalib.text_response(event,allergen_response)
-        qnalib.ssml_response(event,allergen_response)
-    
+        #response objects
+        qnalib.markdown_response(event,markdown)
+        if allergen_argument:
+            allergen_response = written_allergen(meals,meal_argument,allergen_argument)
+            qnalib.text_response(event,allergen_response)
+            qnalib.ssml_response(event,allergen_response)
+        
+        else:
+            written_response = written_restriction(meals,meal_argument,dietary_argument)
+            qnalib.text_response(event,written_response)
+            qnalib.ssml_response(event,written_response)
+            
+        return event
     else:
-        written_response = written_restriction(meals,meal_argument,dietary_argument)
-        qnalib.text_response(event,written_response)
-        qnalib.ssml_response(event,written_response)
-        
-    return event
+        event['res']['message'] = "There are currently no meals that meet this criteria"
 
 
 def written_allergen(meal_list,meal_type,allergen):
