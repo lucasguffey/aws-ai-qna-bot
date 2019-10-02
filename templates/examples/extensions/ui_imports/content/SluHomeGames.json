@@ -1,0 +1,34 @@
+﻿{
+  "qna": [
+    {
+      "next": "",
+      "a": "this is a lambda response",
+      "r": {
+        "buttons": [
+          {
+            "text": "",
+            "value": ""
+          }
+        ],
+        "subTitle": "",
+        "imageUrl": "",
+        "title": "",
+        "text": "",
+        "url": ""
+      },
+      "t": "",
+      "alt": {
+        "markdown": "",
+        "ssml": ""
+      },
+      "l": "QNA:EXTSluHomeGames",
+      "qid": "sports.homegames",
+      "type": "qna",
+      "q": [
+        "what are the upcoming home games",
+        "what sports teams can I watch at SLU",
+        "upcoming sporting events at SLU"
+      ]
+    }
+  ]
+}

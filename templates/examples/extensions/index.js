@@ -245,6 +245,28 @@ module.exports=Object.assign(
                 },
                 {
                   "Effect": "Allow",
+            			"Action": [
+            				"dynamodb:BatchGetItem",
+            				"dynamodb:GetItem",
+            				"dynamodb:Query",
+            				"dynamodb:Scan",
+        					], 
+        					"Resource":"*"
+        					
+                },
+                {
+                  "Effect": "Allow",
+                "Action": [
+                    "secretsmanager:Describe*",
+                    "secretsmanager:Get*",
+                    "secretsmanager:List*" 
+                ],
+                "Resource": "*"
+        					
+                },
+
+                {
+                  "Effect": "Allow",
                   "Action": [
                     "lambda:InvokeFunction"
                   ],

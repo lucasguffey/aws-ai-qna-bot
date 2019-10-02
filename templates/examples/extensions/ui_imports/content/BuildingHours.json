@@ -1,0 +1,65 @@
+﻿{
+  "qna": [
+    {
+      "args": [
+        "Science Center"
+      ],
+      "next": "",
+      "a": "Here are the hours for the science center.",
+      "r": {
+        "buttons": [
+          {
+            "text": "",
+            "value": ""
+          }
+        ],
+        "subTitle": "",
+        "imageUrl": "",
+        "title": ""
+      },
+      "t": "",
+      "alt": {
+        "markdown": "",
+        "ssml": ""
+      },
+      "l": "QNA:EXTSluBuildingHours",
+      "qid": "building.sciencecenter",
+      "type": "qna",
+      "selected": false,
+      "q": [
+        "What are the hours for the science center?"
+      ]
+    },
+    {
+      "args": [
+        "Test Building 5"
+      ],
+      "next": "",
+      "a": "Test building 5 is open",
+      "r": {
+        "buttons": [
+          {
+            "text": "",
+            "value": ""
+          }
+        ],
+        "subTitle": "",
+        "imageUrl": "",
+        "title": "",
+        "text": "",
+        "url": ""
+      },
+      "t": "",
+      "alt": {
+        "markdown": "",
+        "ssml": ""
+      },
+      "l": "QNA:EXTSluBuildingHours",
+      "qid": "building.testbuilding5",
+      "type": "qna",
+      "q": [
+        "What are the hours for test building 5?"
+      ]
+    }
+  ]
+}

@@ -1,11 +1,14 @@
 import json
-from botocore.vendored import requests
+import requests
 import qnalib 
-
+import time
+from jose import jwt
+from secrets import get_secret
 
 
 def handler(event, context):
-    
+    global token
+
     event_results = event["res"]["result"]
     dietary_argument = event_results["args"][0]
     meal_argument = event_results["args"][1]
@@ -15,11 +18,12 @@ def handler(event, context):
     except IndexError:
         allergen_argument = None
         
-    print(meal_argument)
-    print(allergen_argument)
     
-    
-    sodexo_endpoint = requests.get("http://api-staging.sodexomyway.net/api/menus/13341001/14759/{}/{}".format(dietary_argument,allergen_argument))
+    #if token is expired fetch a new one
+    if time.time() > token['expiration']:
+        token = fetch_token(password)
+        
+    sodexo_endpoint = requests.get("http://api-staging.sodexomyway.net/api/v1/menus/13341001/14759/{}/{}".format(dietary_argument,allergen_argument),headers={'Authorization': 'Bearer ' + token['tokenValue']})
     try:
         sodexo_endpoint.raise_for_status()
     except Exception as exc:
@@ -41,26 +45,27 @@ def handler(event, context):
         markdown = "| Grand Dining Hall {} Free {} Items |\n|------------|-------|".format(allergen_argument.capitalize(),meal_argument.capitalize())
     else:
         markdown = "| Grand Dining Hall {} {} Items |\n|------------|-------|".format(dietary_argument.capitalize(),meal_argument.capitalize())
+    
+    if meals:    
+        for i in meals:
+            markdown += "\n| {}      |".format(i)
+            ssml += " and {}".format(i)
         
-    for i in meals:
-        markdown += "\n| {}      |".format(i)
-        ssml += " and {}".format(i)
-    
-    
-    qnalib.markdown_response(event,markdown)
-     
-
-    if allergen_argument:
-        allergen_response = written_allergen(meals,meal_argument,allergen_argument)
-        qnalib.text_response(event,allergen_response)
-        qnalib.ssml_response(event,allergen_response)
-    
+        #response objects
+        qnalib.markdown_response(event,markdown)
+        if allergen_argument:
+            allergen_response = written_allergen(meals,meal_argument,allergen_argument)
+            qnalib.text_response(event,allergen_response)
+            qnalib.ssml_response(event,allergen_response)
+        
+        else:
+            written_response = written_restriction(meals,meal_argument,dietary_argument)
+            qnalib.text_response(event,written_response)
+            qnalib.ssml_response(event,written_response)
+            
+        return event
     else:
-        written_response = written_restriction(meals,meal_argument,dietary_argument)
-        qnalib.text_response(event,written_response)
-        qnalib.ssml_response(event,written_response)
-        
-    return event
+        event['res']['message'] = "There are currently no meals that meet this criteria"
 
 
 def written_allergen(meal_list,meal_type,allergen):
@@ -89,3 +94,14 @@ def written_restriction(meal_list,meal_type,meal_restriction):
         response = response_message + ", ".join(str(x) for x in meal_list[:-2]) + " ".join(str(x) for x in meal_list[-2:])
     return response
         
+#fetches token from sodexo authentication server
+def fetch_token(password):
+        response = requests.post('http://api-staging.sodexomyway.net/api/authenticate', json={"Username":"slu.iot","Password":password['Sodexo']})
+        json_response = response.json()
+        claims = jwt.get_unverified_claims(json_response['token'])
+        expiration = claims['exp']
+        response_object = {'tokenValue':json_response['token'],'expiration':expiration}
+        return response_object
+
+password = get_secret()
+token = fetch_token(password)

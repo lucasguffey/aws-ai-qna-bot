@@ -1,0 +1,387 @@
+{
+  "qna": [
+    {
+      "args": [
+        "93211"
+      ],
+      "next": "",
+      "a": "this is a lambda response",
+      "r": {
+        "buttons": [
+          {
+            "text": "",
+            "value": ""
+          }
+        ],
+        "subTitle": "",
+        "imageUrl": "",
+        "title": "",
+        "text": "",
+        "url": ""
+      },
+      "t": "",
+      "alt": {
+        "markdown": "",
+        "ssml": ""
+      },
+      "l": "QNA:EXTSluSportsResults",
+      "qid": "sports.result.volleyball",
+      "type": "qna",
+      "q": [
+        "When was the result of the last volleyball game",
+        "volleyball game result"
+      ]
+    },
+    {
+      "args": [
+        "93210"
+      ],
+      "next": "",
+      "a": "this is a lambda response",
+      "r": {
+        "buttons": [
+          {
+            "text": "",
+            "value": ""
+          }
+        ],
+        "subTitle": "",
+        "imageUrl": "",
+        "title": "",
+        "text": "",
+        "url": ""
+      },
+      "t": "",
+      "alt": {
+        "markdown": "",
+        "ssml": ""
+      },
+      "l": "QNA:EXTSluSportsResults",
+      "qid": "sports.results.w.tennis",
+      "type": "qna",
+      "q": [
+        "what was the score of the womens tennis game",
+        " womens tennis meet result"
+      ]
+    },
+    {
+      "args": [
+        "93207"
+      ],
+      "next": "",
+      "a": "this is a lambda response",
+      "r": {
+        "buttons": [
+          {
+            "text": "",
+            "value": ""
+          }
+        ],
+        "subTitle": "",
+        "imageUrl": "",
+        "title": "",
+        "text": "",
+        "url": ""
+      },
+      "t": "",
+      "alt": {
+        "markdown": "",
+        "ssml": ""
+      },
+      "l": "QNA:EXTSluSportsResults",
+      "qid": "sports.results.softball",
+      "type": "qna",
+      "q": [
+        "what was the score of the softball game",
+        " softball game result"
+      ]
+    },
+    {
+      "args": [
+        "95701"
+      ],
+      "next": "",
+      "a": "this is a lambda response",
+      "r": {
+        "buttons": [
+          {
+            "text": "",
+            "value": ""
+          }
+        ],
+        "subTitle": "",
+        "imageUrl": "",
+        "title": "",
+        "text": "",
+        "url": ""
+      },
+      "t": "",
+      "alt": {
+        "markdown": "",
+        "ssml": ""
+      },
+      "l": "QNA:EXTSluSportsResults",
+      "qid": "sports.results.w.soccer",
+      "type": "qna",
+      "q": [
+        "what was the score of the womens soccer game",
+        " womens soccer game result"
+      ]
+    },    {
+      "args": [
+        "95895"
+      ],
+      "next": "",
+      "a": "this is a lambda response",
+      "r": {
+        "buttons": [
+          {
+            "text": "",
+            "value": ""
+          }
+        ],
+        "subTitle": "",
+        "imageUrl": "",
+        "title": "",
+        "text": "",
+        "url": ""
+      },
+      "t": "",
+      "alt": {
+        "markdown": "",
+        "ssml": ""
+      },
+      "l": "QNA:EXTSluSportsResults",
+      "qid": "sports.results.fieldhockey",
+      "type": "qna",
+      "q": [
+        "what was the score of the field hockey game",
+        " field hockey game result"
+      ]
+    },
+    {
+      "args": [
+        "93216"
+      ],
+      "next": "",
+      "a": "this is a lambda response",
+      "r": {
+        "buttons": [
+          {
+            "text": "",
+            "value": ""
+          }
+        ],
+        "subTitle": "",
+        "imageUrl": "",
+        "title": "",
+        "text": "",
+        "url": ""
+      },
+      "t": "",
+      "alt": {
+        "markdown": "",
+        "ssml": ""
+      },
+      "l": "QNA:EXTSluSportsResults",
+      "qid": "sports.results.w.basketball",
+      "type": "qna",
+      "q": [
+        "what was the score of the womens basketball game",
+        " womens basketball game result"
+      ]
+    },
+    {
+      "args": [
+        "93209"
+      ],
+      "next": "",
+      "a": "this is a lambda response",
+      "r": {
+        "buttons": [
+          {
+            "text": "",
+            "value": ""
+          }
+        ],
+        "subTitle": "",
+        "imageUrl": "",
+        "title": "",
+        "text": "",
+        "url": ""
+      },
+      "t": "",
+      "alt": {
+        "markdown": "",
+        "ssml": ""
+      },
+      "l": "QNA:EXTSluSportsResults",
+      "qid": "sports.results.m.tennis",
+      "type": "qna",
+      "q": [
+        "what was the score of the mens tennis game",
+        " mens tennis meet result"
+      ]
+    },
+    {
+      "args": [
+        "93205"
+      ],
+      "next": "",
+      "a": "this is a lambda response",
+      "r": {
+        "buttons": [
+          {
+            "text": "",
+            "value": ""
+          }
+        ],
+        "subTitle": "",
+        "imageUrl": "",
+        "title": "",
+        "text": "",
+        "url": ""
+      },
+      "t": "",
+      "alt": {
+        "markdown": "",
+        "ssml": ""
+      },
+      "l": "QNA:EXTSluSportsResults",
+      "qid": "sports.results.swimming",
+      "type": "qna",
+      "q": [
+        "what was the score of the swim meet",
+        " swim team result"
+      ]
+    },
+    {
+      "args": [
+        "93202"
+      ],
+      "next": "",
+      "a": "this is a lambda response",
+      "r": {
+        "buttons": [
+          {
+            "text": "",
+            "value": ""
+          }
+        ],
+        "subTitle": "",
+        "imageUrl": "",
+        "title": "",
+        "text": "",
+        "url": ""
+      },
+      "t": "",
+      "alt": {
+        "markdown": "",
+        "ssml": ""
+      },
+      "l": "QNA:EXTSluSportsResults",
+      "qid": "sports.results.m.soccer",
+      "type": "qna",
+      "q": [
+        "what was the score of the mens soccer game",
+        " mens soccer game result"
+      ]
+    },
+    {
+      "args": [
+        "95700"
+      ],
+      "next": "",
+      "a": "this is a lambda response",
+      "r": {
+        "buttons": [
+          {
+            "text": "",
+            "value": ""
+          }
+        ],
+        "subTitle": "",
+        "imageUrl": "",
+        "title": "",
+        "text": "",
+        "url": ""
+      },
+      "t": "",
+      "alt": {
+        "markdown": "",
+        "ssml": ""
+      },
+      "l": "QNA:EXTSluSportsResults",
+      "qid": "sports.results.crosscountry",
+      "type": "qna",
+      "q": [
+        "what was the score of the cross country meet",
+        " cross country meet result"
+      ]
+    },
+    {
+      "args": [
+        "93215"
+      ],
+      "next": "",
+      "a": "this is a lambda response",
+      "r": {
+        "buttons": [
+          {
+            "text": "",
+            "value": ""
+          }
+        ],
+        "subTitle": "",
+        "imageUrl": "",
+        "title": "",
+        "text": "",
+        "url": ""
+      },
+      "t": "",
+      "alt": {
+        "markdown": "",
+        "ssml": ""
+      },
+      "l": "QNA:EXTSluSportsResults",
+      "qid": "sports.results.m.basketball",
+      "type": "qna",
+      "q": [
+        "what was the score of the mens basketball game",
+        " mens basketball game result"
+      ]
+    },
+    {
+      "args": [
+        "93212"
+      ],
+      "next": "",
+      "a": "this is a lambda response",
+      "r": {
+        "buttons": [
+          {
+            "text": "",
+            "value": ""
+          }
+        ],
+        "subTitle": "",
+        "imageUrl": "",
+        "title": "",
+        "text": "",
+        "url": ""
+      },
+      "t": "",
+      "alt": {
+        "markdown": "",
+        "ssml": ""
+      },
+      "l": "QNA:EXTSluSportsResults",
+      "qid": "sports.results.baseball",
+      "type": "qna",
+      "q": [
+        "what was the score of the baseball game",
+        " baseball game result"
+      ]
+    }
+  ]
+}
