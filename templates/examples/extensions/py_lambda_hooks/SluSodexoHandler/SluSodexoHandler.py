@@ -66,6 +66,7 @@ def handler(event, context):
         return event
     else:
         event['res']['message'] = "There are currently no meals that meet this criteria"
+        return event
 
 
 def written_allergen(meal_list,meal_type,allergen):
