@@ -22,7 +22,7 @@
         "markdown": "",
         "ssml": ""
       },
-      "l": "arn:aws:lambda:us-east-1:238359442180:function:qna-building-hrs",
+      "l": "QNA:EXTSluBuildingHours",
       "qid": "building.sciencecenter",
       "type": "qna",
       "selected": false,
@@ -54,7 +54,7 @@
         "markdown": "",
         "ssml": ""
       },
-      "l": "arn:aws:lambda:us-east-1:238359442180:function:qna-building-hrs",
+      "l": "QNA:EXTSluBuildingHours",
       "qid": "building.testbuilding5",
       "type": "qna",
       "q": [

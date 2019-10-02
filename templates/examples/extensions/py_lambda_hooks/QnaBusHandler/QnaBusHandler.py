@@ -1,6 +1,5 @@
 import json
-#import requests
-from botocore.vendored import requests
+import requests
 import boto3
 import os
 import decimal

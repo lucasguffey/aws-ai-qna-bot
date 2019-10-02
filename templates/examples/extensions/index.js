@@ -254,6 +254,16 @@ module.exports=Object.assign(
         					"Resource":"*"
         					
                 },
+                {
+                  "Effect": "Allow",
+                "Action": [
+                    "secretsmanager:Describe*",
+                    "secretsmanager:Get*",
+                    "secretsmanager:List*" 
+                ],
+                "Resource": "*"
+        					
+                },
 
                 {
                   "Effect": "Allow",
