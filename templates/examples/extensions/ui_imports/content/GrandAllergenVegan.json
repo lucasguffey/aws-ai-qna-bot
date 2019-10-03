@@ -270,6 +270,22 @@
 		{
 			"args": [
 				"allergen",
+				"dinner",
+				"eggs"
+			],
+			"a": "this is a lambda answer",
+			"t": "eggs",
+			"l": "QNA:EXTSluSodexoHandler",
+			"qid": "grand.allergen.eggs.dinner",
+			"type": "qna",
+			"q": [
+				"egg free dinner meals",
+				"which dinner meals are egg free at grand dining hall"
+			]
+		},
+		{
+			"args": [
+				"allergen",
 				"breakfast",
 				"eggs"
 			],
