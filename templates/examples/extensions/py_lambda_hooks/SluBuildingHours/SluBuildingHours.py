@@ -1,5 +1,5 @@
 import json
-import requests
+from botocore.vendored import requests
 import os
 import boto3
 import decimal
@@ -12,7 +12,7 @@ import calendar
 from datetime import datetime as dt
 
 
-def lambda_handler(event, context):
+def handler(event, context):
     
     response = ''
     event_results = event["res"]["result"]
@@ -47,11 +47,17 @@ def lambda_handler(event, context):
         #print(openHrsConverted)
         # - Initialize the short response. 
         if(expandDayfromShortName(days['days']) == dayOfWeek):
-            initialmessage = "On {} the {} is open from {} to {}\n, here are the hours for the week:\n ".format(str(expandDayfromShortName(days['days'])), buildingName, dt.strptime(str(days['open']), '%H:%M').strftime('%I:%M %p'), dt.strptime(str(days['closed']), '%H:%M').strftime('%I:%M %p'))
+            if(days['isclosed']):
+                initialmessage = "On {} the {} is closed \n".format(str(expandDayfromShortName(days['days'])), buildingName)
+            else :
+                initialmessage = "On {} the {} is open from {} to {} \n".format(str(expandDayfromShortName(days['days'])), buildingName, dt.strptime(str(days['open']), '%H:%M').strftime('%I:%M %p'), dt.strptime(str(days['closed']), '%H:%M').strftime('%I:%M %p'))
 
         
         if days['days']:
-           markdown +=    "\n|    {0}      |  {1}      | {2}      |".format(str(expandDayfromShortName(days['days'])), dt.strptime(str(days['open']), '%H:%M').strftime('%I:%M %p'), dt.strptime(str(days['closed']), '%H:%M').strftime('%I:%M %p'))
+            if(days['isclosed']):
+                markdown +=    "\n|    {0}      |  Closed      | Closed      |".format(str(expandDayfromShortName(days['days'])))            
+            else:
+                markdown +=    "\n|    {0}      |  {1}      | {2}      |".format(str(expandDayfromShortName(days['days'])), dt.strptime(str(days['open']), '%H:%M').strftime('%I:%M %p'), dt.strptime(str(days['closed']), '%H:%M').strftime('%I:%M %p'))
 
 
         response =  initialmessage 
@@ -118,6 +124,12 @@ def searchUtteranceforDoW(utterance):
     for pattern in patterns:
         if re.search(pattern, utterance.lower()):
             return "Saturday"
+            
+    patterns = ['Sunday', 'sun']
+
+    for pattern in patterns:
+        if re.search(pattern, utterance.lower()):
+            return "Sunday"
 
     return None
 
@@ -133,7 +145,7 @@ def getDaysfromScheduleID(scheduleID):
     
     # - Query the Schedule table for the ScheduleID.
     response = table.scan(
-        FilterExpression=Key('dayScheduleId').eq(scheduleID) # & Key('closed').eq('false')
+        FilterExpression=Key('dayScheduleId').eq(scheduleID)
  
         )
     
@@ -145,7 +157,8 @@ def getDaysfromScheduleID(scheduleID):
                 "order":  i["order"],
                 "days":  i['day_name'],
                 "open":    i['opening_time'],
-                "closed":  i['closing_time']
+                "closed":  i['closing_time'],
+                "isclosed": i['closed']
                 
             }
             daysarray.append(days)  
