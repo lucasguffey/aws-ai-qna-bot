@@ -32,7 +32,7 @@
 			]
 		},
 		{
-			"a": "this works for ssml currently",
+			"a": "Please type vegetarian breakfast, vegetarian lunch, or vegetarian dinner ",
 			"r": {
 				"buttons": [{
 						"text": "Lunch",
@@ -51,7 +51,8 @@
 			},
 			"t": "vegetarian",
 			"alt": {
-				"markdown": "Which of the following meals would you like to hear the vegetarian options for"
+				"markdown": "Which of the following meals would you like to hear the vegetarian options for",
+				"ssml": "Please say vegetarian breakfast, vegetarian lunch, or vegetarian dinner"
 			},
 			"qid": "grand.vegetarian.initial",
 			"type": "qna",
@@ -98,7 +99,7 @@
 				""
 			],
 			"next": "",
-			"a": "The following are free of dairy.",
+			"a": "Please type dairy free breakfast, dairy free lunch, or dairy free dinner.",
 			"r": {
 				"buttons": [{
 						"text": "Breakfast meals safe for milk allergens",
@@ -479,7 +480,7 @@
 				""
 			],
 			"next": "",
-			"a": "The following foods are free of wheat allergens",
+			"a": "Please type wheat free breakfast, wheat free lunch, or wheat free dinner",
 			"r": {
 				"buttons": [{
 						"text": "Breakfast meals safe for wheat allergies",
@@ -517,7 +518,7 @@
 		{
 			"args": [],
 			"next": "",
-			"a": "The following foods are safe for tree nut allergies",
+			"a": "Please type tree nut free breakfast, tree nut free lunch, or tree nut free dinner",
 			"r": {
 				"buttons": [{
 						"text": "Breakfast meals safe for tree nut allergies",
@@ -555,7 +556,7 @@
 		{
 			"args": [],
 			"next": "",
-			"a": "The following foods are safe for fish allergies",
+			"a": "Please type fish free breakfast, fish free lunch, or fish free dinner",
 			"r": {
 				"buttons": [{
 						"text": "Breakfast meals safe for fish allergies",
@@ -823,7 +824,7 @@
 		{
 			"args": [],
 			"next": "",
-			"a": "The following are free of soy allergens",
+			"a": "Please type soy free breakfast, soy free lunch, or soy free dinner",
 			"r": {
 				"buttons": [{
 						"text": "Breakfast meals safe for soy bean allergies",
@@ -861,7 +862,7 @@
 		{
 			"args": [],
 			"next": "",
-			"a": "The following meals are shellfish free",
+			"a": "Please type shellfish free breakfast, shellfish free lunch, or shellfish free dinner",
 			"r": {
 				"buttons": [{
 						"text": "Breakfast meals safe for shellfish allergies",
@@ -1126,7 +1127,7 @@
 				""
 			],
 			"next": "",
-			"a": "The following foods are safe for egg allergies",
+			"a": "Please type egg free breakfast, egg free lunch, or egg free dinner.",
 			"r": {
 				"buttons": [{
 						"text": "Breakfast meals safe for egg allergens",
@@ -1260,7 +1261,7 @@
 				""
 			],
 			"next": "",
-			"a": "this should be ssml",
+			"a": "Please type vegan breakfast, vegan lunch, or vegan dinner",
 			"r": {
 				"buttons": [{
 						"text": "Lunch",
@@ -1284,7 +1285,7 @@
 			"t": "vegan",
 			"alt": {
 				"markdown": "Which of the following meals would you like to hear about?",
-				"ssml": ""
+				"ssml": "Please say vegan breakfast, vegan lunch, or vegan dinner"
 			},
 			"qid": "grand.vegan.initial",
 			"type": "qna",
@@ -1378,7 +1379,7 @@
 		{
 			"args": [],
 			"next": "",
-			"a": "The following foods are safe for peanut allergies",
+			"a": "Please type peanut free breakfast, peanut free lunch, or peanut free dinner",
 			"r": {
 				"buttons": [{
 						"text": "Breakfast meals safe for peanut allergies",
