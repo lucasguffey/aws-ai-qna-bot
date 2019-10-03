@@ -9,9 +9,10 @@ import re
 import datetime
 from datetime import date
 import calendar
+from datetime import datetime as dt
 
 
-def handler(event, context):
+def lambda_handler(event, context):
     
     response = ''
     event_results = event["res"]["result"]
@@ -42,13 +43,15 @@ def handler(event, context):
     # - Construct the days message.
     for days in daysfromSchedule:
         
+        #openHrsConverted = dt.strptime(str(days['open']), '%H:%M').strftime('%I:%M %p')
+        #print(openHrsConverted)
         # - Initialize the short response. 
         if(expandDayfromShortName(days['days']) == dayOfWeek):
-            initialmessage = "On {} the {} is open from {} to {}\n, here are the hours for the week:\n ".format(str(expandDayfromShortName(days['days'])), buildingName, str(days['open']), str(days['closed']))
+            initialmessage = "On {} the {} is open from {} to {}\n, here are the hours for the week:\n ".format(str(expandDayfromShortName(days['days'])), buildingName, dt.strptime(str(days['open']), '%H:%M').strftime('%I:%M %p'), dt.strptime(str(days['closed']), '%H:%M').strftime('%I:%M %p'))
 
         
         if days['days']:
-           markdown +=    "\n|    {0}      |  {1}      | {2}      |".format(str(expandDayfromShortName(days['days'])), str(days['open']), str(days['closed']))
+           markdown +=    "\n|    {0}      |  {1}      | {2}      |".format(str(expandDayfromShortName(days['days'])), dt.strptime(str(days['open']), '%H:%M').strftime('%I:%M %p'), dt.strptime(str(days['closed']), '%H:%M').strftime('%I:%M %p'))
 
 
         response =  initialmessage 
@@ -130,7 +133,8 @@ def getDaysfromScheduleID(scheduleID):
     
     # - Query the Schedule table for the ScheduleID.
     response = table.scan(
-        FilterExpression=Key('dayScheduleId').eq(scheduleID)
+        FilterExpression=Key('dayScheduleId').eq(scheduleID) # & Key('closed').eq('false')
+ 
         )
     
 
@@ -138,11 +142,17 @@ def getDaysfromScheduleID(scheduleID):
         #print(response)
         for i in response['Items']:
             days =   {
+                "order":  i["order"],
                 "days":  i['day_name'],
                 "open":    i['opening_time'],
                 "closed":  i['closing_time']
+                
             }
             daysarray.append(days)  
+            
+            # Sort the days by their order in the DB.
+            dayssorted  = sorted(daysarray, key=lambda days: days['order'])
+            
   
     except IndexError:
         scheduleID = 'unavailable'
@@ -150,7 +160,7 @@ def getDaysfromScheduleID(scheduleID):
     
  
     # - Return the schedule ID.
-    return daysarray
+    return dayssorted
 
 
 # Query the Schedule ID from the building.

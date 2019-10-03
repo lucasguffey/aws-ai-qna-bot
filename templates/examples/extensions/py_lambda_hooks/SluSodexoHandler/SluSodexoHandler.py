@@ -91,7 +91,7 @@ def written_restriction(meal_list,meal_type,meal_restriction):
         response = response_message + "".join(str(x) for x in meal_list)
     else:
         meal_list.insert(-1,', and')
-        response_message = "The following {} meals are {} free: ".format(meal_type,meal_restriction)
+        response_message = "The following {} meals are {}: ".format(meal_type,meal_restriction)
         response = response_message + ", ".join(str(x) for x in meal_list[:-2]) + " ".join(str(x) for x in meal_list[-2:])
     return response
         
