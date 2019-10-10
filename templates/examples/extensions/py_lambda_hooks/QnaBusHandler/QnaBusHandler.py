@@ -52,7 +52,7 @@ def handler(event, context):
     
     else:
         inactive_route_text = "No buses are currently scheduled for this stop. bus stop information can be found here: https://bit.ly/319ECfO "
-        inactive_route_ssml = "No buses are currently scheduled for this stop"
+        inactive_route_ssml = "No buses are currently scheduled for this stop."
         
         qnalib.markdown_response(event,inactive_route_text) 
         qnalib.text_response(event,inactive_route_text)

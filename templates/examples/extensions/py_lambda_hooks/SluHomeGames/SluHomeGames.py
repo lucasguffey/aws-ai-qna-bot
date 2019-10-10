@@ -21,7 +21,7 @@ def handler(event, context):
             print(type(i))
             markdown +=  "\n|    {}      |  {}      | {} {} {}     |".format(i['team_name'],i['opponent_name'],i['day'],str(i['date']),str(i['time']))
         for i in spoken_response_list:
-            response_string += "The SLU {} team will plays {} on {} {} at {} .".format(i['team_name'],i['opponent_name'],i['day'],str(i['date']),str(i['time']))
+            response_string += "The SLU {} team will play {} on {} {} at {} .".format(i['team_name'],i['opponent_name'],i['day'],str(i['date']),str(i['time']))
         
         qnalib.markdown_response(event,markdown) 
         qnalib.text_response(event,response_string)

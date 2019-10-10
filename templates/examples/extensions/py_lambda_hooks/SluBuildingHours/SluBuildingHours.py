@@ -12,7 +12,7 @@ import calendar
 from datetime import datetime as dt
 
 
-def handler(event, context):
+def lambda_handler(event, context):
     
     response = ''
     event_results = event["res"]["result"]
@@ -33,7 +33,7 @@ def handler(event, context):
     
     # - Query DynamoDB for the stop ID, which we will use to query the doublemap API.
     buildingID = getBuildingIDfromName(buildingName)
-    scheduleID = getScheduleIDfromBuildingID(buildingID)
+    scheduleID = getScheduleIDfromBuildingID(buildingID, todaysDay)
     daysfromSchedule = getDaysfromScheduleID(scheduleID)
     
     
@@ -48,9 +48,9 @@ def handler(event, context):
         # - Initialize the short response. 
         if(expandDayfromShortName(days['days']) == dayOfWeek):
             if(days['isclosed']):
-                initialmessage = "On {} the {} is closed \n".format(str(expandDayfromShortName(days['days'])), buildingName)
+                initialmessage = "On {} the {} is closed\n, here are the hours for the week:\n ".format(str(expandDayfromShortName(days['days'])), buildingName)
             else :
-                initialmessage = "On {} the {} is open from {} to {} \n".format(str(expandDayfromShortName(days['days'])), buildingName, dt.strptime(str(days['open']), '%H:%M').strftime('%I:%M %p'), dt.strptime(str(days['closed']), '%H:%M').strftime('%I:%M %p'))
+                initialmessage = "On {} the {} is open from {} to {}\n, here are the hours for the week:\n ".format(str(expandDayfromShortName(days['days'])), buildingName, dt.strptime(str(days['open']), '%H:%M').strftime('%I:%M %p'), dt.strptime(str(days['closed']), '%H:%M').strftime('%I:%M %p'))
 
         
         if days['days']:
@@ -89,43 +89,43 @@ def handler(event, context):
 
 def searchUtteranceforDoW(utterance):
     
-    patterns = ['monday', 'mon']
+    patterns = [' monday ', ' mon ']
     
     for pattern in patterns:
         if re.search(pattern, utterance.lower()):
             return "Monday"
 
-    patterns = ['tuesday', 'tue']
+    patterns = [' tuesday ', ' tue ']
 
     for pattern in patterns:
         if re.search(pattern, utterance.lower()):
             return "Tuesday"
 
-    patterns = ['wednesday', 'wed']
+    patterns = [' wednesday ', ' wed ']
 
     for pattern in patterns:
         if re.search(pattern, utterance.lower()):
             return "Wednesday"
 
-    patterns = ['thursday', 'thu']
+    patterns = [' thursday ', ' thu ']
 
     for pattern in patterns:
         if re.search(pattern, utterance.lower()):
             return "Thursday"
 
-    patterns = ['Friday', 'fri']
+    patterns = [' Friday ', ' fri' ]
 
     for pattern in patterns:
         if re.search(pattern, utterance.lower()):
             return "Friday"
 
-    patterns = ['Saturday', 'sat']
+    patterns = [' Saturday ', ' sat ']
 
     for pattern in patterns:
         if re.search(pattern, utterance.lower()):
             return "Saturday"
             
-    patterns = ['Sunday', 'sun']
+    patterns = [' Sunday ', 'sun']
 
     for pattern in patterns:
         if re.search(pattern, utterance.lower()):
@@ -145,7 +145,7 @@ def getDaysfromScheduleID(scheduleID):
     
     # - Query the Schedule table for the ScheduleID.
     response = table.scan(
-        FilterExpression=Key('dayScheduleId').eq(scheduleID)
+        FilterExpression=Key('dayScheduleId').eq(scheduleID) 
  
         )
     
@@ -177,7 +177,7 @@ def getDaysfromScheduleID(scheduleID):
 
 
 # Query the Schedule ID from the building.
-def getScheduleIDfromBuildingID(buildingID):
+def getScheduleIDfromBuildingID(buildingID, todaysDay):
 
    # print (buildingID)
     
@@ -185,7 +185,7 @@ def getScheduleIDfromBuildingID(buildingID):
 
     # - Query the Schedule table for the ScheduleID.
     response = table.scan(
-        FilterExpression=Key('scheduleBuildingId').eq(buildingID)
+        FilterExpression=Key('scheduleBuildingId').eq(buildingID) & Key('start_date').gt(todaysDay) &  Key('end_date').lt(todaysDay)
         )
     try:
         scheduleID = response['Items'][0]['id']
