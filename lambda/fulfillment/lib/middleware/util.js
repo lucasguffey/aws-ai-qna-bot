@@ -34,7 +34,49 @@ exports.invokeLambda=async function(params){
             throw e
         }
     }else{
-        console.log(result.FunctionError)
-        throw result.FunctionError
+        switch(params.req._type){
+            case 'LEX':
+                var error_message = LexError();                
+                break;
+            case 'ALEXA':
+                var error_message = new AlexaError();
+                break;
+        }
+
+        console.log("Error Response",JSON.stringify(error_message,null,2))
+        throw error_message
     }
+}
+
+function Respond(message){
+    this.action="RESPOND"
+    this.message=message
+}
+
+function AlexaError(){
+    this.action="RESPOND"
+    this.message={
+        version:'1.0',
+        response:{
+            outputSpeech:{
+                type:"PlainText",
+                text:"I am currently having trouble processing your request. Please try again later."
+            },
+            shouldEndSession:true
+        }
+    }
+}
+
+var LexError = function() {
+    var response_object = {
+        dialogAction:{
+            type:"Close",
+            fulfillmentState:"Fulfilled",
+            message: {
+                contentType: "PlainText",
+                content: "I am currently having trouble processing your request. Please try again later."
+            }
+        }
+    }
+    return response_object
 }

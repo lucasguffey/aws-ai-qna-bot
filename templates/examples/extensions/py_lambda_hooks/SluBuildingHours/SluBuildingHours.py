@@ -12,7 +12,7 @@ import calendar
 from datetime import datetime as dt
 
 
-def lambda_handler(event, context):
+def handler(event, context):
     
     response = ''
     event_results = event["res"]["result"]

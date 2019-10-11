@@ -43,7 +43,6 @@ chrome_options.add_argument('user-agent=Mozilla/5.0 (X11; Linux x86_64) AppleWeb
 chrome_options.binary_location = os.getcwd() + "/bin/headless-chromium"
 
 def handler(event, context):
-    # TODO implement
     driver = webdriver.Chrome(chrome_options=chrome_options)
     page_data = ""
     if event["res"]["result"]["args"][0]:
@@ -56,13 +55,15 @@ def handler(event, context):
             dining_div = i.find_all("div", {"class": "dining-halls-block-left desktop-only"})
             for i in dining_div:
                 dining_title = i.find("a", {"href": re.compile("/dining-near-me")})
-                dining_name = dining_title.contents[0]
-                if '@' in dining_name:
-                    new_dining_name = dining_name.split('@')
-                    restaurants.append(new_dining_name[0][:-1])
-                else:
-                    restaurants.append(dining_name)
-
+                if dining_title:
+                    dining_names = getattr(dining_title, 'contents', False)
+                    if dining_names:
+                        dining_name = dining_names[0]
+                        if '@' in dining_name:
+                            new_dining_name = dining_name.split('@')
+                            restaurants.append(new_dining_name[0][:-1])
+                        else:
+                            restaurants.append(dining_name)
 
 #Markdown response flow
     if restaurants:           
@@ -80,7 +81,7 @@ def handler(event, context):
         response_message = "The following restaurant is currently open: "
         response = response_message + "".join(str(x) for x in restaurants)
     else:
-        restaurants.insert(-1,'and')
+        restaurants.insert(-1,' and ')
         response_message = "The following restaurants are currently open: "
         response = response_message + ", ".join(str(x) for x in restaurants[:-2]) + " ".join(str(x) for x in restaurants[-2:])
 
