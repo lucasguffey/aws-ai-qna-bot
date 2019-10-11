@@ -16,7 +16,7 @@ exports.parse=function(event){
 
         channel:null,
     }
-
+    var welcome_message = process.env.DEFAULT_ALEXA_LAUNCH_MESSAGE ? process.env.DEFAULT_ALEXA_LAUNCH_MESSAGE : "Hello, Please ask a question";
     switch(_.get(event,"request.type")){
         case "LaunchRequest":
             throw new Respond({
@@ -24,7 +24,7 @@ exports.parse=function(event){
                 response:{
                     outputSpeech:{
                         type:"PlainText",
-                        text: (process.env.DEFAULT_ALEXA_LAUNCH_MESSAGE ? process.env.DEFAULT_ALEXA_LAUNCH_MESSAGE : "Welcome to the ask Slew Skill.  I can answer many common questions about Saint Louis University.  Try asking me what is open now for dining, or when Fall Break begins.")
+                        text: welcome_message
                     },
                     shouldEndSession:false
                 }
@@ -56,7 +56,7 @@ exports.parse=function(event){
             console.log(JSON.stringify(out))
             throw new Respond({
                 version:'1.0',
-                response: _.get(out,"session.cachedOutput",{outputSpeech:{type:"PlainText",text:"Sorry, I do not remember."},shouldEndSession:false})
+                response: _.get(out,"session.cachedOutput",{outputSpeech:{type:"PlainText",text:welcome_message},shouldEndSession:false})
             })
             break;
         case "AMAZON.StopIntent":
@@ -65,7 +65,7 @@ exports.parse=function(event){
                 response:{
                     outputSpeech:{
                         type:"PlainText",
-                        text:(process.env.DEFAULT_ALEXA_STOP_MESSAGE ? process.env.DEFAULT_ALEXA_STOP_MESSAGE :"Thanks for using ask Slew.  If you are on your way to catch the shuttle, try Alexa, ask slew when will the bus arrive.")
+                        text:(process.env.DEFAULT_ALEXA_STOP_MESSAGE ? process.env.DEFAULT_ALEXA_STOP_MESSAGE :"Goodbye")
                     },
                     shouldEndSession:true
                 }
