@@ -1,7 +1,7 @@
 var config=require('./config')
 var _=require('lodash')
 
-examples=_.fromPairs(require('../../examples/outputs')
+var examples=_.fromPairs(require('../../examples/outputs')
     .names
     .map(x=>{
         return [x,{"Fn::GetAtt":["ExamplesStack",`Outputs.${x}`]}]
@@ -42,10 +42,13 @@ module.exports={
             LAMBDA_LOG:{"Ref":"ESLoggingLambda"},
             ES_SERVICE_QID:{"Ref":"ESQidLambda"},
             ES_SERVICE_PROXY:{"Ref":"ESProxyLambda"},
+            DYNAMODB_USERSTABLE:{"Ref":"UsersTable"},
             "ERRORMESSAGE":config.ErrorMessage,
             "EMPTYMESSAGE":config.EmptyMessage,
             "DEFAULT_ALEXA_LAUNCH_MESSAGE":config.DefaultAlexaLaunchMessage,
-            "DEFAULT_ALEXA_STOP_MESSAGE":config.DefaultAlexaStopMessage
+            "DEFAULT_ALEXA_STOP_MESSAGE":config.DefaultAlexaStopMessage,
+            "SMS_USER_HINT_MESSAGE":config.SMSUserHintMessage,
+            "SMS_USER_HINT_INTERVAL_HRS":config.SMSUserHintIntervalHrs,
           },examples)
         },
         "Handler": "index.handler",
@@ -80,6 +83,25 @@ module.exports={
                 .map(x=>{
                     return {"Fn::GetAtt":["ExamplesStack",`Outputs.${x}`]}
                 }))
+            }]
+        },
+        "Roles": [{"Ref": "FulfillmentLambdaRole"}]
+      }
+    },
+    "DynamoDBPolicy": {
+      "Type": "AWS::IAM::ManagedPolicy",
+      "Properties": {
+        "PolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [{
+              "Effect": "Allow",
+              "Action": [
+                "dynamodb:GetItem",
+                "dynamodb:PutItem",
+              ],
+              "Resource":[
+                {"Fn::GetAtt":["UsersTable","Arn"]}
+              ]
             }]
         },
         "Roles": [{"Ref": "FulfillmentLambdaRole"}]
