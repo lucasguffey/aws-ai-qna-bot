@@ -19,7 +19,7 @@ module.exports={
     "DefaultAlexaLaunchMessage":"Hello, Please ask a question",
     "DefaultAlexaStopMessage":"Goodbye",
     "Abort":"Sorry, I did not understand that",
-    "SMSUserHintMessage":" (Feedback? Reply THUMBS UP or THUMBS DOWN. Ask HELP ME at any time)",
+    "SMSUserHintMessage":" (Feedback for the askSLU chat bot? Reply THUMBS UP or THUMBS DOWN. Ask HELP ME at any time)",
     "SMSUserHintIntervalHrs":"24", 
     "utterances":require('../../../assets/default-utterances')
 }
