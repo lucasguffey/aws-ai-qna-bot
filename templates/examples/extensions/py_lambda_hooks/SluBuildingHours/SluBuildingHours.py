@@ -1,5 +1,5 @@
 import json
-from botocore.vendored import requests
+import requests
 import os
 import boto3
 import decimal
@@ -10,6 +10,7 @@ import datetime
 from datetime import date
 import calendar
 from datetime import datetime as dt
+from pytz import timezone
 
 
 def handler(event, context):
@@ -20,7 +21,9 @@ def handler(event, context):
     question_utterance = event["req"]["question"]
     initialmessage = ''
     my_date = date.today()
-    todaysDay = calendar.day_name[my_date.weekday()]
+    central_object = timezone('US/Central')
+    central_time = central_object.fromutc(dt.now())
+    todaysDay = calendar.day_name[central_time.weekday()]
     
     
     dayOfWeek = searchUtteranceforDoW(question_utterance)
@@ -33,7 +36,7 @@ def handler(event, context):
     
     # - Query DynamoDB for the stop ID, which we will use to query the doublemap API.
     buildingID = getBuildingIDfromName(buildingName)
-    scheduleID = getScheduleIDfromBuildingID(buildingID, todaysDay)
+    scheduleID = getScheduleIDfromBuildingID(buildingID)
     daysfromSchedule = getDaysfromScheduleID(scheduleID)
     
     
@@ -177,16 +180,36 @@ def getDaysfromScheduleID(scheduleID):
 
 
 # Query the Schedule ID from the building.
-def getScheduleIDfromBuildingID(buildingID, todaysDay):
+def getScheduleIDfromBuildingID(buildingID):
 
    # print (buildingID)
+    current_date = dt.now()
+    current_date = current_date.replace(hour=0, minute=0, second=0, microsecond=0)
+    print(current_date)
     
     table = boto3.resource('dynamodb').Table(os.environ['SCHEDULE'])
 
     # - Query the Schedule table for the ScheduleID.
     response = table.scan(
-        FilterExpression=Key('scheduleBuildingId').eq(buildingID) & Key('start_date').gt(todaysDay) &  Key('end_date').lt(todaysDay)
+        FilterExpression=Key('scheduleBuildingId').eq(buildingID)
         )
+    print(json.dumps(response))
+    
+    for i in response["Items"]:
+        end_date = dt.strptime(i["end_date"], '%a %b %d %Y')
+        start_date = dt.strptime(i["start_date"], '%a %b %d %Y')
+        print(start_date)
+        print(end_date)
+        if start_date <= current_date <= end_date:
+            scheduleID = i["id"]
+            print(scheduleID)
+            return scheduleID
+
+        else:
+            scheduleID = 'unavailable'
+            print('hell0 ' + scheduleID)
+    return scheduleID
+
     try:
         scheduleID = response['Items'][0]['id']
     except IndexError:

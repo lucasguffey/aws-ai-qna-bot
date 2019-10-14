@@ -107,6 +107,9 @@ module.exports={
     },
     "ElasticsearchIndex":{
       "Value":{"Fn::GetAtt":["Var","index"]}
+    },
+    "UsersTable":{
+      "Value":{"Ref":"UsersTable"}
     }
   },
   "Parameters": {

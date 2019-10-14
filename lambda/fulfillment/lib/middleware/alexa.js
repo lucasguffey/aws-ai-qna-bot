@@ -2,6 +2,7 @@ var _=require('lodash')
 exports.parse=function(event){
     var out={
         _type:"ALEXA",
+        _userId:_.get(event,"session.user.userId","Unknown Alexa User"),
         original:event,
         session:_.mapValues(
             _.get(event,'session.attributes',{}),
@@ -13,7 +14,6 @@ exports.parse=function(event){
                 }
             }
         ),
-
         channel:null,
     }
     var welcome_message = process.env.DEFAULT_ALEXA_LAUNCH_MESSAGE ? process.env.DEFAULT_ALEXA_LAUNCH_MESSAGE : "Hello, Please ask a question";
