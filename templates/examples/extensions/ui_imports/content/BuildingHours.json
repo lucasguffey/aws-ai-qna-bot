@@ -1,65 +1,356 @@
 {
-  "qna": [
-    {
-      "args": [
-        "Science Center"
-      ],
-      "next": "",
-      "a": "Here are the hours for the science center.",
-      "r": {
-        "buttons": [
-          {
-            "text": "",
-            "value": ""
-          }
-        ],
-        "subTitle": "",
-        "imageUrl": "",
-        "title": ""
-      },
-      "t": "",
-      "alt": {
-        "markdown": "",
-        "ssml": ""
-      },
-      "l": "QNA:EXTSluBuildingHours",
-      "qid": "building.sciencecenter",
-      "type": "qna",
-      "selected": false,
-      "q": [
-        "What are the hours for the science center?"
-      ]
-    },
-    {
-      "args": [
-        "Test Building 5"
-      ],
-      "next": "",
-      "a": "Test building 5 is open",
-      "r": {
-        "buttons": [
-          {
-            "text": "",
-            "value": ""
-          }
-        ],
-        "subTitle": "",
-        "imageUrl": "",
-        "title": "",
-        "text": "",
-        "url": ""
-      },
-      "t": "",
-      "alt": {
-        "markdown": "",
-        "ssml": ""
-      },
-      "l": "QNA:EXTSluBuildingHours",
-      "qid": "building.testbuilding5",
-      "type": "qna",
-      "q": [
-        "What are the hours for test building 5?"
-      ]
-    }
-  ]
+	"qna": [{
+			"args": [
+				""
+			],
+			"next": "",
+			"a": "Please type Pius Library Hours, Medical School Library Hours, or Law School Library Hours.",
+			"r": {
+				"buttons": [{
+						"text": "Pius Library",
+						"value": "Pius Library Hours"
+					},
+					{
+						"text": "Medical School Library",
+						"value": "When is the Medical School Library Open"
+					},
+					{
+						"text": "Law Library",
+						"value": "When is the Law Library Open"
+					}
+				],
+				"subTitle": "",
+				"imageUrl": "",
+				"title": "Library Hours"
+			},
+			"t": "",
+			"alt": {
+				"markdown": "Please choose one of the following:",
+				"ssml": "<speak> Please say Pius Library Hours, Medical School Library Hours, or Law School Library Hours. </speak>"
+			},
+			"l": "",
+			"qid": "building.librarygeneral",
+			"type": "qna",
+			"q": [
+				"what are the library hours",
+				"when is the library open",
+				"when does the library open",
+				"when does the library close"
+			]
+		},
+		{
+			"args": [
+				"Medical School Library"
+			],
+			"next": "",
+			"a": "lambda",
+			"r": {
+				"buttons": [{
+					"text": "",
+					"value": ""
+				}],
+				"subTitle": "",
+				"imageUrl": "",
+				"title": "",
+				"text": "",
+				"url": ""
+			},
+			"t": "",
+			"alt": {
+				"markdown": "",
+				"ssml": ""
+			},
+			"l": "QNA:EXTSluBuildingHours",
+			"qid": "building.medicalschoollibrary",
+			"type": "qna",
+			"q": [
+				"when is the medical school library open",
+				"what are the hours for the medical school library",
+				"for medical school library hours",
+				"what are the medical school library hours"
+			]
+		},
+		{
+			"args": [
+				"Pius Library"
+			],
+			"next": "",
+			"a": "Lambda",
+			"r": {
+				"buttons": [{
+					"text": "",
+					"value": ""
+				}],
+				"subTitle": "",
+				"imageUrl": "",
+				"title": ""
+			},
+			"t": "building hours",
+			"alt": {
+				"markdown": "",
+				"ssml": ""
+			},
+			"l": "QNA:EXTSluBuildingHours",
+			"qid": "building.piuslibrary",
+			"type": "qna",
+			"selected": false,
+			"q": [
+				"when does is pius library open",
+				"what are the hours for pius library",
+				"for Pius Library Hours",
+				"when does pius library close"
+			]
+		},
+		{
+			"args": [
+				"Parking Card Services"
+			],
+			"next": "",
+			"a": "Here are the hours for the science center.",
+			"r": {
+				"buttons": [{
+					"text": "",
+					"value": ""
+				}],
+				"subTitle": "",
+				"imageUrl": "",
+				"title": ""
+			},
+			"t": "",
+			"alt": {
+				"markdown": "",
+				"ssml": ""
+			},
+			"l": "QNA:EXTSluBuildingHours",
+			"qid": "building.parkingcardservices",
+			"type": "qna",
+			"selected": false,
+			"q": [
+				"When is parking card services open.",
+				"when does parking card services close",
+				"for parking card services hours",
+				"what are parking card services hours"
+			]
+		},
+		{
+			"args": [
+				"Test Building 5"
+			],
+			"next": "",
+			"a": "Test building 5 is open",
+			"r": {
+				"buttons": [{
+					"text": "",
+					"value": ""
+				}],
+				"subTitle": "",
+				"imageUrl": "",
+				"title": "",
+				"text": "",
+				"url": ""
+			},
+			"t": "",
+			"alt": {
+				"markdown": "",
+				"ssml": ""
+			},
+			"l": "QNA:EXTSluBuildingHours",
+			"qid": "building.testbuilding5",
+			"type": "qna",
+			"q": [
+				"What are the hours for test building 5?"
+			]
+		},
+		{
+			"args": [
+				"Pius Library"
+			],
+			"next": "",
+			"a": "Lambda",
+			"r": {
+				"buttons": [{
+					"text": "",
+					"value": ""
+				}],
+				"subTitle": "",
+				"imageUrl": "",
+				"title": ""
+			},
+			"t": "",
+			"alt": {
+				"markdown": "",
+				"ssml": ""
+			},
+			"l": "QNA:EXTSluBuildingHours",
+			"qid": "building.piouslibraryvariation",
+			"type": "qna",
+			"selected": false,
+			"q": [
+				"when does is pious library open",
+				"what are the hours for pious library",
+				"for pious library hours",
+				"when does pious library close"
+			]
+		},
+		{
+			"args": [
+				"Busch Student Center"
+			],
+			"next": "",
+			"a": "lambda",
+			"r": {
+				"buttons": [{
+					"text": "",
+					"value": ""
+				}],
+				"subTitle": "",
+				"imageUrl": "",
+				"title": "",
+				"text": "",
+				"url": ""
+			},
+			"t": "building hours",
+			"alt": {
+				"markdown": "",
+				"ssml": ""
+			},
+			"l": "QNA:EXTSluBuildingHours",
+			"qid": "building.buschstudentcenter",
+			"type": "qna",
+			"q": [
+				"when is the busch student center bsc open",
+				"when does the busch student center bsc close",
+				"for busch student center bsc hours",
+				"what are busch student center hours"
+			]
+		},
+		{
+			"args": [
+				"Simon Recreation Center"
+			],
+			"next": "",
+			"a": "lambda",
+			"r": {
+				"buttons": [{
+					"text": "",
+					"value": ""
+				}],
+				"subTitle": "",
+				"imageUrl": "",
+				"title": "",
+				"text": "",
+				"url": ""
+			},
+			"t": "",
+			"alt": {
+				"markdown": "",
+				"ssml": ""
+			},
+			"l": "QNA:EXTSluBuildingHours",
+			"qid": "building.simonrecreationcenter",
+			"type": "qna",
+			"q": [
+				"when is simon recreation center open",
+				"when does the rec center close",
+				"for rec center hours",
+				"what are the recreation center hours"
+			]
+		},
+		{
+			"args": [
+				"Office of the Registrar"
+			],
+			"next": "",
+			"a": "Lambda",
+			"r": {
+				"buttons": [{
+					"text": "",
+					"value": ""
+				}],
+				"subTitle": "",
+				"imageUrl": "",
+				"title": "",
+				"text": "",
+				"url": ""
+			},
+			"t": "",
+			"alt": {
+				"markdown": "",
+				"ssml": ""
+			},
+			"l": "QNA:EXTSluBuildingHours",
+			"qid": "building.registraroffice",
+			"type": "qna",
+			"q": [
+				"when is the registrar office open",
+				"when does the registrar office close",
+				"for registrar office hours",
+				"what are the office of the registrar hours"
+			]
+		},
+		{
+			"args": [
+				"Law Library"
+			],
+			"next": "",
+			"a": "lambda",
+			"r": {
+				"buttons": [{
+					"text": "",
+					"value": ""
+				}],
+				"subTitle": "",
+				"imageUrl": "",
+				"title": "",
+				"text": "",
+				"url": ""
+			},
+			"t": "",
+			"alt": {
+				"markdown": "",
+				"ssml": ""
+			},
+			"l": "QNA:EXTSluBuildingHours",
+			"qid": "building.lawlibrary",
+			"type": "qna",
+			"q": [
+				"when is the law library open",
+				"when does the law library close",
+				"for law library hours",
+				"what are the law library hours"
+			]
+		},
+		{
+			"args": [
+				"Student Health Center"
+			],
+			"next": "",
+			"a": "lambda",
+			"r": {
+				"buttons": [{
+					"text": "",
+					"value": ""
+				}],
+				"subTitle": "",
+				"imageUrl": "",
+				"title": "",
+				"text": "",
+				"url": ""
+			},
+			"t": "building hours",
+			"alt": {
+				"markdown": "",
+				"ssml": ""
+			},
+			"l": "QNA:EXTSluBuildingHours",
+			"qid": "building.studenthealthcenter",
+			"type": "qna",
+			"q": [
+				"When is the student health center open",
+				"When does the student health center close",
+				"for Student health center hours",
+				"what are the student health center hours"
+			]
+		}
+	]
 }
