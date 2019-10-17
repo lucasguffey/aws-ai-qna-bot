@@ -140,7 +140,7 @@ def searchUtteranceforDoW(utterance):
         if re.search(pattern, utterance.lower()):
             return "Thursday"
 
-    patterns = ['friday', ' fri' ]
+    patterns = ['friday', ' fri ' ]
 
     for pattern in patterns:
         if re.search(pattern, utterance.lower()):
@@ -152,7 +152,7 @@ def searchUtteranceforDoW(utterance):
         if re.search(pattern, utterance.lower()):
             return "Saturday"
             
-    patterns = ['Sunday', 'sun']
+    patterns = ['Sunday', ' sun ']
 
     for pattern in patterns:
         if re.search(pattern, utterance.lower()):
