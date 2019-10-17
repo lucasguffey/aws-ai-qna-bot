@@ -51,9 +51,9 @@ def handler(event, context):
         # - Initialize the short response. 
         if(expandDayfromShortName(days['days']) == dayOfWeek):
             if(days['isclosed']):
-                initialmessage = "On {} the {} is closed\n, here are the hours for the week:\n ".format(str(expandDayfromShortName(days['days'])), buildingName)
+                initialmessage = "On {} the {} is closed \n ".format(str(expandDayfromShortName(days['days'])), buildingName)
             else :
-                initialmessage = "On {} the {} is open from {} to {}\n, here are the hours for the week:\n ".format(str(expandDayfromShortName(days['days'])), buildingName, dt.strptime(str(days['open']), '%H:%M').strftime('%I:%M %p'), dt.strptime(str(days['closed']), '%H:%M').strftime('%I:%M %p'))
+                initialmessage = "On {} the {} is open from {} to {} \n ".format(str(expandDayfromShortName(days['days'])), buildingName, dt.strptime(str(days['open']), '%H:%M').strftime('%I:%M %p'), dt.strptime(str(days['closed']), '%H:%M').strftime('%I:%M %p'))
 
         
         if days['days']:

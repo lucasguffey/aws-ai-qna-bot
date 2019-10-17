@@ -1,15 +1,39 @@
 {
-	"qna": [{
-		"a": "a",
-		"qid": "sodexo.open",
-		"args": [
-			"https://dineslu.sodexomyway.com/dining-near-me/open-now#"
-		],
-		"l": "QNA:EXTSluWhatsOpenNow",
-		"q": [
-			"what restaurants are open right now on campus",
-			"where can i eat right now on campus"
-		],
-		"type": "qna"
-	}]
+  "qna": [
+    {
+      "args": [
+        "https://dineslu.sodexomyway.com/dining-near-me/open-now#"
+      ],
+      "next": "",
+      "a": "a",
+      "r": {
+        "buttons": [
+          {
+            "text": "",
+            "value": ""
+          }
+        ],
+        "subTitle": "",
+        "imageUrl": "",
+        "title": "",
+        "text": "",
+        "url": ""
+      },
+      "t": "",
+      "alt": {
+        "markdown": "",
+        "ssml": ""
+      },
+      "l": "QNA:EXTSluWhatsOpenNow",
+      "qid": "sodexo.open",
+      "type": "qna",
+      "q": [
+        "what restaurants are open right now on campus",
+        "where can i eat right now on campus",
+        "where can i eat right now",
+        "i am hungry",
+        "what restaurants can i eat at right now"
+      ]
+    }
+  ]
 }
