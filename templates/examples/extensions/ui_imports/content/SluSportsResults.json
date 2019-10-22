@@ -2,10 +2,10 @@
   "qna": [
     {
       "args": [
-        "93211"
+        ""
       ],
       "next": "",
-      "a": "this is a lambda response",
+      "a": "You may view the latest cross country meet results by visiting http://www.slubillikens.com/SportSelect.dbml?DB_OEM_ID=27200&SPID=95700&SPSID=640152&DB_OEM_ID=27200.",
       "r": {
         "buttons": [
           {
@@ -21,142 +21,16 @@
       },
       "t": "",
       "alt": {
-        "markdown": "",
-        "ssml": ""
+        "markdown": "You may view the latest cross country meet results by visiting http://www.slubillikens.com/SportSelect.dbml?DB_OEM_ID=27200&SPID=95700&SPSID=640152&DB_OEM_ID=27200.",
+        "ssml": "<speak>  You may view the latest cross country meet results by searching cross country results at slew dot e d u . You may ask another question, or say stop to exit.  </speak>"
       },
-      "l": "QNA:EXTSluSportsResults",
-      "qid": "sports.result.volleyball",
+      "l": "",
+      "qid": "sports.results.crosscountry",
       "type": "qna",
       "q": [
-        "When was the result of the last volleyball game",
-        "volleyball game result"
-      ]
-    },
-    {
-      "args": [
-        "93210"
-      ],
-      "next": "",
-      "a": "this is a lambda response",
-      "r": {
-        "buttons": [
-          {
-            "text": "",
-            "value": ""
-          }
-        ],
-        "subTitle": "",
-        "imageUrl": "",
-        "title": "",
-        "text": "",
-        "url": ""
-      },
-      "t": "",
-      "alt": {
-        "markdown": "",
-        "ssml": ""
-      },
-      "l": "QNA:EXTSluSportsResults",
-      "qid": "sports.results.w.tennis",
-      "type": "qna",
-      "q": [
-        "what was the score of the womens tennis game",
-        " womens tennis meet result"
-      ]
-    },
-    {
-      "args": [
-        "93207"
-      ],
-      "next": "",
-      "a": "this is a lambda response",
-      "r": {
-        "buttons": [
-          {
-            "text": "",
-            "value": ""
-          }
-        ],
-        "subTitle": "",
-        "imageUrl": "",
-        "title": "",
-        "text": "",
-        "url": ""
-      },
-      "t": "",
-      "alt": {
-        "markdown": "",
-        "ssml": ""
-      },
-      "l": "QNA:EXTSluSportsResults",
-      "qid": "sports.results.softball",
-      "type": "qna",
-      "q": [
-        "what was the score of the softball game",
-        " softball game result"
-      ]
-    },
-    {
-      "args": [
-        "95701"
-      ],
-      "next": "",
-      "a": "this is a lambda response",
-      "r": {
-        "buttons": [
-          {
-            "text": "",
-            "value": ""
-          }
-        ],
-        "subTitle": "",
-        "imageUrl": "",
-        "title": "",
-        "text": "",
-        "url": ""
-      },
-      "t": "",
-      "alt": {
-        "markdown": "",
-        "ssml": ""
-      },
-      "l": "QNA:EXTSluSportsResults",
-      "qid": "sports.results.w.soccer",
-      "type": "qna",
-      "q": [
-        "what was the score of the womens soccer game",
-        " womens soccer game result"
-      ]
-    },    {
-      "args": [
-        "95895"
-      ],
-      "next": "",
-      "a": "this is a lambda response",
-      "r": {
-        "buttons": [
-          {
-            "text": "",
-            "value": ""
-          }
-        ],
-        "subTitle": "",
-        "imageUrl": "",
-        "title": "",
-        "text": "",
-        "url": ""
-      },
-      "t": "",
-      "alt": {
-        "markdown": "",
-        "ssml": ""
-      },
-      "l": "QNA:EXTSluSportsResults",
-      "qid": "sports.results.fieldhockey",
-      "type": "qna",
-      "q": [
-        "what was the score of the field hockey game",
-        " field hockey game result"
+        "what was the score of the cross country meet",
+        "cross country meet result",
+        "who won the cross country meet"
       ]
     },
     {
@@ -188,12 +62,13 @@
       "type": "qna",
       "q": [
         "what was the score of the womens basketball game",
-        " womens basketball game result"
+        "womens basketball game result",
+        "who won the women's basketball game"
       ]
     },
     {
       "args": [
-        "93209"
+        "95895"
       ],
       "next": "",
       "a": "this is a lambda response",
@@ -216,43 +91,12 @@
         "ssml": ""
       },
       "l": "QNA:EXTSluSportsResults",
-      "qid": "sports.results.m.tennis",
+      "qid": "sports.results.fieldhockey",
       "type": "qna",
       "q": [
-        "what was the score of the mens tennis game",
-        " mens tennis meet result"
-      ]
-    },
-    {
-      "args": [
-        "93205"
-      ],
-      "next": "",
-      "a": "this is a lambda response",
-      "r": {
-        "buttons": [
-          {
-            "text": "",
-            "value": ""
-          }
-        ],
-        "subTitle": "",
-        "imageUrl": "",
-        "title": "",
-        "text": "",
-        "url": ""
-      },
-      "t": "",
-      "alt": {
-        "markdown": "",
-        "ssml": ""
-      },
-      "l": "QNA:EXTSluSportsResults",
-      "qid": "sports.results.swimming",
-      "type": "qna",
-      "q": [
-        "what was the score of the swim meet",
-        " swim team result"
+        "what was the score of the field hockey game",
+        "field hockey game result",
+        "who won the field hockey match"
       ]
     },
     {
@@ -284,12 +128,13 @@
       "type": "qna",
       "q": [
         "what was the score of the mens soccer game",
-        " mens soccer game result"
+        "mens soccer game result",
+        "who won the men's soccer game"
       ]
     },
     {
       "args": [
-        "95700"
+        "93207"
       ],
       "next": "",
       "a": "this is a lambda response",
@@ -312,11 +157,111 @@
         "ssml": ""
       },
       "l": "QNA:EXTSluSportsResults",
-      "qid": "sports.results.crosscountry",
+      "qid": "sports.results.softball",
       "type": "qna",
       "q": [
-        "what was the score of the cross country meet",
-        " cross country meet result"
+        "what was the score of the softball game",
+        "softball game result",
+        "who won the softball game"
+      ]
+    },
+    {
+      "args": [
+        "95701"
+      ],
+      "next": "",
+      "a": "this is a lambda response",
+      "r": {
+        "buttons": [
+          {
+            "text": "",
+            "value": ""
+          }
+        ],
+        "subTitle": "",
+        "imageUrl": "",
+        "title": "",
+        "text": "",
+        "url": ""
+      },
+      "t": "",
+      "alt": {
+        "markdown": "",
+        "ssml": ""
+      },
+      "l": "QNA:EXTSluSportsResults",
+      "qid": "sports.results.w.soccer",
+      "type": "qna",
+      "q": [
+        "what was the score of the womens soccer game",
+        "womens soccer game result",
+        "who won the women's soccer game"
+      ]
+    },
+    {
+      "args": [
+        "93205"
+      ],
+      "next": "",
+      "a": "You may view the latest swimming meet results by visiting http://www.slubillikens.com/SportSelect.dbml?DB_OEM_ID=27200&SPID=93205&SPSID=632590.",
+      "r": {
+        "buttons": [
+          {
+            "text": "",
+            "value": ""
+          }
+        ],
+        "subTitle": "",
+        "imageUrl": "",
+        "title": "",
+        "text": "",
+        "url": ""
+      },
+      "t": "",
+      "alt": {
+        "markdown": "You may view the latest swimming meet results by visiting http://www.slubillikens.com/SportSelect.dbml?DB_OEM_ID=27200&SPID=93205&SPSID=632590.",
+        "ssml": "<speak>  You may view the latest swimming meet results by searching swimming meet results at slew dot e d u .  You may ask another question, or say stop to exit.  </speak?"
+      },
+      "l": "QNA:EXTSluSportsResults",
+      "qid": "sports.results.swimming",
+      "type": "qna",
+      "q": [
+        "what was the score of the swim meet",
+        "swim team result",
+        "who won the swim meet"
+      ]
+    },
+    {
+      "args": [
+        ""
+      ],
+      "next": "",
+      "a": "You may view the latest men's tennis meet results by visiting http://www.slubillikens.com/SportSelect.dbml?DB_OEM_ID=27200&SPID=93209&SPSID=632608",
+      "r": {
+        "buttons": [
+          {
+            "text": "",
+            "value": ""
+          }
+        ],
+        "subTitle": "",
+        "imageUrl": "",
+        "title": "Men's Tennis Results",
+        "text": "",
+        "url": ""
+      },
+      "t": "",
+      "alt": {
+        "markdown": "You may view the latest men's tennis meet results by visiting http://www.slubillikens.com/SportSelect.dbml?DB_OEM_ID=27200&SPID=93209&SPSID=632608",
+        "ssml": "<speak>  You may view the latest men's tennis results by searching men's tennis results at slew dot e d u.  You may ask another question, or say stop to exit.  </speak>"
+      },
+      "l": "",
+      "qid": "sports.results.m.tennis",
+      "type": "qna",
+      "q": [
+        "what was the score of the mens tennis game",
+        "mens tennis meet result",
+        "who won the men's tennis match"
       ]
     },
     {
@@ -348,7 +293,8 @@
       "type": "qna",
       "q": [
         "what was the score of the mens basketball game",
-        " mens basketball game result"
+        "mens basketball game result",
+        "who won the men's basketball game"
       ]
     },
     {
@@ -380,7 +326,39 @@
       "type": "qna",
       "q": [
         "what was the score of the baseball game",
-        " baseball game result"
+        "baseball game result",
+        "who won the baseball game"
+      ]
+    },
+    {
+      "args": [],
+      "next": "",
+      "a": "You may view the latest women's tennis match results by visiting http://www.slubillikens.com/SportSelect.dbml?DB_OEM_ID=27200&SPID=93210&SPSID=640252.",
+      "r": {
+        "buttons": [
+          {
+            "text": "",
+            "value": ""
+          }
+        ],
+        "subTitle": "",
+        "imageUrl": "",
+        "title": "Women's Tennis",
+        "text": "",
+        "url": ""
+      },
+      "t": "",
+      "alt": {
+        "markdown": "You may view the latest women's tennis match results by visiting http://www.slubillikens.com/SportSelect.dbml?DB_OEM_ID=27200&SPID=93210&SPSID=640252.",
+        "ssml": "<speak>  You may view the latest women's tennis match results by searching women's tennis results at slew dot e d u . </speak>"
+      },
+      "l": "",
+      "qid": "sports.results.w.tennis",
+      "type": "qna",
+      "q": [
+        "what was the score of the womens tennis game",
+        "womens tennis meet result",
+        "who won the women's tennis match"
       ]
     }
   ]
