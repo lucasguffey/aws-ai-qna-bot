@@ -28,10 +28,11 @@
       "qid": "bus.SchnucksCulinaria",
       "type": "qna",
       "q": [
-        "when does the schnucks culinaria bus shuffle shuttle arrive",
+        "when does the schnucks culinaria bus arrive",
         "Schnucks Culinaria",
-        "when does the Schnucks Culinaria bus shuffle shuttle arrive?",
-        "what time does the Schnucks Culinaria arrive?"
+        "what time does the Schnucks Culinaria arrive?",
+        "when does the schnucks culinaria shuttle arrive",
+        "when does the schnucks culinaria shuffle arrive"
       ]
     },
     {
@@ -62,10 +63,11 @@
       "qid": "bus.olivegaragechanning",
       "type": "qna",
       "q": [
-        "when does the channing bus shuffle shuttle arrive",
+        "when does the channing bus arrive",
         "Olive Garage (Channing)",
-        "when does the Olive Garage (Channing) bus shuffle shuttle arrive?",
-        "what time does the Olive Garage (Channing) arrive?"
+        "when does the Olive Garage (Channing) shuttle arrive?",
+        "what time does the Olive Garage (Channing) arrive?",
+        "when does the olive garage culinaria shuffle arrive"
       ]
     },
     {
@@ -96,10 +98,11 @@
       "qid": "bus.olivegarageolive",
       "type": "qna",
       "q": [
-        "when does the Olive Garage bus shuffle shuttle arrive",
+        "when does the Olive Garage shuffle arrive",
         "Olive Garage (Olive)",
-        "when does the Olive Garage (Olive) bus shuffle shuttle arrive?",
-        "what time does the Olive Garage (Olive) arrive?"
+        "when does the Olive Garage (Olive) shuttle arrive?",
+        "what time does the Olive Garage (Olive) arrive?",
+        "when does the Olive Garage bus arrive"
       ]
     },
     {
@@ -130,10 +133,11 @@
       "qid": "bus.crave",
       "type": "qna",
       "q": [
-        "when does the crave bus shuttle shuffle arrive",
+        "when does the crave shuffle arrive",
         "Crave",
-        "when does the Crave bus shuttle shuffle arrive?",
-        "what time does the Crave arrive?"
+        "when does the Crave shuttle arrive?",
+        "what time does the Crave arrive?",
+        "when does the crave bus arrive"
       ]
     },
     {
@@ -164,10 +168,11 @@
       "qid": "bus.schoolofmedicine",
       "type": "qna",
       "q": [
-        "when does the school of medicine bus shuffle shuttle arrive",
+        "when does the school of medicine shuttle arrive",
         "School of Medicine",
-        "when does the School of Medicine bus shuffle shuttle arrive?",
-        "what time does the School of Medicine arrive?"
+        "when does the School of Medicine shuffle arrive?",
+        "what time does the School of Medicine arrive?",
+        "when does the School of Medicine bus arrive"
       ]
     },
     {
@@ -198,10 +203,11 @@
       "qid": "bus.saluscenter",
       "type": "qna",
       "q": [
-        "when does the salus solace center bus shuffle shuttle arrive",
+        "when does the salus solace center shuttle arrive",
         "Salus solace Center",
-        "when does the Salus solace Center bus shuffle shuttle arrive?",
-        "what time does the Salus solace Center arrive?"
+        "when does the Salus solace Center shuffle arrive?",
+        "what time does the Salus solace Center arrive?",
+        "when does the Salus solace center bus arrive"
       ]
     },
     {
@@ -232,10 +238,11 @@
       "qid": "bus.springlaclede",
       "type": "qna",
       "q": [
-        "when does the Spring and Laclede bus shuffle shuttle arrive",
+        "when does the Spring and Laclede shuttle arrive",
         "Spring and Laclede",
-        "when does the Spring and Laclede bus shuffle shuttle arrive?",
-        "what time does the Spring and Laclede arrive?"
+        "when does the Spring and Laclede shuffle arrive?",
+        "what time does the Spring and Laclede arrive?",
+        "when does the Spring and Laclede bus arrive"
       ]
     },
     {
@@ -266,10 +273,11 @@
       "qid": "bus.vandeventer",
       "type": "qna",
       "q": [
-        "when does the Vandeventer and West Pine bus shuffle shuttle arrive",
+        "when does the Vandeventer and West Pine shuttle arrive",
         "Vandeventer and West Pine",
-        "when does the Vandeventer and West Pine bus shuffle shuttle arrive?",
-        "what time does the Vandeventer and West Pine arrive?"
+        "when does the Vandeventer and West Pine shuffle arrive?",
+        "what time does the Vandeventer and West Pine arrive?",
+        "when does the Vandeventer and West Pine bus arrive"
       ]
     },
     {
@@ -300,10 +308,11 @@
       "qid": "bus.chouteau",
       "type": "qna",
       "q": [
-        "when does the chouteau and broadway bus shuttle shuffle arrive",
+        "when does the chouteau and broadway shuffle arrive",
         "Chouteau and Broadway",
-        "when does the Chouteau and Broadway bus shuttle shuffle arrive?",
-        "what time does the Chouteau and Broadway arrive?"
+        "when does the Chouteau and Broadway shuttle arrive?",
+        "what time does the Chouteau and Broadway arrive?",
+        "when does the Chouteau and Broadway bus arrive"
       ]
     },
     {
@@ -334,10 +343,11 @@
       "qid": "bus.collegechurch",
       "type": "qna",
       "q": [
-        "when does the college church bus shuffle shuttle arrive",
+        "when does the college church shuttle arrive",
         "College Church",
-        "when does the College Church bus shuffle shuttle arrive?",
-        "what time does the College Church arrive?"
+        "when does the College Church shuffle arrive?",
+        "what time does the College Church arrive?",
+        "when does the College Church bus arrive"
       ]
     },
     {
@@ -368,10 +378,11 @@
       "qid": "bus.springrutger",
       "type": "qna",
       "q": [
-        "when does the spring rutger bus shuffle shuttle arrive",
-        "When does the spring rutger bus shuffle shuttle arrive",
+        "when does the spring rutger shuttle arrive",
+        "When does the spring rutger shuffle arrive",
         "Spring/Rutger",
-        "Rutger"
+        "Rutger",
+        "when does the spring rutger bus arrive"
       ]
     },
     {
@@ -402,10 +413,11 @@
       "qid": "bus.villageapts",
       "type": "qna",
       "q": [
-        "when does the village apartments bus shuffle shuttle arrive",
+        "when does the village apartments shuttle arrive",
         "Village Apts",
-        "when does the Village Apts bus shuffle shuttle arrive?",
-        "what time does the Village Apts arrive?"
+        "when does the Village apartments shuffle arrive?",
+        "what time does the Village apartments arrive?",
+        "when does the Village apartments bus arrive"
       ]
     },
     {
@@ -436,10 +448,11 @@
       "qid": "bus.georgetown",
       "type": "qna",
       "q": [
-        "when does the Georgetown Loop bus shuffle shuttle arrive",
+        "when does the Georgetown Loop shuttle arrive",
         "Georgetown Loop",
-        "when does the Georgetown Loop bus shuffle shuttle arrive?",
-        "what time does the Georgetown Loop arrive?"
+        "when does the Georgetown Loop shuffle arrive?",
+        "what time does the Georgetown Loop arrive?",
+        "when does the Georgetown Loop bus arrive"
       ]
     },
     {
@@ -470,10 +483,11 @@
       "qid": "bus.metrowest",
       "type": "qna",
       "q": [
-        "when does the metro-west bus shuffle shuttle arrive",
+        "when does the metro-west shuttle arrive",
         "Metro-West",
-        "when does the Metro-West bus shuffle shuttle arrive?",
-        "what time does the Metro-West arrive?"
+        "when does the Metro-West shuffle arrive?",
+        "what time does the Metro-West arrive?",
+        "when does the Metro-West bus arrive"
       ]
     },
     {
@@ -504,10 +518,11 @@
       "qid": "bus.target",
       "type": "qna",
       "q": [
-        "when does the target bus shuffle shuttle arrive",
+        "when does the target shuttle arrive",
         "Target",
-        "when does the Target bus shuffle shuttle arrive?",
-        "what time does the Target arrive?"
+        "when does the Target shuffle arrive?",
+        "what time does the Target arrive?",
+        "when does the Target bus arrive"
       ]
     },
     {
@@ -538,10 +553,11 @@
       "qid": "bus.busch",
       "type": "qna",
       "q": [
-        "when does the Busch student center bsc bus shuffle shuttle arrive",
-        "when does the busch student center bsc bus shuttle shuffle arrive?",
+        "when does the Busch student center bsc shuttle arrive",
+        "when does the busch student center bsc shuffle arrive?",
         "what time does the busch student center bsc arrive?",
-        "busch student center bsc"
+        "busch student center bsc",
+        "when does the Busch student center bsc bus arrive"
       ]
     },
     {
@@ -572,10 +588,11 @@
       "qid": "bus.bannister",
       "type": "qna",
       "q": [
-        "when does the bannister house bus shuffle shuttle arrive",
+        "when does the bannister house shuttle arrive",
         "Bannister House",
-        "when does the Bannister House bus shuffle shuttle arrive?",
-        "what time does the Bannister House arrive?"
+        "when does the Bannister House shuffle arrive?",
+        "what time does the Bannister House arrive?",
+        "when does the Bannister House bus arrive"
       ]
     },
     {
@@ -606,10 +623,11 @@
       "qid": "bus.parksairport",
       "type": "qna",
       "q": [
-        "when does the parks airport bus shuffle shuttle arrive",
+        "when does the parks airport shuttle arrive",
         "Parks Airport",
-        "when does the Parks Airport bus shuffle shuttle arrive?",
-        "what time does the Parks Airport arrive?"
+        "when does the Parks Airport shuffle arrive?",
+        "what time does the Parks Airport arrive?",
+        "when does the Parks Airport bus arrive"
       ]
     },
     {
@@ -640,10 +658,11 @@
       "qid": "bus.centralwestendlibrary",
       "type": "qna",
       "q": [
-        "when does the central west end library bus shuffle shuttle arrive",
+        "when does the central west end library shuttle arrive",
         "Central West End Library",
-        "when does the Central West End Library bus shuffle shuttle arrive?",
-        "what time does the Central West End Library arrive?"
+        "when does the Central West End Library shuffle arrive?",
+        "what time does the Central West End Library arrive?",
+        "when does the Center West End Library bus arrive"
       ]
     },
     {
@@ -674,10 +693,11 @@
       "qid": "bus.olivegarage",
       "type": "qna",
       "q": [
-        "when does the olive garage compton bus shuffle shuttle arrive",
+        "when does the olive garage compton shuffle arrive",
         "Olive Garage (Compton)",
-        "when does the Olive Garage (Compton) bus shuffle shuttle arrive?",
-        "what time does the Olive Garage (Compton) arrive?"
+        "when does the Olive Garage (Compton) shuttle arrive?",
+        "what time does the Olive Garage (Compton) arrive?",
+        "when does the Olive Garage (Compton) bus arrive"
       ]
     },
     {
@@ -708,10 +728,11 @@
       "qid": "bus.mcdonnelldouglas",
       "type": "qna",
       "q": [
-        "when does the mcdonnel douglas bus shuttle shuffle arrive",
+        "when does the mcdonnel douglas shuffle arrive",
         "McDonnell Douglas",
-        "when does the McDonnell Douglas bus shuttle shuffle arrive?",
-        "what time does the McDonnell Douglas arrive?"
+        "when does the McDonnell Douglas shuttle arrive?",
+        "what time does the McDonnell Douglas arrive?",
+        "when does the McDonnell Douglas bus arrive"
       ]
     },
     {
@@ -742,10 +763,10 @@
       "qid": "bus.pius",
       "type": "qna",
       "q": [
-        "when does the pius library bus shuffle shuttle arrive",
-        "when does the Pius Library bus shuffle shuttle arrive?",
+        "when does the pius library shuttle arrive",
+        "when does the Pius Library shuffle arrive?",
         "what time does the Pius Library arrive?",
-        "Pius Library bus shuffle shuttle",
+        "Pius Library bus arrive",
         "Pius"
       ]
     },
@@ -777,10 +798,11 @@
       "qid": "bus.walmart",
       "type": "qna",
       "q": [
-        "when does the wal-mart walmart bus shuffle shuttle arrive",
+        "when does the wal-mart walmart shuttle arrive",
         "Wal-Mart walmart",
-        "when does the Wal-Mart walmart bus shuffle shuttle arrive?",
-        "what time does the Wal-Mart walmart arrive?"
+        "when does the Wal-Mart walmart shuffle arrive?",
+        "what time does the Wal-Mart walmart arrive?",
+        "when does the Wal-Mart walmart bus arrive"
       ]
     },
     {
@@ -811,10 +833,11 @@
       "qid": "bus.beb",
       "type": "qna",
       "q": [
-        "when does the beb shuffle bus shuttle arrive",
+        "when does the beb shuffle arrive",
         "BEB",
-        "when does the BEB shuffle bus shuttle arrive?",
-        "what time does the BEB arrive?"
+        "when does the BEB shuttle arrive?",
+        "what time does the BEB arrive?",
+        "when does the BEB bus arrive"
       ]
     },
     {
@@ -845,10 +868,11 @@
       "qid": "bus.schnucksesquiretheatre",
       "type": "qna",
       "q": [
-        "when does the schnucks esquire theatre bus shuffle shuttle arrive",
+        "when does the schnucks esquire theatre bus shuttle arrive",
         "Schnucks/Esquire Theatre",
-        "when does the Schnucks/Esquire Theatre bus shuffle shuttle arrive?",
-        "what time does the Schnucks/Esquire Theatre arrive?"
+        "when does the Schnucks/Esquire Theatre shuffle arrive?",
+        "what time does the Schnucks/Esquire Theatre arrive?",
+        "when does the Schnucks/Esquire Theatre bus arrive"
       ]
     },
     {
@@ -879,10 +903,11 @@
       "qid": "bus.villagehousing",
       "type": "qna",
       "q": [
-        "when does the village housing bus shuffle shuttle arrive",
+        "when does the village housing shuttle arrive",
         "Village Housing",
-        "when does the Village Housing bus shuffle shuttle arrive?",
-        "what time does the Village Housing arrive?"
+        "when does the Village Housing shuffle arrive?",
+        "what time does the Village Housing arrive?",
+        "when does the Village Housing bus arrive"
       ]
     },
     {
@@ -913,10 +938,11 @@
       "qid": "bus.wholefoods",
       "type": "qna",
       "q": [
-        "when does the whole foods bus shuffle shuttle arrive",
+        "when does the whole foods shuffle arrive",
         "Whole Foods",
-        "when does the Whole Foods bus shuffle shuttle arrive?",
-        "what time does the Whole Foods arrive?"
+        "when does the Whole Foods shuttle arrive?",
+        "what time does the Whole Foods arrive?",
+        "when does the Whole Foods bus arrive"
       ]
     },
     {
@@ -947,10 +973,11 @@
       "qid": "bus.metroeast",
       "type": "qna",
       "q": [
-        "when does the metro east bus shuffle shuttle arrive",
+        "when does the metro east shuttle arrive",
         "Metro-East",
-        "when does the Metro-East bus shuffle shuttle arrive?",
-        "what time does the Metro-East arrive?"
+        "when does the Metro-East shuffle arrive?",
+        "what time does the Metro-East arrive?",
+        "when does the Metro-East bus arrive"
       ]
     },
     {
@@ -981,10 +1008,11 @@
       "qid": "bus.scotthall",
       "type": "qna",
       "q": [
-        "when does the scott hall bus shuffle shuttle arrive",
+        "when does the scott hall shuttle arrive",
         "Scott Hall",
-        "when does the Scott Hall bus shuffle shuttle arrive?",
-        "what time does the Scott Hall arrive?"
+        "when does the Scott Hall shuffle arrive?",
+        "what time does the Scott Hall arrive?",
+        "when does the Scott Hall bus arrive"
       ]
     },
     {
@@ -1015,10 +1043,11 @@
       "qid": "bus.galleria",
       "type": "qna",
       "q": [
-        "when does the galleria bus shuttle shuffle arrive",
+        "when does the galleria shuffle arrive",
         "Galleria",
-        "when does the Galleria bus shuttle shuffle arrive?",
-        "what time does the Galleria arrive?"
+        "when does the Galleria shuttle arrive?",
+        "what time does the Galleria arrive?",
+        "when does the Galleria bus arrive"
       ]
     },
     {
@@ -1047,9 +1076,10 @@
       "qid": "bus.initial",
       "type": "qna",
       "q": [
-        "when does the bus shuffle shuttle arrive",
-        "what time does the bus shuffle shuttle arrive?",
-        "when does the bus shuffle shuttle arrive"
+        "when does the shuffle arrive",
+        "what time does the bus arrive?",
+        "when does the shuttle arrive",
+        "when does the bus arrive"
       ]
     },
     {
@@ -1080,10 +1110,11 @@
       "qid": "bus.13thandOliveSt",
       "type": "qna",
       "q": [
-        "when does the 13th and Olive St Parking Lot shuttle shuffle bus arrive",
+        "when does the 13th and Olive St Parking Lot shuffle arrive",
         "13th and Olive St Parking Lot",
-        "when does the 13th and Olive St Parking Lot bus shuttle shuffle bus arrive?",
-        "what time does the 13th and Olive St Parking Lot arrive?"
+        "when does the 13th and Olive St Parking Lot bus shuttle arrive?",
+        "what time does the 13th and Olive St Parking Lot arrive?",
+        "when does the 13th and Olive St Parking Lot bus arrive"
       ]
     },
     {
@@ -1114,10 +1145,11 @@
       "qid": "bus.bedbath",
       "type": "qna",
       "q": [
-        "when does the bed bath and beyond shuttle shuffle bus arrive",
+        "when does the bed bath and beyond shuttle arrive",
         "Bed Bath and Beyond",
-        "when does the Bed Bath and Beyond shuttle shuffle bus arrive?",
-        "what time does the Bed Bath and Beyond arrive?"
+        "when does the Bed Bath and Beyond shuffle arrive?",
+        "what time does the Bed Bath and Beyond arrive?",
+        "when does the Bed Bath and Beyond bus arrive"
       ]
     },
     {
@@ -1148,10 +1180,11 @@
       "qid": "bus.springlindell",
       "type": "qna",
       "q": [
-        "when does the spring and lindell bus shuffle shuttle arrive",
+        "when does the spring and lindell shuttle arrive",
         "Spring and Lindell",
-        "when does the Spring and Lindell bus shuffle shuttle arrive?",
-        "what time does the Spring and Lindell arrive?"
+        "when does the Spring and Lindell shuffle arrive?",
+        "what time does the Spring and Lindell arrive?",
+        "when does the Spring and Lindell bus arrive"
       ]
     }
   ]
