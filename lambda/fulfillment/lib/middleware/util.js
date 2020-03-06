@@ -1,5 +1,7 @@
-var aws=require('../aws')
-var lambda= new aws.Lambda()
+var _=require('lodash');
+var aws=require('../aws');
+var lambda= new aws.Lambda();
+
 
 exports.getLambdaArn=function(name){
     var match=name.match(/QNA:(.*)/)
@@ -36,10 +38,10 @@ exports.invokeLambda=async function(params){
     }else{
         switch(params.req._type){
             case 'LEX':
-                var error_message = LexError();                
+                var error_message = new LexError(_.get(params,'req._settings.ERRORMESSAGE',"Exception from Lambda Hook"));                
                 break;
             case 'ALEXA':
-                var error_message = new AlexaError();
+                var error_message = new AlexaError(_.get(params,'req._settings.ERRORMESSAGE',"Exception from Lambda Hook"));
                 break;
         }
 
@@ -53,28 +55,34 @@ function Respond(message){
     this.message=message
 }
 
-function AlexaError(){
+function AlexaError(errormessage){
     this.action="RESPOND"
     this.message={
         version:'1.0',
         response:{
             outputSpeech:{
                 type:"PlainText",
-                text:"I am currently having trouble processing your request. Please try again later."
+                text:errormessage
+            },
+            card: {
+              type: "Simple",
+              title: "Processing Error",
+              content: errormessage
             },
             shouldEndSession:true
         }
     }
 }
 
-var LexError = function() {
-    var response_object = {
+function LexError(errormessage) {
+    this.action="RESPOND"
+    this.message={
         dialogAction:{
             type:"Close",
             fulfillmentState:"Fulfilled",
             message: {
                 contentType: "PlainText",
-                content: "I am currently having trouble processing your request. Please try again later."
+                content: errormessage
             }
         }
     }

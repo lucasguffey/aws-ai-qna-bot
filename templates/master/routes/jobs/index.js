@@ -134,7 +134,7 @@ module.exports={
         "Handler": "index.handler",
         "MemorySize": "128",
         "Role": {"Fn::GetAtt": ["S3ListLambdaRole","Arn"]},
-        "Runtime": "nodejs8.10",
+        "Runtime": "nodejs10.x",
         "Timeout": 300,
         "Tags":[{
             Key:"Type",
@@ -159,27 +159,26 @@ module.exports={
         },
         "Path": "/",
         "ManagedPolicyArns": [
-          "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole",
-          {"Ref":"S3ListPolicy"}
+          "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+        ],
+        "Policies": [
+          {
+            "PolicyName" : "S3ListPolicy",
+            "PolicyDocument" : {
+              "Version": "2012-10-17",
+              "Statement": [
+                {
+                  "Effect": "Allow",
+                  "Action": ["S3:List*"],
+                  "Resource":["*"]
+                }
+              ]
+            }
+          }
         ]
       }
     },
-    "S3ListPolicy": {
-      "Type": "AWS::IAM::ManagedPolicy",
-      "Properties": {
-        "PolicyDocument": {
-          "Version": "2012-10-17",
-          "Statement": [
-            {
-              "Effect": "Allow",
-              "Action": ["S3:List*"],
-              "Resource":["*"]
-            }
-          ]
-        }
-        }
-    }
-}
+};
 
 function proxy(opts){
     return {

@@ -139,7 +139,7 @@ module.exports=Object.assign(
         "Handler": "ui_import.handler",
         "MemorySize": "128",
         "Role":{"Ref":"CFNLambdaRole"} ,
-        "Runtime": "nodejs8.10",
+        "Runtime": "nodejs10.x",
         "Timeout": 300,
         "Tags":[{
             Key:"Type",
@@ -308,7 +308,8 @@ module.exports=Object.assign(
           }
         }],
         "ManagedPolicyArns": [
-            "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"]
+            "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole",
+            "arn:aws:iam::aws:policy/AmazonKendraReadOnlyAccess"]
       }
     }
 });
@@ -337,7 +338,7 @@ function jslambda(name){
       "Handler":`${name}.handler`,
       "MemorySize": "2048",
       "Role": {"Fn::GetAtt": ["ExtensionLambdaRole","Arn"]},
-      "Runtime": "nodejs8.10",
+      "Runtime": "nodejs10.x",
       "Timeout": 300,
       "Tags":[{
           Key:"Type",
