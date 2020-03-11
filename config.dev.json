@@ -1,0 +1,10 @@
+{
+  "region": "us-east-1",
+  "profile": "default",
+  "publicBucket": "qna-dev-dev-bootstrap-1-bucket-tk1ytsvkwia6",
+  "publicPrefix": "artifacts/aws-ai-qna-bot",
+  "devEmail": "lucas.guffey@health.slu.edu",
+  "stackNamePrefix": "QNA",
+  "namespace": "dev"
+}
+
