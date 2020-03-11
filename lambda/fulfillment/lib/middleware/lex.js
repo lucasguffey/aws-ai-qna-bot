@@ -1,5 +1,6 @@
 var _=require('lodash')
-exports.parse=function(event){
+exports.parse=function(req){
+    var event = req._event;
     var out={
         _type:"LEX",
         _userId:_.get(event,"userId","Unknown Lex User"),

@@ -9,10 +9,16 @@ module.exports={
             "S3Key": {"Fn::Sub":"${BootstrapPrefix}/lambda/proxy-es.zip"},
             "S3ObjectVersion":{"Ref":"ESProxyCodeVersion"}
         },
+        "Environment": {
+            "Variables": {
+                DEFAULT_SETTINGS_PARAM:{"Ref":"DefaultQnABotSettings"},
+                CUSTOM_SETTINGS_PARAM:{"Ref":"CustomQnABotSettings"},
+            }
+        },
         "Handler": "index.resource",
         "MemorySize": "1408",
         "Role": {"Fn::GetAtt": ["ESProxyLambdaRole","Arn"]},
-        "Runtime": "nodejs8.10",
+        "Runtime": "nodejs10.x",
         "Timeout": 300,
         "Tags":[{
             Key:"Type",

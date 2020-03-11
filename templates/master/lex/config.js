@@ -13,7 +13,7 @@ License for the specific language governing permissions and limitations under th
 
 module.exports={
     "voiceId":"Joanna",
-    "Clarification":"Sorry, I did not understand that",
+    "Clarification":"Sorry, I don't have that answer yet.  For immediate ITS assistance call 314-977-4000 or visit www.help.slu.edu.  For general assistance call 1-800-758-3678.",
     "ErrorMessage":"Sadly I encountered an error when searching for your answer. Please ask me again later.",
     "EmptyMessage":"You stumped me! Sadly I don't know how to answer your question.",
     "DefaultAlexaLaunchMessage":"Welcome to the ask Saint Louis University Skill.  You may ask a question, or say help for more information.",

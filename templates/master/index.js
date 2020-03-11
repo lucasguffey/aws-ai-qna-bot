@@ -9,7 +9,7 @@ module.exports={
   "Resources":_.assign.apply({},files),
   "Conditions": {},
   "AWSTemplateFormatVersion": "2010-09-09",
-  "Description": "QnABot with admin and client websites",
+  "Description": `QnABot with admin and client websites - (Master v${process.env.npm_package_version})`,
   "Mappings": {},
   "Outputs": {
     "CognitoEndpoint":{
@@ -110,6 +110,12 @@ module.exports={
     },
     "UsersTable":{
       "Value":{"Ref":"UsersTable"}
+    },
+    "DefaultSettingsSSMParameterName":{
+      "Value":{"Ref":"DefaultQnABotSettings"}
+    },
+    "CustomSettingsSSMParameterName":{
+      "Value":{"Ref":"CustomQnABotSettings"}
     }
   },
   "Parameters": {

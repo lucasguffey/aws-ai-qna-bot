@@ -36,7 +36,7 @@ module.exports=Object.assign(
         "Handler": "index.step",
         "MemorySize": "1280",
         "Role": {"Fn::GetAtt": ["TestAllRole","Arn"]},
-        "Runtime": "nodejs8.10",
+        "Runtime": "nodejs10.x",
         "Timeout": 900,
         "Tags":[{
             Key:"Type",
@@ -62,40 +62,39 @@ module.exports=Object.assign(
         "Path": "/",
         "ManagedPolicyArns": [
           "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole",
-          {"Ref":"TestAllPolicy"}
-        ]
-      }
-    },
-    "TestAllPolicy": {
-      "Type": "AWS::IAM::ManagedPolicy",
-      "Properties": {
-        "PolicyDocument": {
-          "Version": "2012-10-17",
-          "Statement": [{
-              "Effect": "Allow",
-              "Action": [
-                "s3:*"
-              ],
-              "Resource":[{"Fn::Sub":"arn:aws:s3:::${TestAllBucket}*"}]
-          },{
-              "Effect": "Allow",
-              "Action": [
-                "lambda:InvokeFunction"
-              ],
-              "Resource":[{"Ref":"EsProxyLambda"}]
-          },
-            {
-              "Effect": "Allow",
-              "Action": [
-                  "lex:PostContent",
-                  "lex:PostText"
-              ],
-              "Resource": [
-                  "*"
+        ],
+        "Policies": [
+          {
+            "PolicyName" : "TestAllPolicy",
+            "PolicyDocument" : {
+              "Version": "2012-10-17",
+              "Statement": [{
+                  "Effect": "Allow",
+                  "Action": [
+                    "s3:*"
+                  ],
+                  "Resource":[{"Fn::Sub":"arn:aws:s3:::${TestAllBucket}*"}]
+              },{
+                  "Effect": "Allow",
+                  "Action": [
+                    "lambda:InvokeFunction"
+                  ],
+                  "Resource":[{"Ref":"EsProxyLambda"}]
+              },
+                {
+                  "Effect": "Allow",
+                  "Action": [
+                      "lex:PostContent",
+                      "lex:PostText"
+                  ],
+                  "Resource": [
+                      "*"
+                  ]
+                }
               ]
             }
-          ]
-        }
+          }
+        ]
       }
     },
     "TestAllClear":{
