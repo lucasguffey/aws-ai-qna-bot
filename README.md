@@ -8,7 +8,19 @@ This repository contains code for the QnABot, described in the AWS AI blog post 
 
 See the "Getting Started" to launch your own QnABot
 
-**New features in 2.6.0** [Kendra Fallback and MultiLanguage Support](#new-features)
+**New features in 4.1.0** [Encryption at rest for S3 and Elastic Search Cluster, option to require Cognito user pool authorization to access embedded web UI, enhanced Kendra integration, enhanced Connect integration, and others](#new-features)
+
+**New features in 4.0.0** [Update to Elasticsearch 7.4, improved question matching accuracy, fuzzy matching, new multi-language support debug setting, SSML for Amazon Connect, improved Kendra integration, full upgrade support](#new-features)
+
+**New features in 3.0.3** [New content tuning Readme, Enhanced CFN Lex Resource to work with manually created Bot versions](#new-features)
+
+**New features in 3.0.2** [New Elicit Response Bots, Lambda Functions backing conditional chaining, Lex Bot versioning use](#new-features)
+
+**New features in 3.0.0** [ElicitResponse, Conditional Chaining, new Launch regions](#new-features)
+
+## Upgrade Notes
+During an upgrade, we recommend that existing QnABot content first be exported and downloaded from the Content Designer prior to 
+the upgrade. In this release we expect upgrade to be smooth but just in case you should always have your QnABot content preserved. 
 
 ## Prerequisites
 
@@ -20,6 +32,19 @@ See the "Getting Started" to launch your own QnABot
 
 
 ## Getting Started
+Two approaches can be used to get started. Deploy from pre-created repositories or clone the repo and build a version yourself.
+
+### Pre-created deployment 
+Click a button to launch QnABot CloudFormation stack in the desired region
+
+| Region   |  Launch | 
+|----------|:-------------:|
+| Northern Virginia | <a target="_blank" href="https://us-east-1.console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/new?stackName=QnABot&templateURL=http://aws-bigdata-blog.s3.amazonaws.com/artifacts/aws-ai-qna-bot/templates/public.json"><span><img height="24px" src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png"/></span></a>     |
+| Oregon | <a target="_blank" href="https://us-west-2.console.aws.amazon.com/cloudformation/home?region=us-west-2#/stacks/new?stackName=QnABot&templateURL=http://aws-bigdata-blog-replica-us-west-2.s3.us-west-2.amazonaws.com/artifacts/aws-ai-qna-bot/templates/public.json"><span><img height="24px" src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png"/></span></a> |
+| Ireland | <a target="_blank" href="https://eu-west-1.console.aws.amazon.com/cloudformation/home?region=eu-west-1#/stacks/new?stackName=QnABot&templateURL=https://aws-bigdata-blog-replica-eu-west-1.s3-eu-west-1.amazonaws.com/artifacts/aws-ai-qna-bot/templates/public.json"><span><img height="24px" src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png"/></span></a> |
+| Sydney | <a target="_blank" href="https://ap-southeast-2.console.aws.amazon.com/cloudformation/home?region=ap-southeast-2#/stacks/new?stackName=QnABot&templateURL=https://aws-bigdata-blog-replica-ap-southeast-2.s3-ap-southeast-2.amazonaws.com/artifacts/aws-ai-qna-bot/templates/public.json"><span><img height="24px" src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png"/></span></a> |
+
+### Clone the git repo and build a version
 First, install all prerequisites:
 ```shell
 npm install 
@@ -126,7 +151,131 @@ We are currently working on adding Microsoft Edge support.
 ## License
 See the [LICENSE.md](LICENSE.md) file for details
 
-## New features
+## New features 
+
+### Version 4.1.0
+- Install / Upgrade now supports the option to configure S3 Buckets and Elastic Search cluster using encryption at rest
+- Install / Upgrade now supports the option to require Cognito based user authorization to access the built-in full screen web UI (Public/Private parameter in template) - Public is the default
+- Added two settings parameters to enforce user identity verification check, so that bot can be secured for use by authenticated users only
+    - ENFORCE_VERIFIED_IDENTITY. Default is false. Set to true to make QnABot require verified identity from client
+    - NO_VERIFIED_IDENTITY_QUESTION. The default is "no_verified_identity". If user identity cannot be verified, replace question string with this. If not verified, the system will respond to user's question with the result of searching for NO_VERIFIED_IDENTITY_QUESTION. This allows a customizable message which informs the user that they must log in. A default question with qid "no_verified_identity" is included in QNAUtility example package.
+- Enhanced Kendra fallback integration to use a specific answer if there is a best answer available and bold face highlighted words from Kendra response
+- Added Comprehend sentiment analysis to all utterances and text captured by the QNAFreeText elicit response bot
+- Enhanced Kibana dashboard to identify Lex client channels - Connect, Web, SMS
+- Improved internal use of Booleans from settings configuration 
+- Enhanced Connect integration 
+    - Added session attribute named "qnabot_qid" that holds the matching question id found in elastic search
+    - Added session attribute "qnabot_gotanswer" that holds boolean true/fale if an answer was fround
+    - Encapsulating all Kendra and Elicit Response Bot session attributes into a single "qnabotcontext" attribute making it easier to store and reset in Connect contact flow
+- Added new QNAYesNoExit elicit response bot which allows a user to exit the YesNoExit question using "exit", "bye", "quit", "admin", "rep","representative","stop", "help", "bye", "goodbye" which sets the Yes_No_Exit slot value / session attribute to "Exit".
+- Update to 0.17.0 of embedded lex-web-ui
+- Resolved additional dependabot identified security issues with dependent packages
+- Fixed lambda/fulfillment unit tests
+- Fixed defect where response bot was not triggered on next question when using lambda function for conditional chaining 
+
+### Version 4.0.0
+- Update to Elasticsearch 7.4
+- Improved question matching accuracy and tuning
+- Tolerance for typos and minor spelling errors with fuzzy matching setting
+- Easier troubleshooting when using voice or multi-language support with new debug setting
+- SSML support when using Amazon Connect
+- Improvements to Amazon Kendra integration
+- Full upgrade support without data loss when upgrading from previous versions.
+
+### Content Tuning and Accuracy Guide
+Content Tuning an and Accuracy Guide now available as a Markdown Readme.  [README](tuning_accuracy_guide/AWS_QnABot_tuning_recognition_accuracy_guide.md)
+
+### Optional Redact feature for log and metric output
+QnABot can be configured to redact information written to CloudWatch logs, S3 metrics, and Kibana metrics logs. 
+This feature is disabled by default. Use the Designer UI Settings form to enable this feature. One can configure
+the RegEx applied to strings as they are logged. If RegEx matches are found, the match is replaced with the string
+'XXXXXX'.
+
+The initial RegEx is 
+```
+\b\d{4}\b(?![-])|\b\d{9}\b|\b\d{3}-\d{2}-\d{4}\b
+```
+
+This replaces 4 digit numbers not followed by a hyphen, a 9 digit number (SSN without hyphens), and a typical
+SSN using nnn-nn-nnnn syntax with hyphens. 
+ 
+### New Connect Callback Example
+New example demonstrating how QnABot can be asked by a user for a live agent based phone callback. The 
+implementation provides a new LambdaHook example as well as four sample questions that ask a user for 
+their name and phone number prior to handing off to an Amazon Connect instance to initiate the callback. 
+
+**Two configuration updates are required to use this example with Amazon Connect.**
+
+The IAM Role/Policy used by the ConnectCallback Lambda must include a new policy that allows 
+the action "connect:StartOutboundVoiceContact" to be used with the resource
+"arn:aws:connect:*:*:instance/<YourConnectInstanceId>/*". The following is an example of this policy
+```
+{
+   "Version": "2012-10-17",
+   "Statement": [
+       {
+           "Sid": "VisualEditor0",
+           "Effect": "Allow",
+           "Action": "connect:StartOutboundVoiceContact",
+           "Resource": "arn:aws:connect:*:*:instance/<YourConnectInstanceId>/*"
+       }
+   ]
+}
+```
+1) Find the Lambda ConnectCallback Function in the AWS Lambda Console
+2) Open the AWS Console and select the Lambda Service
+3) In the Console's filter enter 'ConnectCallback' and press enter
+4) The displayed function will start with <stackname>-ExamplePYTHONLambdaConne... If you have multiple QnABot stacks
+installed you'll see multiple functions listed
+5) Open the Lambda function by clicking on the function
+6) Select the Permissions tab
+7) Click on the Role name to open this Role in a new tab
+8) Click on + Add inline policy
+9) Select the JSON tab
+10) Copy the sample text above, paste as JSON, and change <YourConnectInstanceId> to the Instance ID identified in the Connect Console.
+11) Click on Review policy
+12) Enter a name for the policy and click Create policy
+
+You've now enabled Lambda functions using this role to start outbound calls via the connect instance
+
+Lambda Hook Arguments need to be updated. Before being used, the item with qid CONNECT_TO_AGENT.04 
+should have its Arguments field adjusted to reflect identifiers from the Connect instance:
+``` 
+"AWS_connect_instance_id": "<your-connect-instance-id >",
+"AWS_connect_contact_flow_id": "<your-connect-contact-flow-id>", 
+"AWS_connect_queue_id": "<your-connect-queue-id>", 
+```
+Once these configuration changes are in place, QnABot can be successfully use Amazon Connect to place
+outbound calls. 
+
+### Conditional Chaining now supports Lambda Function
+You can specify that a Conditional Chaining rule runs a Lambda Function using the "Lambda::FunctionName" syntax.
+The Lambda function name must start with "QNA". The Lambda will receive arguments the same as Lambda Hooks. The
+function must return a String that is used to resolve the next item just the same as other conditional chaining rules.
+
+### Improved Scale
+This release of QnABot utilizes Lex Bot aliases and Lex versioning. The QnA Bot and all ElicitResponse Bots are
+now installed using the alias 'live'. 'live' points at the latest numbered Bot version. All Lex resources are now
+versioned starting with '1' after initial installation.
+
+### Additional Elicit Response Bots
+This release adds several elicit response bots for 
+QNAWage - 7 digit wage value - returns slot named "Wage"
+QNASocialSecurity - SSN Numbers in the nnn-nn-nnnn format - returns slot named "SSN"
+QNAPin - 4 digit pin value - Returns slot named "Pin"
+
+### Configuring QnABot to ask the questions
+QnABot was designed to answer questions, but now it can also ask questions and process 
+the user’s answers. Use this feature for data collection and validation; 
+or implement surveys, quizzes, personalized recommendations; or to build a triage 
+chatbot application. See the [blog post](https://aws.amazon.com/blogs/machine-learning/creating-a-question-and-answer-bot-with-amazon-lex-and-amazon-alexa/) for details about this new feature. 
+This feature is know as ElicitResponse from a configuration perspective.
+
+### Automatically advancing and branching along a tree of questions
+QnABot can now chain the user from one answer to another. This can be used with ElicitResponse
+to ask multiple questions from a user. Conditional chaining allows branching based on 
+the state of session variables. Please see the [blog post](https://aws.amazon.com/blogs/machine-learning/creating-a-question-and-answer-bot-with-amazon-lex-and-amazon-alexa/)
+for a description on how to use this feature.
 
 ### Kendra Fallback Support
 QnABot version 2.6.0 optionally supports integration with Amazon Kendra as a fallback mechanism if a question/answer can not
@@ -136,36 +285,14 @@ be found in QnABot.
 review the Kendra pricing structure. The fallback mechanism for QnABot can be useful when deploying Kendra as an
 Enterprise search solution.**
  
-To enable this support for your Kendra indexes add the Custom Property 'ALT_SEARCH_KENDRA_INDEXES' 
-to QnABot's set of custom properties in Systems Manager Parameter Store. 
-
-This custom property will contain a string value that specifies an array of 
-Kendra indexes to search. At least one index must be specified. Until this custom property 
-is set in QnABot, use of Kendra as a fallback mechanism will return an error. 
-
-To find your custom property name used in Parameter store, open the QnABot CF stack outputs. You'll set key in QnABot CF
-Stack Outputs called 'CustomSettingsSSMParameterName'. If will have a value similar to 
-
+To enable this support for your Kendra indexes, use the Settings UI in the Designer and add your 
+index to the ALT_SEARCH_KENDRA_INDEXS parameter. This parameter takes an array of strings and uses the form below.
 ```
-CFN-CustomQnABotSettings-EOVHQJcYx9Ms
+["a672e3a2-nnnn-nnnn-nnnn-7b3abc81c313"]
 ```
-
-Once you know the name of your parameter, use the SSM Parameter Store UI to edit the parameter. 
-Add your Kendra IndexId to a key/value pair in this json object. If you already
-have set a new custom property for QnABot you will need to 
-add to the object a new key/value pair rather than replacing the entire string. Once completed your property
-will look similar to the following.  
-
-```
-{"ALT_SEARCH_KENDRA_INDEXES":"[\"857710ab-9637-4a46-910f-9a1456d02596\"]"}
-```
-
-**Note the Escaped Quote marks around the array of Kendra index ids are required**
-
 **Don't forget to use your Kendra Index ID rather than the one in the sample**
 
-The last step you need to perform to enable this feature is to use the QnABot Designer UI to import a Sample/Extension 
-named KendraFallback.
+Next use the QnABot Designer UI to import a Sample/Extension named KendraFallback.
 
 This loads a new question with a qid of "KendraFallback". Edit this question in the Designer UI and change its question from 
 "no_hits_alternative" to "no_hits" and save the changes. 
@@ -174,8 +301,8 @@ If you have previously loaded the QnAUtility.json from Examples/Extensions you n
 the question with the ID "CustomNoMatches" or change the question for this ID from "no_hits" to "no_hits_original"
 
 Once the new question, "KendraFallback" is configured as the response for "no_hits", the Kendra index will be
-searched for an answer whenever a curated answer can not be found. Once setup, Kendra provides a fallback 
-mechanism prior to telling the user an answer could not be found. 
+searched for an answer whenever a curated answer can not be found. This feature provides a fallback mechanism
+prior to telling the user an answer could not be found. 
 
 A [workshop](https://github.com/aws-samples/aws-ai-qna-bot/tree/master/workshops/reinvent2019/readme.md) is available in github 
 that will walk you through setting up this feature. 
@@ -186,48 +313,62 @@ Enterprise search solution.**
 
 ### MultiLanguage Support
 
-QnABot version 2.6.0 supports use of multiple languages. Once enabled, if the user enters a question in a language other 
-than english, QnABot will attempt to return an answer in the other language. Its does this by using AWS Comprehend to 
-identify the language spoken or typed. If Comprehend can identify the language based on a configured minimum confidence, 
-QnABot will serve up content based on that locale.
+QnABot version 2.6.0 supports use of multiple languages with these limitations:
+- MultiLanguage support for voice is limited to use with Alexa skills only. (Amazon Lex currently supports voice recognition in English only)
+- MutiLanguage support for text is available via all text clients (e.g. Lex Web UI, SMS, etc.)
 
-It converts the question posed by the user to English and performs a lookup of the answer in Elastic Search 
-just as it normally does. Once it finds the question, QnABot will serve up the configured answer. The answers specifying 
-blocks to use for different locales.
+ ####Lex (text mode only):  
+
+If the user enters a question in a language other than english, QnABot will attempt to return an answer in the other language. 
+It does this by using Amazon Comprehend to identify the language typed. If Comprehend can identify the language based on a configured minimum confidence, 
+QnABot will serve up content based on that locale.
 
 Users can also set a preferred language whereby QnABot will always attempt to respond with content in the chosen
 locale.  If the user sets the preferred language to be Spanish, QnABot will always try and serve up content using
 Spanish when possible. 
+
+####Alexa (voice)
+
+You will need to add each language you want to use to your QnABot skill using the Alexa Developer console. The intent schema for each 
+language will be identical except for the skill invocation name. Give the skill a unique invokation name for each language that you add.
+
+QnABot will use the language setting provided by Alexa, and will attempt to respond in that language.
+
+####How it works
+
+QnABot converts the question posed by the user to English, using Amazon Translate, and performs a lookup of the answer in Elastic Search 
+just as it normally does, using the English translation of the question. ElasticSearch searches are done in English only since QnABot documents
+are indexed using the English text analyser (stemming, stop words, etc.)
+
+To ensure good matching of translated questions, you can use the Amazon Translate console to see the English tranlation of your local language question. Use QnABot content designer
+to ensure your QnA item has the right sample questions to ensure a match.
+
+Once it finds the question, QnABot will serve up the configured answer. 
+
+You can use Handlebar blocks to define explicit answers in each different language you want to support. OR, if you do not 
+explicitly define an answer in the user's language, QnABot will automatically use Amazon Translate to convert the default enghlish 
+answer to the target language.
+
+####Configuration
 
 By default this feature is disabled. Use the following three steps to enable and configure this feature. Step 1 enables 
 the feature. Step 2 loads in two questions from this extension that allow the user to select a preferred language. The 
 defaults supplied in this question are English, Spanish, French, German, and Italian. You can extend this list to
 support other languages. 
 
-Step 1) Custom Property
+Step 1) Enable multi language support 
 
-a) QnABot uses a property named ENABLE_MULTI_LANGUAGE_SUPPORT. It is a boolean and has a default value of false. 
-You can override this setting using SSM Parameter Store to add a new key/value pair as a custom property. 
-Find your custom property name from the QnABot CF stack outputs. The key in the QnABot CF stack outputs is 
-'CustomSettingsSSMParameterName'. If will have a value similar to 
+a) QnABot uses a property named ENABLE_MULTI_LANGUAGE_SUPPORT, default value of "false". 
+You can change this setting using the Content Designer Settings page. Set it to "true" to enable multi language support.
 
-```
-CFN-CustomQnABotSettings-EOVHQJcYx9Ms
-```
 
-b) Identify your CustomSettingsSSMParameterName property name using CloudFormation and then open the AWS Systems 
-Manager console and navigate to ParameterStore. Filter the list using your custom property name name. Open and Edit the parameter. 
+Step 2) Use the Designer UI to import the Sample/Extension named Language / Multiple Language Support.
 
-Set the value to be the following and save the changes. Be careful if you already have existing key/value pairs in
-this property. If you do have existing key/value apirs, be sure to add the key and value as a new attribute of the object. 
+This will add two questions to the system: Language.000 and Language.001. When using Lex text clients, these questions will allow you to set your preferred language.  
+The preferred language, if set, will take precendence over
+the auto detected language.  
 
-```
-{"ENABLE_MULTI_LANGUAGE_SUPPORT":true}
-```
-
-Step 2) Use the Designer UI to import the Sample/Extension named Language / Multiple Language Support. 
-
-This will add two questions to the system: Language.000 and Language.001. 
+_When using Alexa, the language is automatically set by the skill. You will not be able to override the preferred language when using Alexa._
 
 Language.000 provides a question that allows the user to set the current sessions preferred output saying a simple word 
 such as French, German, or Spanish, or Italian. 
@@ -251,10 +392,15 @@ The answer for Language.000 uses the following handlebar syntax
 {{#setLang 'en' true}} Ok. I've set your preferred language to English. {{/setLang}}
 ```
 
-The helper function setLang performs the necessary processing based on the language/locale detected by Comprehend. To
+The helper function setLang performs the necessary processing to set the preferred language/locale for teh session. To
 add support for other languages just extend the answer in Language.000 with additional locales. 
 
-Step 3) In order to serve up content that is locale specific modify answers in questions to respond in multiple languages. 
+
+Step 3) In order to serve up content that is locale specific you can
+
+- allow QnABot to automatically translate your english answers to the session language using Amazon Translate.
+- OR provide explicitly curated answers in QnA items, in multiple languages, using handlebars, as shown below. 
+
 Lets modify the question sun.1. The following would be an example where the handlebar function ifLang is used to 
 specify a response for spanish. 
 

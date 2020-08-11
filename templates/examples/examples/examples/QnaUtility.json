@@ -43,11 +43,19 @@
 			"type": "qna"
 		},
 		{
-			"a": "You stumped me, I don't currently know the answer to that question.",
+			"a": "{{Settings.EMPTYMESSAGE}}",
 			"qid": "CustomNoMatches",
 			"type": "qna",
 			"q": [
 				"no_hits"
+			]
+		},
+		{
+			"a": "Sorry, your identity cannot be verified - please log in.",
+			"qid": "CustomNoVerifiedIdentity",
+			"type": "qna",
+			"q": [
+				"no_verified_identity"
 			]
 		},
 		{

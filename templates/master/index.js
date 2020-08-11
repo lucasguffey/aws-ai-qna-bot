@@ -2,7 +2,7 @@ var fs=require('fs')
 var _=require('lodash')
 
 var files=fs.readdirSync(`${__dirname}`)
-    .filter(x=>!x.match(/README.md|Makefile|index|test/))
+    .filter(x=>!x.match(/README.md|Makefile|index|test|.DS_Store/))
     .map(x=>require(`./${x}`))
 
 module.exports={
@@ -32,13 +32,16 @@ module.exports={
         "Value":{"Ref":"LexBot"}
     },
     "BotAlias":{
-        "Value":{"Ref":"Alias"}
+        "Value":{"Ref":"VersionAlias"}
     },
     "SlotType":{
         "Value":{"Ref":"SlotType"}
     },
     "Intent":{
         "Value":{"Ref":"Intent"}
+    },
+    "IntentFallback":{
+        "Value":{"Ref":"IntentFallback"}
     },
     "DashboardURL":{
         "Value":{"Fn::Join":["",[
@@ -110,12 +113,18 @@ module.exports={
     },
     "UsersTable":{
       "Value":{"Ref":"UsersTable"}
+<<<<<<< HEAD
+=======
     },
     "DefaultSettingsSSMParameterName":{
       "Value":{"Ref":"DefaultQnABotSettings"}
     },
     "CustomSettingsSSMParameterName":{
       "Value":{"Ref":"CustomQnABotSettings"}
+    },
+    "DefaultUserPoolJwksUrlParameterName": {
+      "Value":{"Ref":"DefaultUserPoolJwksUrl"}
+>>>>>>> efa9d9302ebd7ab6664330cb3ef8afa3471e7e67
     }
   },
   "Parameters": {
@@ -129,12 +138,12 @@ module.exports={
       "ConstraintDescription":"Allowed Values are FALSE or TRUE",
       "Default":"TRUE"
     },
-    "PublicOrPrivate":{
+    "Encryption":{
         "Type":"String",
-        "Description":"(optional) Whether access to the QnABot should be publicly available or restricted to users in QnABot UserPool. Allowed values are PUBLIC or PRIVATE",
-        "AllowedPattern":"(PUBLIC|PRIVATE)",
-        "Default":"PUBLIC",
-        "ConstraintDescription":"Allowed Values are PUBLIC or PRIVATE"
+        "Description":"Choose whether resources (S3 and ElasticSearch) are encrypted at rest. Selecting encrypted configuration will provision c5.large.elasticsearch instances - see https://aws.amazon.com/elasticsearch-service/pricing/.",
+        "AllowedValues": ["ENCRYPTED", "UNENCRYPTED"],
+        "Default":"UNENCRYPTED",
+        "ConstraintDescription":"Allowed Values are UNENCRYPTED or ENCRYPTED"
     },
     "ApprovedDomain":{
         "Type":"String",
@@ -161,10 +170,17 @@ module.exports={
     "BuildExamples":{
       "Type":"String",
       "Default":"TRUE"
-    }
+    },
+    "PublicOrPrivate":{
+        "Type":"String",
+        "Description":"Choose whether access to the QnABot client should be publicly available or restricted to users in QnABot UserPool.",
+        "AllowedValues" : ["PUBLIC", "PRIVATE"],
+        "Default":"PUBLIC"
+    },
   },
   "Conditions":{
     "Public":{"Fn::Equals":[{"Ref":"PublicOrPrivate"},"PUBLIC"]},
+    "Encrypted":{"Fn::Equals":[{"Ref":"Encryption"}, "ENCRYPTED"]},
     "AdminSignUp":{"Fn::Equals":[{"Ref":"AdminUserSignUp"},"TRUE"]},
     "Domain":{"Fn::Not":[{"Fn::Equals":[{"Ref":"ApprovedDomain"},"NONE"]}]},
     "BuildExamples":{"Fn::Equals":[{"Ref":"BuildExamples"},"TRUE"]},

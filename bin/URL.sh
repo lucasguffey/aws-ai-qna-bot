@@ -1,6 +1,8 @@
 #! /bin/bash 
 __dirname="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 export AWS_PROFILE=$(node -e "console.log(require('$__dirname'+'/../config').profile)")
+# If profile specified from config file does not exist, allow cli to move on to using instance profile
+aws configure get aws_access_key_id --profile $AWS_PROFILE || unset AWS_PROFILE
 export AWS_DEFAULT_REGION=$(node -e "console.log(require('$__dirname'+'/../config').region)")
 
 OUTPUT=$($__dirname/exports.js dev/bootstrap)
@@ -10,8 +12,8 @@ PUBLIC_BUCKET=$( cat $__dirname/../config.json | $__dirname/json.js publicBucket
 PUBLIC_PREFIX=$( cat $__dirname/../config.json | $__dirname/json.js publicPrefix)
 REGION=$AWS_DEFAULT_REGION
 
-MASTER="http://s3.amazonaws.com/$BUCKET/$PREFIX/templates/master.json"
-PUBLIC="http://s3.amazonaws.com/$PUBLIC_BUCKET/$PUBLIC_PREFIX/templates/public.json"
+MASTER="http://$BUCKET.s3.$REGION.amazonaws.com/$PREFIX/templates/master.json"
+PUBLIC="http://$PUBLIC_BUCKET.s3.$REGION.amazonaws.com/$PUBLIC_PREFIX/templates/public.json"
 
 echo "========================Master=============="
 echo "template url:"

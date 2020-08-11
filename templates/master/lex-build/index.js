@@ -13,7 +13,7 @@ module.exports={
         STATUS_BUCKET:{"Ref":"BuildStatusBucket"},
         STATUS_KEY:"status.json",
         BOTNAME:{"Ref":"LexBot"},
-        BOTALIAS:{"Ref":"Alias"},
+        BOTALIAS:{"Ref":"VersionAlias"},
         SLOTTYPE:{"Ref":"SlotType"},
         INTENT:{"Ref":"Intent"},
         INTENTFALLBACK:{"Ref":"IntentFallback"},
@@ -121,6 +121,21 @@ module.exports={
             },
             "VersioningConfiguration":{
                 "Status":"Enabled"
+            },
+            "BucketEncryption": {
+                "Fn::If": [
+                    "Encrypted",
+                    {
+                        "ServerSideEncryptionConfiguration": [{
+                            "ServerSideEncryptionByDefault": {
+                                "SSEAlgorithm": "AES256"
+                            }
+                        }]
+                    },
+                    {
+                        "Ref": "AWS::NoValue"
+                    }
+                ]
             }
         }
     },

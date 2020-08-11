@@ -1,5 +1,5 @@
 var _=require('lodash')
-exports.parse=function(req){
+exports.parse=async function(req){
     var event = req._event;
     var out={
         _type:"LEX",
@@ -49,12 +49,28 @@ exports.assemble=function(request,response){
         })
     }
     
+    // copy response card to appContext session attribute used by lex-web-ui
+    //  - allows repsonse card display even when using postContent (voice) with Lex (not otherwise supported by Lex)
+    //  - allows Lex limit of 5 buttons to be exceeded when using lex-web-ui
     if(isCard(response.card)){
-        var tmp=JSON.parse(_.get(response,"session.appContext","{}"))
-        tmp.responseCard=out.dialogAction.responseCard
-        response.session.appContext=JSON.stringify(tmp)
+        var tmp
+        try {
+            tmp=JSON.parse(_.get(response,"session.appContext","{}"));
+        } catch(e) {
+            tmp=_.get(response,"session.appContext","{}");
+        }
+        tmp.responseCard=out.dialogAction.responseCard;
+        response.session.appContext=JSON.stringify(tmp);
     }
-
+ 
+    // Lex has limit of max 5 buttons in the responsecard.. if we have more than 5, use the first 5 only.
+    // note when using lex-web-ui, this limitation is circumvented by use of the appContext session attribute above.
+    var buttons = _.get(out,"dialogAction.responseCard.genericAttachments[0].buttons");
+    if (buttons && buttons.length > 5) {
+        console.log("WARNING: Truncating button list to contain only first 5 buttons to adhere to Lex limits.");
+        _.set(out,"dialogAction.responseCard.genericAttachments[0].buttons",buttons.slice(0,5));
+    }
+    
     console.log("Lex response:",JSON.stringify(out,null,2))
     return out
 }

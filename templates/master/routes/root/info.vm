@@ -5,12 +5,14 @@
     "Version":"${InfoVar.Version}",
     "BuildDate":"${InfoVar.BuildDateString}",
     "BotName":"${LexBot}",
-    "BotVersion":"${Alias}",
+    "BotVersion":"${VersionAlias}",
     "PoolId":"${IdPool}",
     "StackName":"${AWS::StackName}",
     "ClientIdClient":"${ClientClient}",
     "ClientIdDesigner":"${ClientDesigner}",
     "UserPool":"${UserPool}",
+    "DefaultQnABotSettings":"${DefaultQnABotSettings}",
+    "CustomQnABotSettings":"${CustomQnABotSettings}",
     "Id":"$stageVariables.Id",
     "_links":{
         "root":{

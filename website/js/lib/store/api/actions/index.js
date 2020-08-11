@@ -32,6 +32,7 @@ var failed=false
 module.exports=Object.assign(
     require('./export'),
     require('./import'),
+    require('./settings'),
     require('./testall'),{
     _request:Promise.method(async function(context,opts){
         var url=Url.parse(opts.url)
@@ -125,7 +126,7 @@ module.exports=Object.assign(
         })
     },
     list(context,opts){
-        var perpage=opts.perpage || 10
+        var perpage=opts.perpage || 100
         return context.dispatch('_request',{
             url:context.rootState.info._links.questions.href+'?'+query({
                 from:(opts.page || 0)*perpage,

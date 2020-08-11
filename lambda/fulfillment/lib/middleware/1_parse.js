@@ -1,6 +1,7 @@
 var Promise = require('bluebird')
 var lex = require('./lex')
 var multilanguage = require('./multilanguage')
+var get_sentiment=require('./sentiment');
 var alexa = require('./alexa')
 var _ = require('lodash')
 var AWS = require('aws-sdk');
@@ -14,6 +15,21 @@ function isJson(str) {
     return true;
 }
 
+function str2bool(settings) {
+    var new_settings = _.mapValues(settings, x => {
+        if (_.isString(x)) {
+            if (x.toLowerCase() === "true") {
+                return true ;
+            }
+            if (x.toLowerCase() === "false") {
+                return false ;
+            }
+        }
+        return x;
+    });
+    return new_settings;
+}
+
 async function get_parameter(param_name) {
     var ssm = new AWS.SSM();
     var params = {
@@ -23,6 +39,7 @@ async function get_parameter(param_name) {
     var settings = response.Parameter.Value
     if (isJson(settings)) {
         settings = JSON.parse(response.Parameter.Value);
+        settings = str2bool(settings) ;
     }
     return settings;
 }
@@ -45,8 +62,41 @@ async function get_settings() {
     _.set(settings, "DEFAULT_USER_POOL_JWKS_URL", default_jwks_url);
 
     console.log("Merged Settings: ", settings);
+
+    if (settings.ENABLE_REDACTING) {
+        console.log("redacting enabled");
+        process.env.QNAREDACT="true";
+        process.env.REDACTING_REGEX=settings.REDACTING_REGEX;
+    } else {
+        console.log("redacting disabled");
+        process.env.QNAREDACT="false";
+        process.env.REDACTING_REGEX="";
+    }
     return settings;
 }
+
+// makes best guess as to lex client type in use based on fields in req.. not perfect
+function getClientType(req) {
+    if (req._type == 'ALEXA') {
+        return req._type ;
+    }
+    // Try to determine which Lex client is being used based on patterns in the req - best effort attempt.
+    const voiceortext = (req._preferredResponseType == 'SSML') ? "Voice" : "Text" ;
+    // Amazon Connect indicates support for SSML using request header x-amz-lex:accept-content-types
+    if (_.get(req,"_event.requestAttributes.x-amz-lex:accept-content-types")) {
+        return "LEX.AmazonConnect." + voiceortext ;
+    } else if (_.get(req,"_event.requestAttributes.x-amz-lex:channel-type") == "Twilio-SMS") {
+        return "LEX.TwilioSMS." + voiceortext ;
+    } else if (/^.*-.*-\d:.*-.*-.*-.*$/.test(_.get(req,"_event.userId"))){
+        // user id pattern to detect lex-web-uithrough use of cognito id as userId: e.g. us-east-1:a8e1f7b2-b20d-441c-9698-aff8b519d8d5
+        // TODO: add another clientType indicator for lex-web-ui?
+        return "LEX.LexWebUI." + voiceortext ;
+    } else {
+        // generic LEX client
+        return "LEX." + voiceortext ;
+    }
+}
+
 
 module.exports = async function parse(req, res) {
 
@@ -54,23 +104,48 @@ module.exports = async function parse(req, res) {
     var settings = await get_settings();
     _.set(req, "_settings", settings);
 
-    // multilanguage support modification
-    var isMultilanguageEnabled = settings.ENABLE_MULTI_LANGUAGE_SUPPORT;
-    if (isMultilanguageEnabled) {
-        await multilanguage.set_multilang_env(req);
-    }
-    // end of multilanguage support modification
-
     req._type = req._event.version ? "ALEXA" : "LEX"
 
     switch (req._type) {
         case 'LEX':
-            Object.assign(req, lex.parse(req))
+            Object.assign(req, await lex.parse(req))
             break;
         case 'ALEXA':
-            Object.assign(req, alexa.parse(req))
+            Object.assign(req, await alexa.parse(req))
             break;
     }
+    
+
+    // Determine preferred response message type - PlainText, or SSML
+    const outputDialogMode = _.get(req,"_event.outputDialogMode");
+    _.set(req,"_preferredResponseType","PlainText") ;
+    if (outputDialogMode == "Voice") {
+        _.set(req,"_preferredResponseType","SSML") ;
+    } else if (outputDialogMode == "Text") {
+        // Amazon Connect uses outputDialogMode "Text" yet indicates support for SSML using request header x-amz-lex:accept-content-types
+        const contentTypes = _.get(req,"_event.requestAttributes.x-amz-lex:accept-content-types","") ;
+        if (contentTypes.includes("SSML")) {
+            _.set(req,"_preferredResponseType","SSML") ;
+        }
+    } else {
+        console.log("WARNING: Unrecognised value for outputDialogMode:", outputDialogMode);
+    }
+
+    req._clientType = getClientType(req) ;
+
+
+    // multilanguage support 
+    if (_.get(settings, 'ENABLE_MULTI_LANGUAGE_SUPPORT')) {
+        await multilanguage.set_multilang_env(req);
+    }
+    // end of multilanguage support 
+    
+    // get sentiment
+    if (_.get(settings, 'ENABLE_SENTIMENT_SUPPORT')) {
+        req.sentiment = await get_sentiment(req.question);
+    } else {
+        req.sentiment = "NOT_ENABLED";
+    }  
 
     Object.assign(res, {
         type: "PlainText",

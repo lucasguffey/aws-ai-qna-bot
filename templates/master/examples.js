@@ -3,11 +3,11 @@ module.exports={
         "Type" : "AWS::CloudFormation::Stack",
         "Condition":"BuildExamples",
         "Properties" : {
-            "TemplateURL" :{"Fn::Sub":"http://s3.amazonaws.com/${BootstrapBucket}/${BootstrapPrefix}/templates/examples.json"},
+            "TemplateURL" :{"Fn::Sub":"http://${BootstrapBucket}.s3.${AWS::Region}.amazonaws.com/${BootstrapPrefix}/templates/examples.json"},
             "Parameters" :{
                 "QnAType":{"Fn::GetAtt":["Var","QnAType"]}, 
                 "QuizType":{"Fn::GetAtt":["Var","QuizType"]},
-                "Index":{"Fn::GetAtt":["Var","index"]},
+                "Index":{"Fn::GetAtt":["Var","QnaIndex"]},
                 "ESAddress":{"Fn::GetAtt":["ESVar","ESAddress"]},
                 "BootstrapBucket":{"Ref":"BootstrapBucket"},
                 "BootstrapPrefix":{"Ref":"BootstrapPrefix"},

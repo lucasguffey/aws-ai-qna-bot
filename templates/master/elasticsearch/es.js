@@ -3,7 +3,7 @@ var properties={
     "ElasticsearchClusterConfig": {
        "DedicatedMasterEnabled": false,
        "InstanceCount": 2,
-       "InstanceType": "t2.small.elasticsearch",
+       "InstanceType": {"Fn::If": [ "Encrypted", "c5.large.elasticsearch", "t2.small.elasticsearch"]},
        "ZoneAwarenessEnabled": "true"
     },
     "EBSOptions": {
@@ -11,18 +11,22 @@ var properties={
        "VolumeSize": 10,
        "VolumeType": "gp2"
     },
-    "ElasticsearchVersion": "5.1",
+    "ElasticsearchVersion": "7.4",
     "SnapshotOptions": {
        "AutomatedSnapshotStartHour": "0"
     },
     "AdvancedOptions": {
        "rest.action.multi.allow_explicit_index": "true"
+    },
+    "EncryptionAtRestOptions": {
+       "Enabled": {"Fn::If": [ "Encrypted", true, false]}
     }
 }
 
 module.exports={
     "ElasticsearchDomain": {
         "Type": "AWS::Elasticsearch::Domain",
+        "DependsOn":["PreUpgradeExport"],
         "Condition":"CreateDomain",
         "Properties":properties 
     },

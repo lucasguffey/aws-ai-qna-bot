@@ -6,6 +6,11 @@ var examples = _.fromPairs(require('../../examples/outputs')
   .map(x => {
     return [x, { "Fn::GetAtt": ["ExamplesStack", `Outputs.${x}`] }]
   }))
+var responsebots = _.fromPairs(require('../../examples/examples/responsebots')
+  .names
+  .map(x => {
+    return [x, { "Fn::GetAtt": ["ExamplesStack", `Outputs.${x}`] }]
+  }))
 
 module.exports = {
   "Alexa": {
@@ -36,7 +41,7 @@ module.exports = {
       "Environment": {
         "Variables": Object.assign({
           ES_TYPE: { "Fn::GetAtt": ["Var", "QnAType"] },
-          ES_INDEX: { "Fn::GetAtt": ["Var", "index"] },
+          ES_INDEX: { "Fn::GetAtt": ["Var","QnaIndex"] },
           ES_ADDRESS: { "Fn::GetAtt": ["ESVar", "ESAddress"] },
           LAMBDA_DEFAULT_QUERY: { "Ref": "ESQueryLambda" },
           LAMBDA_LOG: { "Ref": "ESLoggingLambda" },
@@ -46,7 +51,7 @@ module.exports = {
           DEFAULT_USER_POOL_JWKS_PARAM: { "Ref": "DefaultUserPoolJwksUrl" },
           DEFAULT_SETTINGS_PARAM: { "Ref": "DefaultQnABotSettings" },
           CUSTOM_SETTINGS_PARAM: { "Ref": "CustomQnABotSettings" },
-        }, examples)
+        }, examples, responsebots)
       },
       "Handler": "index.handler",
       "MemorySize": "1408",
@@ -85,6 +90,24 @@ module.exports = {
       "Roles": [{ "Ref": "FulfillmentLambdaRole" }]
     }
   },
+  "LexBotPolicy": {
+    "Type": "AWS::IAM::ManagedPolicy",
+    "Properties": {
+      "PolicyDocument": {
+        "Version": "2012-10-17",
+        "Statement": [{
+          "Effect": "Allow",
+          "Action": [
+            "lex:PostText"
+          ],
+          "Resource": [
+            "arn:aws:lex:*:*:bot:QNA*"
+          ]
+        }]
+      },
+      "Roles": [{ "Ref": "FulfillmentLambdaRole" }]
+    }
+  },
   "FulfillmentLambdaRole": {
     "Type": "AWS::IAM::Role",
     "Properties": {
@@ -104,6 +127,7 @@ module.exports = {
       "ManagedPolicyArns": [
         "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole",
         "arn:aws:iam::aws:policy/TranslateReadOnly",
+        "arn:aws:iam::aws:policy/ComprehendReadOnly",
         { "Ref": "EsPolicy" }
       ],
       "Policies": [

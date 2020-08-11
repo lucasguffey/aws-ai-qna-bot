@@ -4,14 +4,17 @@ var _=require('lodash')
 var examples=require(`./examples`);
 var extensions=require(`./extensions`);
 var resources=Object.assign(examples,extensions);
+var outputs1=require('./outputs').outputs;
+var outputs2=require('./examples/responsebots').outputs;
+var outputs=Object.assign(outputs1,outputs2);
 
 module.exports={
   "Resources":resources,
   "Conditions": {},
   "AWSTemplateFormatVersion": "2010-09-09",
-  "Description": "QnABot with admin and client websites",
+  "Description": "QnABot nested example resources",
   "Mappings": {},
-  "Outputs": require('./outputs').outputs,
+  "Outputs": outputs,
   "Parameters": {
     "FulfillmentLambdaRole":{"Type":"String"},
     "QnAType":{"Type":"String"}, 
